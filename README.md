@@ -45,7 +45,7 @@ You are expected to perform work on your projects and ideas until the submission
 
 Submission deadline is `Thursday, the 11th of July 2024, at 8.00pm UTC +0`. Any submissions received or with new commited work past this point will be welcomed, but won't be eligible to present on `Friday, the 12th of July 2024`, nor to receive any top prize (but may earn a participation prize). The timestamp of submission will be taken from the last valid commit in an open pull request to the `vault-bounties`.
 
-Projects must be built on top of existing libraries, boilerplates or reference implementations. Projects that are ported from other existing application will be disqualified.
+Projects may be built on top of existing libraries, boilerplates or reference implementations. Projects that are ported from other existing application will be disqualified.
 
 By participating, you are acknowledging that you need to present your work in the [Tokenized Vault Competition @ ETHCC](https://lu.ma/smo8wv09?tk=orTIsj) event. This must happen either in `TheMerode` in person OR if you don't want to present live/can't be in person, a presentation video must be submitted (rules on the video recording can be read in a section below).
 
@@ -117,6 +117,6 @@ Please keep introductions in your video brief and make sure your environment is 
 
 ## After the competition
 
-- Prizes will be delivered in USDC tokens within x days/weeks
+- Prizes will be delivered in USDC tokens within approximately one week by the 4626 Alliance 
 
 
