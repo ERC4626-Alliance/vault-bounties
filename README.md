@@ -117,6 +117,6 @@ Please keep introductions in your video brief and make sure your environment is 
 
 ## After the competition
 
-- Prizes will be delivered in USDC tokens within x days/weeks
+- Prizes will be delivered in USDC tokens within approximately one week by the 4626 Alliance 
 
 
