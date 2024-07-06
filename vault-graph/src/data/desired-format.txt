@@ -1,0 +1,15 @@
+vault address    asset address    vault name    vault symbol    asset name    asset symbol
+
+Build edges and nodes using addresses, display name and symbol, distinguish by type
+Edge
+   from            to
+
+Nodes
+All vault addresses - displaying name = vault name, symbol = vault symbol, type = vault
+All asset addreses  - displaying name = asset name, symbol = asset symbol, type = asset
+
+
+vault address    asset address
+    stETH           wETH
+    rETH            wETH          two vaults with the same asset
+    wstETH         stETH          vault of a vault
