@@ -125,10 +125,10 @@ function processCSVData(data: VaultAssetData[]): {
 
 async function main() {
   try {
-    const csvData = await readCSVFile("./src/data/vaults-sample.csv");
+    const csvData = await readCSVFile("./src/data/process/vaults-6m.csv");
     const { nodes, edges } = processCSVData(csvData);
     const graphML = prepareGraphML(nodes, edges);
-    writeStringToFile(graphML, "./src/data/output.graphml");
+    writeStringToFile(graphML, "./src/data/out/output-6m.graphml");
   } catch (error) {
     console.error("Error processing CSV data:", error);
   }

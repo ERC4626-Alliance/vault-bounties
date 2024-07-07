@@ -1,8 +1,8 @@
 // FILE: getVaultData.ts
 import { ethers } from "ethers";
 import { config } from "dotenv";
-import { Vault__factory } from "../../typechain-types/factories/contracts/Vault__factory";
-import { Token__factory } from "../../typechain-types/factories/contracts/Token__factory";
+import { Vault__factory } from "../../../typechain-types/factories/contracts/Vault__factory";
+import { Token__factory } from "../../../typechain-types/factories/contracts/Token__factory";
 config();
 
 async function main() {

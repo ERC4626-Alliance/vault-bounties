@@ -1,0 +1,1259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns 
+     http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="type" for="node" attr.name="type" attr.type="string"/>
+  <key id="address" for="node" attr.name="address" attr.type="string"/>
+  <key id="name" for="node" attr.name="name" attr.type="string"/>
+  <key id="symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="totalAumUsdMillion" for="node" attr.name="totalAumUsdMillion" attr.type="double"/>
+  <key id="eventCount" for="node" attr.name="eventCount" attr.type="double"/>
+  <graph id="G" edgedefault="undirected">
+    <node id="0xd9a442856c234a39a81a089c06451ebaa4306a72">
+      <data key="type">vault</data>
+      <data key="address">0xd9a442856c234a39a81a089c06451ebaa4306a72</data>
+      <data key="name">pufETH</data>
+      <data key="symbol">pufETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">66873</data>
+    </node>
+    <node id="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2">
+      <data key="type">asset</data>
+      <data key="address">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</data>
+      <data key="name">Wrapped Ether</data>
+      <data key="symbol">WETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0xea1a6307d9b18f8d1cbf1c3dd6aad8416c06a221">
+      <data key="type">vault</data>
+      <data key="address">0xea1a6307d9b18f8d1cbf1c3dd6aad8416c06a221</data>
+      <data key="name">Ether.fi-Liquid1</data>
+      <data key="symbol">LQIDETHFIV1</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">26633</data>
+    </node>
+    <node id="0xf96798f49936efb1a56f99ceae924b6b8359affb">
+      <data key="type">vault</data>
+      <data key="address">0xf96798f49936efb1a56f99ceae924b6b8359affb</data>
+      <data key="name">Restaked ALT</data>
+      <data key="symbol">reALT</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">23636</data>
+    </node>
+    <node id="0xb6D149C8DdA37aAAa2F8AD0934f2e5682C35890B">
+      <data key="type">asset</data>
+      <data key="address">0xb6D149C8DdA37aAAa2F8AD0934f2e5682C35890B</data>
+      <data key="name">Staked ALT</data>
+      <data key="symbol">STALT</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x68754d29f2e97b837cb622ccff325adac27e9977">
+      <data key="type">vault</data>
+      <data key="address">0x68754d29f2e97b837cb622ccff325adac27e9977</data>
+      <data key="name">Karak - pufETH</data>
+      <data key="symbol">KpufETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">16161</data>
+    </node>
+    <node id="0xD9A442856C234a39a81a089C06451EBAa4306a72">
+      <data key="type">asset</data>
+      <data key="address">0xD9A442856C234a39a81a089C06451EBAa4306a72</data>
+      <data key="name">pufETH</data>
+      <data key="symbol">pufETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x9d39a5de30e57443bff2a8307a4256c8797a3497">
+      <data key="type">vault</data>
+      <data key="address">0x9d39a5de30e57443bff2a8307a4256c8797a3497</data>
+      <data key="name">Staked USDe</data>
+      <data key="symbol">sUSDe</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">12901</data>
+    </node>
+    <node id="0x4c9EDD5852cd905f086C759E8383e09bff1E68B3">
+      <data key="type">asset</data>
+      <data key="address">0x4c9EDD5852cd905f086C759E8383e09bff1E68B3</data>
+      <data key="name">USDe</data>
+      <data key="symbol">USDe</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0xc585df3a8c9ca0c614d023a812624be36161502b">
+      <data key="type">vault</data>
+      <data key="address">0xc585df3a8c9ca0c614d023a812624be36161502b</data>
+      <data key="name">Karak - swETH</data>
+      <data key="symbol">KswETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">6383</data>
+    </node>
+    <node id="0xf951E335afb289353dc249e82926178EaC7DEd78">
+      <data key="type">asset</data>
+      <data key="address">0xf951E335afb289353dc249e82926178EaC7DEd78</data>
+      <data key="name">swETH</data>
+      <data key="symbol">swETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x1b4d88f5f38988bea334c79f48aa69beeefe2e1e">
+      <data key="type">vault</data>
+      <data key="address">0x1b4d88f5f38988bea334c79f48aa69beeefe2e1e</data>
+      <data key="name">Karak - rswETH</data>
+      <data key="symbol">KrswETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">6138</data>
+    </node>
+    <node id="0xFAe103DC9cf190eD75350761e95403b7b8aFa6c0">
+      <data key="type">asset</data>
+      <data key="address">0xFAe103DC9cf190eD75350761e95403b7b8aFa6c0</data>
+      <data key="name">rswETH</data>
+      <data key="symbol">rswETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x83f20f44975d03b1b09e64809b757c47f942beea">
+      <data key="type">vault</data>
+      <data key="address">0x83f20f44975d03b1b09e64809b757c47f942beea</data>
+      <data key="name">Savings Dai</data>
+      <data key="symbol">sDAI</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">5297</data>
+    </node>
+    <node id="0x6B175474E89094C44Da98b954EedeAC495271d0F">
+      <data key="type">asset</data>
+      <data key="address">0x6B175474E89094C44Da98b954EedeAC495271d0F</data>
+      <data key="name">Dai Stablecoin</data>
+      <data key="symbol">DAI</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x2dabcea55a12d73191aece59f508b191fb68adac">
+      <data key="type">vault</data>
+      <data key="address">0x2dabcea55a12d73191aece59f508b191fb68adac</data>
+      <data key="name">Karak - Wrapped eETH</data>
+      <data key="symbol">KweETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">4590</data>
+    </node>
+    <node id="0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee">
+      <data key="type">asset</data>
+      <data key="address">0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee</data>
+      <data key="name">Wrapped eETH</data>
+      <data key="symbol">weETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0xbe3ca34d0e877a1fc889bd5231d65477779aff4e">
+      <data key="type">vault</data>
+      <data key="address">0xbe3ca34d0e877a1fc889bd5231d65477779aff4e</data>
+      <data key="name">Karak - USDe</data>
+      <data key="symbol">KUSDe</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">2745</data>
+    </node>
+    <node id="0x6928e5947e5a9e8e57da66121037c7e8da3a5b30">
+      <data key="type">vault</data>
+      <data key="address">0x6928e5947e5a9e8e57da66121037c7e8da3a5b30</data>
+      <data key="name">Karak - mswETH</data>
+      <data key="symbol">K-mswETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">1472</data>
+    </node>
+    <node id="0x32bd822d615A3658A68b6fDD30c2fcb2C996D678">
+      <data key="type">asset</data>
+      <data key="address">0x32bd822d615A3658A68b6fDD30c2fcb2C996D678</data>
+      <data key="name">mswETH</data>
+      <data key="symbol">mswETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0xe4a8b89ba73517c83c4e3e6b3e2e8c5c536d2085">
+      <data key="type">vault</data>
+      <data key="address">0xe4a8b89ba73517c83c4e3e6b3e2e8c5c536d2085</data>
+      <data key="name">Karak - Renzo Restaked ETH</data>
+      <data key="symbol">KezETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">1457</data>
+    </node>
+    <node id="0xbf5495Efe5DB9ce00f80364C8B423567e58d2110">
+      <data key="type">asset</data>
+      <data key="address">0xbf5495Efe5DB9ce00f80364C8B423567e58d2110</data>
+      <data key="name">Renzo Restaked ETH</data>
+      <data key="symbol">ezETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x996d67aa9b37df96428ad3608cb21352bf1fdb90">
+      <data key="type">vault</data>
+      <data key="address">0x996d67aa9b37df96428ad3608cb21352bf1fdb90</data>
+      <data key="name">Staked Zentry</data>
+      <data key="symbol">stZENT</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">1457</data>
+    </node>
+    <node id="0xdBB7a34Bf10169d6d2D0d02A6cbb436cF4381BFa">
+      <data key="type">asset</data>
+      <data key="address">0xdBB7a34Bf10169d6d2D0d02A6cbb436cF4381BFa</data>
+      <data key="name">Zentry</data>
+      <data key="symbol">ZENT</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0xac3e018457b222d93114458476f3e3416abbe38f">
+      <data key="type">vault</data>
+      <data key="address">0xac3e018457b222d93114458476f3e3416abbe38f</data>
+      <data key="name">Staked Frax Ether</data>
+      <data key="symbol">sfrxETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">1439</data>
+    </node>
+    <node id="0x5E8422345238F34275888049021821E8E08CAa1f">
+      <data key="type">asset</data>
+      <data key="address">0x5E8422345238F34275888049021821E8E08CAa1f</data>
+      <data key="name">Frax Ether</data>
+      <data key="symbol">frxETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x9a23e79a8e6d77f940f2c30eb3d9282af2e4036c">
+      <data key="type">vault</data>
+      <data key="address">0x9a23e79a8e6d77f940f2c30eb3d9282af2e4036c</data>
+      <data key="name">Karak - rsETH</data>
+      <data key="symbol">KrsETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">1252</data>
+    </node>
+    <node id="0xA1290d69c65A6Fe4DF752f95823fae25cB99e5A7">
+      <data key="type">asset</data>
+      <data key="address">0xA1290d69c65A6Fe4DF752f95823fae25cB99e5A7</data>
+      <data key="name">rsETH</data>
+      <data key="symbol">rsETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0xda0002859b2d05f66a753d8241fcde8623f26f4f">
+      <data key="type">vault</data>
+      <data key="address">0xda0002859b2d05f66a753d8241fcde8623f26f4f</data>
+      <data key="name">Trade WETH v3</data>
+      <data key="symbol">dWETHV3</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">1167</data>
+    </node>
+    <node id="0xde5bff0755f192c333b126a449ff944ee2b69681">
+      <data key="type">vault</data>
+      <data key="address">0xde5bff0755f192c333b126a449ff944ee2b69681</data>
+      <data key="name">Karak - Staked USDe</data>
+      <data key="symbol">KsUSDe</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">933</data>
+    </node>
+    <node id="0x9D39A5DE30e57443BfF2A8307A4256c8797A3497">
+      <data key="type">asset</data>
+      <data key="address">0x9D39A5DE30e57443BfF2A8307A4256c8797A3497</data>
+      <data key="name">Staked USDe</data>
+      <data key="symbol">sUSDe</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0xcea18a8752bb7e7817f9ae7565328fe415c0f2ca">
+      <data key="type">vault</data>
+      <data key="address">0xcea18a8752bb7e7817f9ae7565328fe415c0f2ca</data>
+      <data key="name">Curve Vault for crvUSD</data>
+      <data key="symbol">cvcrvUSD</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">795</data>
+    </node>
+    <node id="0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E">
+      <data key="type">asset</data>
+      <data key="address">0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E</data>
+      <data key="name">Curve.Fi USD Stablecoin</data>
+      <data key="symbol">crvUSD</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x9fb7b4477576fe5b32be4c1843afb1e55f251b33">
+      <data key="type">vault</data>
+      <data key="address">0x9fb7b4477576fe5b32be4c1843afb1e55f251b33</data>
+      <data key="name">Fluid USD Coin</data>
+      <data key="symbol">fUSDC</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">746</data>
+    </node>
+    <node id="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48">
+      <data key="type">asset</data>
+      <data key="address">0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48</data>
+      <data key="name">USD Coin</data>
+      <data key="symbol">USDC</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x126d4dbf752aaf61f3eaada24ab0db84fecf6891">
+      <data key="type">vault</data>
+      <data key="address">0x126d4dbf752aaf61f3eaada24ab0db84fecf6891</data>
+      <data key="name">Karak - Wrapped Bitcoin</data>
+      <data key="symbol">KwBTC</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">732</data>
+    </node>
+    <node id="0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599">
+      <data key="type">asset</data>
+      <data key="address">0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599</data>
+      <data key="name">Wrapped BTC</data>
+      <data key="symbol">WBTC</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0xda00000035fef4082f78def6a8903bee419fbf8e">
+      <data key="type">vault</data>
+      <data key="address">0xda00000035fef4082f78def6a8903bee419fbf8e</data>
+      <data key="name">Trade USDC v3</data>
+      <data key="symbol">dUSDCV3</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">704</data>
+    </node>
+    <node id="0x90551c1795392094fe6d29b758eccd233cfaa260">
+      <data key="type">vault</data>
+      <data key="address">0x90551c1795392094fe6d29b758eccd233cfaa260</data>
+      <data key="name">Fluid Wrapped Ether</data>
+      <data key="symbol">fWETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">681</data>
+    </node>
+    <node id="0x5c20b550819128074fd538edf79791733ccedd18">
+      <data key="type">vault</data>
+      <data key="address">0x5c20b550819128074fd538edf79791733ccedd18</data>
+      <data key="name">Fluid Tether USD</data>
+      <data key="symbol">fUSDT</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">645</data>
+    </node>
+    <node id="0xdAC17F958D2ee523a2206206994597C13D831ec7">
+      <data key="type">asset</data>
+      <data key="address">0xdAC17F958D2ee523a2206206994597C13D831ec7</data>
+      <data key="name">Tether USD</data>
+      <data key="symbol">USDT</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x000000000077ee1fcfe351df1ff22736e995806b">
+      <data key="type">vault</data>
+      <data key="address">0x000000000077ee1fcfe351df1ff22736e995806b</data>
+      <data key="name">Compounding LOOKS</data>
+      <data key="symbol">cLOOKS</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">641</data>
+    </node>
+    <node id="0xe7baC7d798D66D353b9e50EbFC6859950fE13Ce4">
+      <data key="type">asset</data>
+      <data key="address">0xe7baC7d798D66D353b9e50EbFC6859950fE13Ce4</data>
+      <data key="name">Wrapped LooksRare Token</data>
+      <data key="symbol">wLOOKS</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0xa663b02cf0a4b149d2ad41910cb81e23e1c41c32">
+      <data key="type">vault</data>
+      <data key="address">0xa663b02cf0a4b149d2ad41910cb81e23e1c41c32</data>
+      <data key="name">Staked FRAX</data>
+      <data key="symbol">sFRAX</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">620</data>
+    </node>
+    <node id="0x853d955aCEf822Db058eb8505911ED77F175b99e">
+      <data key="type">asset</data>
+      <data key="address">0x853d955aCEf822Db058eb8505911ED77F175b99e</data>
+      <data key="name">Frax</data>
+      <data key="symbol">FRAX</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x2411802d8bea09be0af8fd8d08314a63e706b29c">
+      <data key="type">vault</data>
+      <data key="address">0x2411802d8bea09be0af8fd8d08314a63e706b29c</data>
+      <data key="name">Fluid Wrapped liquid staked Ether 2.0</data>
+      <data key="symbol">fwstETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">553</data>
+    </node>
+    <node id="0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0">
+      <data key="type">asset</data>
+      <data key="address">0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0</data>
+      <data key="name">Wrapped liquid staked Ether 2.0</data>
+      <data key="symbol">wstETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x8668a15b7b023dc77b372a740fcb8939e15257cf">
+      <data key="type">vault</data>
+      <data key="address">0x8668a15b7b023dc77b372a740fcb8939e15257cf</data>
+      <data key="name">Asymmetry Finance afCVX</data>
+      <data key="symbol">afCVX</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">501</data>
+    </node>
+    <node id="0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B">
+      <data key="type">asset</data>
+      <data key="address">0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B</data>
+      <data key="name">Convex Token</data>
+      <data key="symbol">CVX</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x86862445f58f50382c421a7bcecbcd971cc25367">
+      <data key="type">vault</data>
+      <data key="address">0x86862445f58f50382c421a7bcecbcd971cc25367</data>
+      <data key="name">Bend Auto-compound ApeCoin</data>
+      <data key="symbol">bacAPE</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">461</data>
+    </node>
+    <node id="0x4d224452801ACEd8B2F0aebE155379bb5D594381">
+      <data key="type">asset</data>
+      <data key="address">0x4d224452801ACEd8B2F0aebE155379bb5D594381</data>
+      <data key="name">ApeCoin</data>
+      <data key="symbol">APE</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0xe24ba27551abe96ca401d39761ca2319ea14e3cb">
+      <data key="type">vault</data>
+      <data key="address">0xe24ba27551abe96ca401d39761ca2319ea14e3cb</data>
+      <data key="name">Yearn-Ajna DAI Vault</data>
+      <data key="symbol">yvAjnaDAI</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">366</data>
+    </node>
+    <node id="0x815c23eca83261b6ec689b60cc4a58b54bc24d8d">
+      <data key="type">vault</data>
+      <data key="address">0x815c23eca83261b6ec689b60cc4a58b54bc24d8d</data>
+      <data key="name">vTHOR</data>
+      <data key="symbol">vTHOR</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">354</data>
+    </node>
+    <node id="0xa5f2211B9b8170F694421f2046281775E8468044">
+      <data key="type">asset</data>
+      <data key="address">0xa5f2211B9b8170F694421f2046281775E8468044</data>
+      <data key="name">THORSwap Token</data>
+      <data key="symbol">THOR</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x4881ef0bf6d2365d3dd6499ccd7532bcdbce0658">
+      <data key="type">vault</data>
+      <data key="address">0x4881ef0bf6d2365d3dd6499ccd7532bcdbce0658</data>
+      <data key="name">Gauntlet LRT Core</data>
+      <data key="symbol">gtLRTcore</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">349</data>
+    </node>
+    <node id="0x78fc2c2ed1a4cdb5402365934ae5648adad094d0">
+      <data key="type">vault</data>
+      <data key="address">0x78fc2c2ed1a4cdb5402365934ae5648adad094d0</data>
+      <data key="name">Re7 WETH</data>
+      <data key="symbol">Re7WETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">340</data>
+    </node>
+    <node id="0x528190e5169ddd5ff72c40cea6d8ba37613143ac">
+      <data key="type">vault</data>
+      <data key="address">0x528190e5169ddd5ff72c40cea6d8ba37613143ac</data>
+      <data key="name">Karak - USD Coin</data>
+      <data key="symbol">KUSDC</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">339</data>
+    </node>
+    <node id="0xdef3aa48bad043e53207d359dcdfde46f50b6c02">
+      <data key="type">vault</data>
+      <data key="address">0xdef3aa48bad043e53207d359dcdfde46f50b6c02</data>
+      <data key="name">ETH-AirPuff</data>
+      <data key="symbol">ETH-AirPuff</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">324</data>
+    </node>
+    <node id="0x43e54c2e7b3e294de3a155785f52ab49d87b9922">
+      <data key="type">vault</data>
+      <data key="address">0x43e54c2e7b3e294de3a155785f52ab49d87b9922</data>
+      <data key="name">Aladdin sdCRV</data>
+      <data key="symbol">asdCRV</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">311</data>
+    </node>
+    <node id="0xD1b5651E55D4CeeD36251c61c50C889B36F6abB5">
+      <data key="type">asset</data>
+      <data key="address">0xD1b5651E55D4CeeD36251c61c50C889B36F6abB5</data>
+      <data key="name">Stake DAO CRV</data>
+      <data key="symbol">sdCRV</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x686e8500b6be8812eb198aabbbfa14c95c03fc88">
+      <data key="type">vault</data>
+      <data key="address">0x686e8500b6be8812eb198aabbbfa14c95c03fc88</data>
+      <data key="name">Staked Open Ecosystem Token</data>
+      <data key="symbol">xOPN</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">303</data>
+    </node>
+    <node id="0xc28eb2250d1AE32c7E74CFb6d6b86afC9BEb6509">
+      <data key="type">asset</data>
+      <data key="address">0xc28eb2250d1AE32c7E74CFb6d6b86afC9BEb6509</data>
+      <data key="name">Open Ecosystem Token</data>
+      <data key="symbol">OPN</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0xbeef01735c132ada46aa9aa4c54623caa92a64cb">
+      <data key="type">vault</data>
+      <data key="address">0xbeef01735c132ada46aa9aa4c54623caa92a64cb</data>
+      <data key="name">Steakhouse USDC</data>
+      <data key="symbol">steakUSDC</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">299</data>
+    </node>
+    <node id="0xa3726bedfd1a8aa696b9b4581277240028c4314b">
+      <data key="type">vault</data>
+      <data key="address">0xa3726bedfd1a8aa696b9b4581277240028c4314b</data>
+      <data key="name">Karak - Wrapped liquid staked Ether 2.0</data>
+      <data key="symbol">KwstETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">291</data>
+    </node>
+    <node id="0x0022228a2cc5e7ef0274a7baa600d44da5ab5776">
+      <data key="type">vault</data>
+      <data key="address">0x0022228a2cc5e7ef0274a7baa600d44da5ab5776</data>
+      <data key="name">Staked USDA</data>
+      <data key="symbol">stUSD</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">277</data>
+    </node>
+    <node id="0x0000206329b97DB379d5E1Bf586BbDB969C63274">
+      <data key="type">asset</data>
+      <data key="address">0x0000206329b97DB379d5E1Bf586BbDB969C63274</data>
+      <data key="name">USDA</data>
+      <data key="symbol">USDA</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x3835a58ca93cdb5f912519ad366826ac9a752510">
+      <data key="type">vault</data>
+      <data key="address">0x3835a58ca93cdb5f912519ad366826ac9a752510</data>
+      <data key="name">FraxlendV1 - Curve DAO Token/Frax - Variable Time-Weighted Interest Rate - 6</data>
+      <data key="symbol">FraxlendV1 - CRV/FRAX</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">277</data>
+    </node>
+    <node id="0x38ca226e5ac5c96fd9b1f1abcad65613e2108d3e">
+      <data key="type">vault</data>
+      <data key="address">0x38ca226e5ac5c96fd9b1f1abcad65613e2108d3e</data>
+      <data key="name">Karak - Universal ETH</data>
+      <data key="symbol">KuniETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">275</data>
+    </node>
+    <node id="0xF1376bceF0f78459C0Ed0ba5ddce976F1ddF51F4">
+      <data key="type">asset</data>
+      <data key="address">0xF1376bceF0f78459C0Ed0ba5ddce976F1ddF51F4</data>
+      <data key="name">Universal ETH</data>
+      <data key="symbol">uniETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0xa0d3707c569ff8c87fa923d3823ec5d81c98be78">
+      <data key="type">vault</data>
+      <data key="address">0xa0d3707c569ff8c87fa923d3823ec5d81c98be78</data>
+      <data key="name">Instadapp ETH v2</data>
+      <data key="symbol">iETHv2</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">274</data>
+    </node>
+    <node id="0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84">
+      <data key="type">asset</data>
+      <data key="address">0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84</data>
+      <data key="name">Liquid staked Ether 2.0</data>
+      <data key="symbol">stETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x7c22725d1e0871f0043397c9761ad99a86ffd498">
+      <data key="type">vault</data>
+      <data key="address">0x7c22725d1e0871f0043397c9761ad99a86ffd498</data>
+      <data key="name">Karak - mETH</data>
+      <data key="symbol">KmETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">261</data>
+    </node>
+    <node id="0xd5F7838F5C461fefF7FE49ea5ebaF7728bB0ADfa">
+      <data key="type">asset</data>
+      <data key="address">0xd5F7838F5C461fefF7FE49ea5ebaF7728bB0ADfa</data>
+      <data key="name">mETH</data>
+      <data key="symbol">mETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x989ab830c6e2bdf3f28214ff54c9b7415c349a3f">
+      <data key="type">vault</data>
+      <data key="address">0x989ab830c6e2bdf3f28214ff54c9b7415c349a3f</data>
+      <data key="name">Karak - ETHx</data>
+      <data key="symbol">KETHx</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">242</data>
+    </node>
+    <node id="0xA35b1B31Ce002FBF2058D22F30f95D405200A15b">
+      <data key="type">asset</data>
+      <data key="address">0xA35b1B31Ce002FBF2058D22F30f95D405200A15b</data>
+      <data key="name">ETHx</data>
+      <data key="symbol">ETHx</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x0d53bc2ba508dfdf47084d511f13bb2eb3f8317b">
+      <data key="type">vault</data>
+      <data key="address">0x0d53bc2ba508dfdf47084d511f13bb2eb3f8317b</data>
+      <data key="name">Affine ultraETHs</data>
+      <data key="symbol">ultraETHs</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">215</data>
+    </node>
+    <node id="0x9ba021b0a9b958b5e75ce9f6dff97c7ee52cb3e6">
+      <data key="type">vault</data>
+      <data key="address">0x9ba021b0a9b958b5e75ce9f6dff97c7ee52cb3e6</data>
+      <data key="name">Autocompounding Pirex Ether</data>
+      <data key="symbol">apxETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">212</data>
+    </node>
+    <node id="0x04C154b66CB340F3Ae24111CC767e0184Ed00Cc6">
+      <data key="type">asset</data>
+      <data key="address">0x04C154b66CB340F3Ae24111CC767e0184Ed00Cc6</data>
+      <data key="name">Pirex Ether</data>
+      <data key="symbol">pxETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x36c2aa2830276b65b12e065aefacaade83ef4b29">
+      <data key="type">vault</data>
+      <data key="address">0x36c2aa2830276b65b12e065aefacaade83ef4b29</data>
+      <data key="name">Karak - PT ether.fi weETH 27JUN2024</data>
+      <data key="symbol">K-PT-weETH-27JUN2024</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">208</data>
+    </node>
+    <node id="0xc69Ad9baB1dEE23F4605a82b3354F8E40d1E5966">
+      <data key="type">asset</data>
+      <data key="address">0xc69Ad9baB1dEE23F4605a82b3354F8E40d1E5966</data>
+      <data key="name">PT ether.fi weETH 27JUN2024</data>
+      <data key="symbol">PT-weETH-27JUN2024</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0xa92b60b8efe9ac06ed65980a6d43e3f488a7f7bb">
+      <data key="type">vault</data>
+      <data key="address">0xa92b60b8efe9ac06ed65980a6d43e3f488a7f7bb</data>
+      <data key="name">Karak - Tether USD</data>
+      <data key="symbol">KUSDT</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">206</data>
+    </node>
+    <node id="0x05a811275fe9b4de503b3311f51edf6a856d936e">
+      <data key="type">vault</data>
+      <data key="address">0x05a811275fe9b4de503b3311f51edf6a856d936e</data>
+      <data key="name">Universal USDT v3</data>
+      <data key="symbol">dUSDTV3</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">206</data>
+    </node>
+    <node id="0x547213367cfb08ab418e7b54d7883b2c2aa27fd7">
+      <data key="type">vault</data>
+      <data key="address">0x547213367cfb08ab418e7b54d7883b2c2aa27fd7</data>
+      <data key="name">Staked USDz</data>
+      <data key="symbol">sUSDz</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">188</data>
+    </node>
+    <node id="0xA469B7Ee9ee773642b3e93E842e5D9b5BaA10067">
+      <data key="type">asset</data>
+      <data key="address">0xA469B7Ee9ee773642b3e93E842e5D9b5BaA10067</data>
+      <data key="name">USDz</data>
+      <data key="symbol">USDz</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x2b95a1dcc3d405535f9ed33c219ab38e8d7e0884">
+      <data key="type">vault</data>
+      <data key="address">0x2b95a1dcc3d405535f9ed33c219ab38e8d7e0884</data>
+      <data key="name">Aladdin cvxCRV</data>
+      <data key="symbol">aCRV</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">174</data>
+    </node>
+    <node id="0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7">
+      <data key="type">asset</data>
+      <data key="address">0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7</data>
+      <data key="name">Convex CRV</data>
+      <data key="symbol">cvxCRV</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x06470d528296bdcf5126de1cd342d1fa191103dc">
+      <data key="type">vault</data>
+      <data key="address">0x06470d528296bdcf5126de1cd342d1fa191103dc</data>
+      <data key="name">BitSwapVault</data>
+      <data key="symbol">xBITS</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">166</data>
+    </node>
+    <node id="0x42496acd2c7b52CE90Ed65adA6CafB0e893e2474">
+      <data key="type">asset</data>
+      <data key="address">0x42496acd2c7b52CE90Ed65adA6CafB0e893e2474</data>
+      <data key="name">BitSwap</data>
+      <data key="symbol">BITS</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0xbe53a109b494e5c9f97b9cd39fe969be68bf6204">
+      <data key="type">vault</data>
+      <data key="address">0xbe53a109b494e5c9f97b9cd39fe969be68bf6204</data>
+      <data key="name">USDC-1 yVault</data>
+      <data key="symbol">yvUSDC-1</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">164</data>
+    </node>
+    <node id="0x38989bba00bdf8181f4082995b3deae96163ac5d">
+      <data key="type">vault</data>
+      <data key="address">0x38989bba00bdf8181f4082995b3deae96163ac5d</data>
+      <data key="name">Flagship ETH</data>
+      <data key="symbol">bbETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">162</data>
+    </node>
+    <node id="0x8eb67a509616cd6a7c1b3c8c21d48ff57df3d458">
+      <data key="type">vault</data>
+      <data key="address">0x8eb67a509616cd6a7c1b3c8c21d48ff57df3d458</data>
+      <data key="name">Gauntlet USDC Core</data>
+      <data key="symbol">gtUSDCcore</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">158</data>
+    </node>
+    <node id="0x397b8c79bca182e25474ea46051a2b460c0985bc">
+      <data key="type">vault</data>
+      <data key="address">0x397b8c79bca182e25474ea46051a2b460c0985bc</data>
+      <data key="name">Staked DODO</data>
+      <data key="symbol">stDODO</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">156</data>
+    </node>
+    <node id="0x43Dfc4159D86F3A37A5A4B3D4580b888ad7d4DDd">
+      <data key="type">asset</data>
+      <data key="address">0x43Dfc4159D86F3A37A5A4B3D4580b888ad7d4DDd</data>
+      <data key="name">DODO bird</data>
+      <data key="symbol">DODO</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x5ae28c9197a4a6570216fc7e53e7e0221d7a0fef">
+      <data key="type">vault</data>
+      <data key="address">0x5ae28c9197a4a6570216fc7e53e7e0221d7a0fef</data>
+      <data key="name">Curve Vault for crvUSD</data>
+      <data key="symbol">cvcrvUSD</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">154</data>
+    </node>
+    <node id="0xfd6db5011b171b05e1ea3b92f9eacaeeb055e971">
+      <data key="type">vault</data>
+      <data key="address">0xfd6db5011b171b05e1ea3b92f9eacaeeb055e971</data>
+      <data key="name">Turbo STETH</data>
+      <data key="symbol">TurboSTETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">149</data>
+    </node>
+    <node id="0x1751e1e4d2c9fa99479c0c5574136f0dbd8f3eb8">
+      <data key="type">vault</data>
+      <data key="address">0x1751e1e4d2c9fa99479c0c5574136f0dbd8f3eb8</data>
+      <data key="name">Karak - Staked Frax Ether</data>
+      <data key="symbol">KsfrxETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">148</data>
+    </node>
+    <node id="0xac3E018457B222d93114458476f3E3416Abbe38F">
+      <data key="type">asset</data>
+      <data key="address">0xac3E018457B222d93114458476f3E3416Abbe38F</data>
+      <data key="name">Staked Frax Ether</data>
+      <data key="symbol">sfrxETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x622fa41799406b120f9a40da843d358b7b2cfee3">
+      <data key="type">vault</data>
+      <data key="address">0x622fa41799406b120f9a40da843d358b7b2cfee3</data>
+      <data key="name">yGauge USDC-1 yVault</data>
+      <data key="symbol">yG-yvUSDC-1</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">140</data>
+    </node>
+    <node id="0xBe53A109B494E5c9f97b9Cd39Fe969BE68BF6204">
+      <data key="type">asset</data>
+      <data key="address">0xBe53A109B494E5c9f97b9Cd39Fe969BE68BF6204</data>
+      <data key="name">USDC-1 yVault</data>
+      <data key="symbol">yvUSDC-1</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x7586c58bf6292b3c9defc8333fc757d6c5da0f7e">
+      <data key="type">vault</data>
+      <data key="address">0x7586c58bf6292b3c9defc8333fc757d6c5da0f7e</data>
+      <data key="name">Curve Vault for crvUSD</data>
+      <data key="symbol">cvcrvUSD</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">137</data>
+    </node>
+    <node id="0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b">
+      <data key="type">vault</data>
+      <data key="address">0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b</data>
+      <data key="name">Syrup USDC</data>
+      <data key="symbol">syrupUSDC</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">136</data>
+    </node>
+    <node id="0xfaa2ed111b4f580fcb85c48e6dc6782dc5fcd7a6">
+      <data key="type">vault</data>
+      <data key="address">0xfaa2ed111b4f580fcb85c48e6dc6782dc5fcd7a6</data>
+      <data key="name">Staked Aura BAL</data>
+      <data key="symbol">stkauraBAL</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">133</data>
+    </node>
+    <node id="0x616e8BfA43F920657B3497DBf40D6b1A02D4608d">
+      <data key="type">asset</data>
+      <data key="address">0x616e8BfA43F920657B3497DBf40D6b1A02D4608d</data>
+      <data key="name">Aura BAL</data>
+      <data key="symbol">auraBAL</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x028ec7330ff87667b6dfb0d94b954c820195336c">
+      <data key="type">vault</data>
+      <data key="address">0x028ec7330ff87667b6dfb0d94b954c820195336c</data>
+      <data key="name">DAI-1 yVault</data>
+      <data key="symbol">yvDAI-1</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">132</data>
+    </node>
+    <node id="0x95eef579155cd2c5510f312c8fa39208c3be01a8">
+      <data key="type">vault</data>
+      <data key="address">0x95eef579155cd2c5510f312c8fa39208c3be01a8</data>
+      <data key="name">Re7 USDT</data>
+      <data key="symbol">Re7USDT</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">129</data>
+    </node>
+    <node id="0x89d80f5e9bc88d8021b352064ae73f0eaf79ebd8">
+      <data key="type">vault</data>
+      <data key="address">0x89d80f5e9bc88d8021b352064ae73f0eaf79ebd8</data>
+      <data key="name">Re7 USDA</data>
+      <data key="symbol">Re7USDA</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">123</data>
+    </node>
+    <node id="0x2c25f6c25770ffec5959d34b94bf898865e5d6b1">
+      <data key="type">vault</data>
+      <data key="address">0x2c25f6c25770ffec5959d34b94bf898865e5d6b1</data>
+      <data key="name">Flagship USDT</data>
+      <data key="symbol">bbUSDT</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">120</data>
+    </node>
+    <node id="0x3d9ebe3161778c4831f6f7a6d9263f031285f976">
+      <data key="type">vault</data>
+      <data key="address">0x3d9ebe3161778c4831f6f7a6d9263f031285f976</data>
+      <data key="name">Karak - mstETH</data>
+      <data key="symbol">K-mstETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">120</data>
+    </node>
+    <node id="0x49446A0874197839D15395B908328a74ccc96Bc0">
+      <data key="type">asset</data>
+      <data key="address">0x49446A0874197839D15395B908328a74ccc96Bc0</data>
+      <data key="name">mstETH</data>
+      <data key="symbol">mstETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x2371e134e3455e0593363cbf89d3b6cf53740618">
+      <data key="type">vault</data>
+      <data key="address">0x2371e134e3455e0593363cbf89d3b6cf53740618</data>
+      <data key="name">Gauntlet WETH Prime</data>
+      <data key="symbol">gtWETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">120</data>
+    </node>
+    <node id="0x67315dd969b8cd3a3520c245837bf71f54579c75">
+      <data key="type">vault</data>
+      <data key="address">0x67315dd969b8cd3a3520c245837bf71f54579c75</data>
+      <data key="name">LlamaRisk crvUSD Vault</data>
+      <data key="symbol">llama-crvUSD</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">119</data>
+    </node>
+    <node id="0xff467c6e827ebbea64da1ab0425021e6c89fbe0d">
+      <data key="type">vault</data>
+      <data key="address">0xff467c6e827ebbea64da1ab0425021e6c89fbe0d</data>
+      <data key="name">Curve Vault for crvUSD</data>
+      <data key="symbol">cvcrvUSD</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">118</data>
+    </node>
+    <node id="0xdd0f28e19c1780eb6396170735d45153d261490d">
+      <data key="type">vault</data>
+      <data key="address">0xdd0f28e19c1780eb6396170735d45153d261490d</data>
+      <data key="name">Gauntlet USDC Prime</data>
+      <data key="symbol">gtUSDC</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">110</data>
+    </node>
+    <node id="0x503e0bab6acdae73ea7fb7cf6ae5792014dbe935">
+      <data key="type">vault</data>
+      <data key="address">0x503e0bab6acdae73ea7fb7cf6ae5792014dbe935</data>
+      <data key="name">Yearn-Ajna WETH Vault</data>
+      <data key="symbol">yvAjnaWETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">108</data>
+    </node>
+    <node id="0x8fb1c7aedcbbc1222325c39dd5c1d2d23420cae3">
+      <data key="type">vault</data>
+      <data key="address">0x8fb1c7aedcbbc1222325c39dd5c1d2d23420cae3</data>
+      <data key="name">Curve Vault for crvUSD</data>
+      <data key="symbol">cvcrvUSD</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">106</data>
+    </node>
+    <node id="0xcf1110bca74890eae1aad534ec3a03f16956ebeb">
+      <data key="type">vault</data>
+      <data key="address">0xcf1110bca74890eae1aad534ec3a03f16956ebeb</data>
+      <data key="name">Karak - PT rswETH 27JUN2024</data>
+      <data key="symbol">K-PT-rswETH-27JUN2024</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">105</data>
+    </node>
+    <node id="0x5cb12D56F5346a016DBBA8CA90635d82e6D1bcEa">
+      <data key="type">asset</data>
+      <data key="address">0x5cb12D56F5346a016DBBA8CA90635d82e6D1bcEa</data>
+      <data key="name">PT rswETH 27JUN2024</data>
+      <data key="symbol">PT-rswETH-27JUN2024</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x99a53fab6fbd1eacb59ae998da2dbf130be94c38">
+      <data key="type">vault</data>
+      <data key="address">0x99a53fab6fbd1eacb59ae998da2dbf130be94c38</data>
+      <data key="name">Popcorn Balancer 20 WETH 80 VCX Vault</data>
+      <data key="symbol">pop-BAL-20WETH-80VCX</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">102</data>
+    </node>
+    <node id="0x577A7f7EE659Aa14Dc16FD384B3F8078E23F1920">
+      <data key="type">asset</data>
+      <data key="address">0x577A7f7EE659Aa14Dc16FD384B3F8078E23F1920</data>
+      <data key="name">Balancer 20 WETH 80 VCX</data>
+      <data key="symbol">BAL-20WETH-80VCX</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x7bdd71e46d602916c065b027028df686a27d5cb2">
+      <data key="type">vault</data>
+      <data key="address">0x7bdd71e46d602916c065b027028df686a27d5cb2</data>
+      <data key="name">VaultCraft Aura Balancer 20 WETH 80 VCX Adapter</data>
+      <data key="symbol">vcAu-BAL-20WETH-80VCX</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">102</data>
+    </node>
+    <node id="0x6557e7f2d3a0ecb3468b5601a8e1b6c0cd6e910d">
+      <data key="type">vault</data>
+      <data key="address">0x6557e7f2d3a0ecb3468b5601a8e1b6c0cd6e910d</data>
+      <data key="name">Karak - PT Kelp rsETH 27JUN2024</data>
+      <data key="symbol">K-PT-rsETH-27JUN2024</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">101</data>
+    </node>
+    <node id="0xB05cABCd99cf9a73b19805edefC5f67CA5d1895E">
+      <data key="type">asset</data>
+      <data key="address">0xB05cABCd99cf9a73b19805edefC5f67CA5d1895E</data>
+      <data key="name">PT Kelp rsETH 27JUN2024</data>
+      <data key="symbol">PT-rsETH-27JUN2024</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x125d41a6e5dbf455cd9df8f80bcc6fd172d52cc6">
+      <data key="type">vault</data>
+      <data key="address">0x125d41a6e5dbf455cd9df8f80bcc6fd172d52cc6</data>
+      <data key="name">Gauntlet USDA Core</data>
+      <data key="symbol">gtUSDAcore</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">100</data>
+    </node>
+    <node id="0xc56413869c6cdf96496f2b1ef801fedbdfa7ddb0">
+      <data key="type">vault</data>
+      <data key="address">0xc56413869c6cdf96496f2b1ef801fedbdfa7ddb0</data>
+      <data key="name">WETH-1 yVault</data>
+      <data key="symbol">yvWETH-1</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">98</data>
+    </node>
+    <node id="0x8659fc767cad6005de79af65dafe4249c57927af">
+      <data key="type">vault</data>
+      <data key="address">0x8659fc767cad6005de79af65dafe4249c57927af</data>
+      <data key="name">Union Pirex</data>
+      <data key="symbol">uCVX</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">96</data>
+    </node>
+    <node id="0xBCe0Cf87F513102F22232436CCa2ca49e815C3aC">
+      <data key="type">asset</data>
+      <data key="address">0xBCe0Cf87F513102F22232436CCa2ca49e815C3aC</data>
+      <data key="name">Pirex CVX</data>
+      <data key="symbol">pxCVX</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x4ca0e178c94f039d7f202e09d8d1a655ed3fb6b6">
+      <data key="type">vault</data>
+      <data key="address">0x4ca0e178c94f039d7f202e09d8d1a655ed3fb6b6</data>
+      <data key="name">LeadBlock USDC RWA</data>
+      <data key="symbol">USDC RWA</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">96</data>
+    </node>
+    <node id="0xc7372ab5dd315606db799246e8aa112405abaeff">
+      <data key="type">vault</data>
+      <data key="address">0xc7372ab5dd315606db799246e8aa112405abaeff</data>
+      <data key="name">Turbo stETH (stETH Deposit)</data>
+      <data key="symbol">TurboSTETH2</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">94</data>
+    </node>
+    <node id="0x06824c27c8a0dbde5f72f770ec82e3c0fd4dcec3">
+      <data key="type">vault</data>
+      <data key="address">0x06824c27c8a0dbde5f72f770ec82e3c0fd4dcec3</data>
+      <data key="name">Amphor Symbiotic LRT (WSTETH)</data>
+      <data key="symbol">amphrLRT</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">93</data>
+    </node>
+    <node id="0x3808708e761b988d23ae011ed0e12674fb66bd62">
+      <data key="type">vault</data>
+      <data key="address">0x3808708e761b988d23ae011ed0e12674fb66bd62</data>
+      <data key="name">SideShift SideShift Token Vault</data>
+      <data key="symbol">svXAI</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">93</data>
+    </node>
+    <node id="0x35e78b3982E87ecfD5b3f3265B601c046cDBe232">
+      <data key="type">asset</data>
+      <data key="address">0x35e78b3982E87ecfD5b3f3265B601c046cDBe232</data>
+      <data key="name">SideShift Token</data>
+      <data key="symbol">XAI</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0xbeef050ecd6a16c4e7bffbb52ebba7846c4b8cd4">
+      <data key="type">vault</data>
+      <data key="address">0xbeef050ecd6a16c4e7bffbb52ebba7846c4b8cd4</data>
+      <data key="name">Steakhouse ETH</data>
+      <data key="symbol">steakETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">92</data>
+    </node>
+    <node id="0x004626a008b1acdc4c74ab51644093b155e59a23">
+      <data key="type">vault</data>
+      <data key="address">0x004626a008b1acdc4c74ab51644093b155e59a23</data>
+      <data key="name">Staked EURA</data>
+      <data key="symbol">stEUR</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">90</data>
+    </node>
+    <node id="0x1a7e4e63778B4f12a199C062f3eFdD288afCBce8">
+      <data key="type">asset</data>
+      <data key="address">0x1a7e4e63778B4f12a199C062f3eFdD288afCBce8</data>
+      <data key="name">EURA (previously agEUR)</data>
+      <data key="symbol">EURA</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x128e72dfd8b00cbf9d12cb75e846ac87b83ddfc9">
+      <data key="type">vault</data>
+      <data key="address">0x128e72dfd8b00cbf9d12cb75e846ac87b83ddfc9</data>
+      <data key="name">yGauge DAI-1 yVault</data>
+      <data key="symbol">yG-yvDAI-1</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">86</data>
+    </node>
+    <node id="0x028eC7330ff87667b6dfb0D94b954c820195336c">
+      <data key="type">asset</data>
+      <data key="address">0x028eC7330ff87667b6dfb0D94b954c820195336c</data>
+      <data key="name">DAI-1 yVault</data>
+      <data key="symbol">yvDAI-1</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0xb5b29320d2dde5ba5bafa1ebcd270052070483ec">
+      <data key="type">vault</data>
+      <data key="address">0xb5b29320d2dde5ba5bafa1ebcd270052070483ec</data>
+      <data key="name">Real Yield ETH</data>
+      <data key="symbol">YieldETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">86</data>
+    </node>
+    <node id="0xfa35d1f603384e8fcfcbff3e610935d02922544e">
+      <data key="type">vault</data>
+      <data key="address">0xfa35d1f603384e8fcfcbff3e610935d02922544e</data>
+      <data key="name">Autocompounding pxBTRFLY</data>
+      <data key="symbol">apxBTRFLY</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">86</data>
+    </node>
+    <node id="0x10978Db3885bA79Bf1Bc823E108085FB88e6F02f">
+      <data key="type">asset</data>
+      <data key="address">0x10978Db3885bA79Bf1Bc823E108085FB88e6F02f</data>
+      <data key="name">Pirex BTRFLY</data>
+      <data key="symbol">pxBTRFLY</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0xede905b2732ffcb73b95f5facb2a0f241b30bd50">
+      <data key="type">vault</data>
+      <data key="address">0xede905b2732ffcb73b95f5facb2a0f241b30bd50</data>
+      <data key="name">Swaap WETH Fund</data>
+      <data key="symbol">swpWETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">85</data>
+    </node>
+    <node id="0xe1a3864dbf62fb94834b108ff6bf439ce70183ac">
+      <data key="type">vault</data>
+      <data key="address">0xe1a3864dbf62fb94834b108ff6bf439ce70183ac</data>
+      <data key="name">vXDEFI</data>
+      <data key="symbol">vXDEFI</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">85</data>
+    </node>
+    <node id="0x72B886d09C117654aB7dA13A14d603001dE0B777">
+      <data key="type">asset</data>
+      <data key="address">0x72B886d09C117654aB7dA13A14d603001dE0B777</data>
+      <data key="name">XDEFI</data>
+      <data key="symbol">XDEFI</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <node id="0x11aae8bee9b1da827c641540d20e4e664677e06f">
+      <data key="type">vault</data>
+      <data key="address">0x11aae8bee9b1da827c641540d20e4e664677e06f</data>
+      <data key="name">yPRISMA-1 yVault</data>
+      <data key="symbol">yvyPRISMA-1</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">85</data>
+    </node>
+    <node id="0xe3668873D944E4A949DA05fc8bDE419eFF543882">
+      <data key="type">asset</data>
+      <data key="address">0xe3668873D944E4A949DA05fc8bDE419eFF543882</data>
+      <data key="name">Yearn PRISMA</data>
+      <data key="symbol">yPRISMA</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
+    </node>
+    <edge source="0xd9a442856c234a39a81a089c06451ebaa4306a72" target="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"/>
+    <edge source="0xea1a6307d9b18f8d1cbf1c3dd6aad8416c06a221" target="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"/>
+    <edge source="0xf96798f49936efb1a56f99ceae924b6b8359affb" target="0xb6D149C8DdA37aAAa2F8AD0934f2e5682C35890B"/>
+    <edge source="0x68754d29f2e97b837cb622ccff325adac27e9977" target="0xD9A442856C234a39a81a089C06451EBAa4306a72"/>
+    <edge source="0x9d39a5de30e57443bff2a8307a4256c8797a3497" target="0x4c9EDD5852cd905f086C759E8383e09bff1E68B3"/>
+    <edge source="0xc585df3a8c9ca0c614d023a812624be36161502b" target="0xf951E335afb289353dc249e82926178EaC7DEd78"/>
+    <edge source="0x1b4d88f5f38988bea334c79f48aa69beeefe2e1e" target="0xFAe103DC9cf190eD75350761e95403b7b8aFa6c0"/>
+    <edge source="0x83f20f44975d03b1b09e64809b757c47f942beea" target="0x6B175474E89094C44Da98b954EedeAC495271d0F"/>
+    <edge source="0x2dabcea55a12d73191aece59f508b191fb68adac" target="0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee"/>
+    <edge source="0xbe3ca34d0e877a1fc889bd5231d65477779aff4e" target="0x4c9EDD5852cd905f086C759E8383e09bff1E68B3"/>
+    <edge source="0x6928e5947e5a9e8e57da66121037c7e8da3a5b30" target="0x32bd822d615A3658A68b6fDD30c2fcb2C996D678"/>
+    <edge source="0xe4a8b89ba73517c83c4e3e6b3e2e8c5c536d2085" target="0xbf5495Efe5DB9ce00f80364C8B423567e58d2110"/>
+    <edge source="0x996d67aa9b37df96428ad3608cb21352bf1fdb90" target="0xdBB7a34Bf10169d6d2D0d02A6cbb436cF4381BFa"/>
+    <edge source="0xac3e018457b222d93114458476f3e3416abbe38f" target="0x5E8422345238F34275888049021821E8E08CAa1f"/>
+    <edge source="0x9a23e79a8e6d77f940f2c30eb3d9282af2e4036c" target="0xA1290d69c65A6Fe4DF752f95823fae25cB99e5A7"/>
+    <edge source="0xda0002859b2d05f66a753d8241fcde8623f26f4f" target="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"/>
+    <edge source="0xde5bff0755f192c333b126a449ff944ee2b69681" target="0x9D39A5DE30e57443BfF2A8307A4256c8797A3497"/>
+    <edge source="0xcea18a8752bb7e7817f9ae7565328fe415c0f2ca" target="0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E"/>
+    <edge source="0x9fb7b4477576fe5b32be4c1843afb1e55f251b33" target="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"/>
+    <edge source="0x126d4dbf752aaf61f3eaada24ab0db84fecf6891" target="0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599"/>
+    <edge source="0xda00000035fef4082f78def6a8903bee419fbf8e" target="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"/>
+    <edge source="0x90551c1795392094fe6d29b758eccd233cfaa260" target="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"/>
+    <edge source="0x5c20b550819128074fd538edf79791733ccedd18" target="0xdAC17F958D2ee523a2206206994597C13D831ec7"/>
+    <edge source="0x000000000077ee1fcfe351df1ff22736e995806b" target="0xe7baC7d798D66D353b9e50EbFC6859950fE13Ce4"/>
+    <edge source="0xa663b02cf0a4b149d2ad41910cb81e23e1c41c32" target="0x853d955aCEf822Db058eb8505911ED77F175b99e"/>
+    <edge source="0x2411802d8bea09be0af8fd8d08314a63e706b29c" target="0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"/>
+    <edge source="0x8668a15b7b023dc77b372a740fcb8939e15257cf" target="0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B"/>
+    <edge source="0x86862445f58f50382c421a7bcecbcd971cc25367" target="0x4d224452801ACEd8B2F0aebE155379bb5D594381"/>
+    <edge source="0xe24ba27551abe96ca401d39761ca2319ea14e3cb" target="0x6B175474E89094C44Da98b954EedeAC495271d0F"/>
+    <edge source="0x815c23eca83261b6ec689b60cc4a58b54bc24d8d" target="0xa5f2211B9b8170F694421f2046281775E8468044"/>
+    <edge source="0x4881ef0bf6d2365d3dd6499ccd7532bcdbce0658" target="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"/>
+    <edge source="0x78fc2c2ed1a4cdb5402365934ae5648adad094d0" target="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"/>
+    <edge source="0x528190e5169ddd5ff72c40cea6d8ba37613143ac" target="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"/>
+    <edge source="0xdef3aa48bad043e53207d359dcdfde46f50b6c02" target="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"/>
+    <edge source="0x43e54c2e7b3e294de3a155785f52ab49d87b9922" target="0xD1b5651E55D4CeeD36251c61c50C889B36F6abB5"/>
+    <edge source="0x686e8500b6be8812eb198aabbbfa14c95c03fc88" target="0xc28eb2250d1AE32c7E74CFb6d6b86afC9BEb6509"/>
+    <edge source="0xbeef01735c132ada46aa9aa4c54623caa92a64cb" target="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"/>
+    <edge source="0xa3726bedfd1a8aa696b9b4581277240028c4314b" target="0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"/>
+    <edge source="0x0022228a2cc5e7ef0274a7baa600d44da5ab5776" target="0x0000206329b97DB379d5E1Bf586BbDB969C63274"/>
+    <edge source="0x3835a58ca93cdb5f912519ad366826ac9a752510" target="0x853d955aCEf822Db058eb8505911ED77F175b99e"/>
+    <edge source="0x38ca226e5ac5c96fd9b1f1abcad65613e2108d3e" target="0xF1376bceF0f78459C0Ed0ba5ddce976F1ddF51F4"/>
+    <edge source="0xa0d3707c569ff8c87fa923d3823ec5d81c98be78" target="0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84"/>
+    <edge source="0x7c22725d1e0871f0043397c9761ad99a86ffd498" target="0xd5F7838F5C461fefF7FE49ea5ebaF7728bB0ADfa"/>
+    <edge source="0x989ab830c6e2bdf3f28214ff54c9b7415c349a3f" target="0xA35b1B31Ce002FBF2058D22F30f95D405200A15b"/>
+    <edge source="0x0d53bc2ba508dfdf47084d511f13bb2eb3f8317b" target="0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"/>
+    <edge source="0x9ba021b0a9b958b5e75ce9f6dff97c7ee52cb3e6" target="0x04C154b66CB340F3Ae24111CC767e0184Ed00Cc6"/>
+    <edge source="0x36c2aa2830276b65b12e065aefacaade83ef4b29" target="0xc69Ad9baB1dEE23F4605a82b3354F8E40d1E5966"/>
+    <edge source="0xa92b60b8efe9ac06ed65980a6d43e3f488a7f7bb" target="0xdAC17F958D2ee523a2206206994597C13D831ec7"/>
+    <edge source="0x05a811275fe9b4de503b3311f51edf6a856d936e" target="0xdAC17F958D2ee523a2206206994597C13D831ec7"/>
+    <edge source="0x547213367cfb08ab418e7b54d7883b2c2aa27fd7" target="0xA469B7Ee9ee773642b3e93E842e5D9b5BaA10067"/>
+    <edge source="0x2b95a1dcc3d405535f9ed33c219ab38e8d7e0884" target="0x62B9c7356A2Dc64a1969e19C23e4f579F9810Aa7"/>
+    <edge source="0x06470d528296bdcf5126de1cd342d1fa191103dc" target="0x42496acd2c7b52CE90Ed65adA6CafB0e893e2474"/>
+    <edge source="0xbe53a109b494e5c9f97b9cd39fe969be68bf6204" target="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"/>
+    <edge source="0x38989bba00bdf8181f4082995b3deae96163ac5d" target="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"/>
+    <edge source="0x8eb67a509616cd6a7c1b3c8c21d48ff57df3d458" target="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"/>
+    <edge source="0x397b8c79bca182e25474ea46051a2b460c0985bc" target="0x43Dfc4159D86F3A37A5A4B3D4580b888ad7d4DDd"/>
+    <edge source="0x5ae28c9197a4a6570216fc7e53e7e0221d7a0fef" target="0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E"/>
+    <edge source="0xfd6db5011b171b05e1ea3b92f9eacaeeb055e971" target="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"/>
+    <edge source="0x1751e1e4d2c9fa99479c0c5574136f0dbd8f3eb8" target="0xac3E018457B222d93114458476f3E3416Abbe38F"/>
+    <edge source="0x622fa41799406b120f9a40da843d358b7b2cfee3" target="0xBe53A109B494E5c9f97b9Cd39Fe969BE68BF6204"/>
+    <edge source="0x7586c58bf6292b3c9defc8333fc757d6c5da0f7e" target="0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E"/>
+    <edge source="0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b" target="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"/>
+    <edge source="0xfaa2ed111b4f580fcb85c48e6dc6782dc5fcd7a6" target="0x616e8BfA43F920657B3497DBf40D6b1A02D4608d"/>
+    <edge source="0x028ec7330ff87667b6dfb0d94b954c820195336c" target="0x6B175474E89094C44Da98b954EedeAC495271d0F"/>
+    <edge source="0x95eef579155cd2c5510f312c8fa39208c3be01a8" target="0xdAC17F958D2ee523a2206206994597C13D831ec7"/>
+    <edge source="0x89d80f5e9bc88d8021b352064ae73f0eaf79ebd8" target="0x0000206329b97DB379d5E1Bf586BbDB969C63274"/>
+    <edge source="0x2c25f6c25770ffec5959d34b94bf898865e5d6b1" target="0xdAC17F958D2ee523a2206206994597C13D831ec7"/>
+    <edge source="0x3d9ebe3161778c4831f6f7a6d9263f031285f976" target="0x49446A0874197839D15395B908328a74ccc96Bc0"/>
+    <edge source="0x2371e134e3455e0593363cbf89d3b6cf53740618" target="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"/>
+    <edge source="0x67315dd969b8cd3a3520c245837bf71f54579c75" target="0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E"/>
+    <edge source="0xff467c6e827ebbea64da1ab0425021e6c89fbe0d" target="0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E"/>
+    <edge source="0xdd0f28e19c1780eb6396170735d45153d261490d" target="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"/>
+    <edge source="0x503e0bab6acdae73ea7fb7cf6ae5792014dbe935" target="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"/>
+    <edge source="0x8fb1c7aedcbbc1222325c39dd5c1d2d23420cae3" target="0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E"/>
+    <edge source="0xcf1110bca74890eae1aad534ec3a03f16956ebeb" target="0x5cb12D56F5346a016DBBA8CA90635d82e6D1bcEa"/>
+    <edge source="0x99a53fab6fbd1eacb59ae998da2dbf130be94c38" target="0x577A7f7EE659Aa14Dc16FD384B3F8078E23F1920"/>
+    <edge source="0x7bdd71e46d602916c065b027028df686a27d5cb2" target="0x577A7f7EE659Aa14Dc16FD384B3F8078E23F1920"/>
+    <edge source="0x6557e7f2d3a0ecb3468b5601a8e1b6c0cd6e910d" target="0xB05cABCd99cf9a73b19805edefC5f67CA5d1895E"/>
+    <edge source="0x125d41a6e5dbf455cd9df8f80bcc6fd172d52cc6" target="0x0000206329b97DB379d5E1Bf586BbDB969C63274"/>
+    <edge source="0xc56413869c6cdf96496f2b1ef801fedbdfa7ddb0" target="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"/>
+    <edge source="0x8659fc767cad6005de79af65dafe4249c57927af" target="0xBCe0Cf87F513102F22232436CCa2ca49e815C3aC"/>
+    <edge source="0x4ca0e178c94f039d7f202e09d8d1a655ed3fb6b6" target="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"/>
+    <edge source="0xc7372ab5dd315606db799246e8aa112405abaeff" target="0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84"/>
+    <edge source="0x06824c27c8a0dbde5f72f770ec82e3c0fd4dcec3" target="0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0"/>
+    <edge source="0x3808708e761b988d23ae011ed0e12674fb66bd62" target="0x35e78b3982E87ecfD5b3f3265B601c046cDBe232"/>
+    <edge source="0xbeef050ecd6a16c4e7bffbb52ebba7846c4b8cd4" target="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"/>
+    <edge source="0x004626a008b1acdc4c74ab51644093b155e59a23" target="0x1a7e4e63778B4f12a199C062f3eFdD288afCBce8"/>
+    <edge source="0x128e72dfd8b00cbf9d12cb75e846ac87b83ddfc9" target="0x028eC7330ff87667b6dfb0D94b954c820195336c"/>
+    <edge source="0xb5b29320d2dde5ba5bafa1ebcd270052070483ec" target="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"/>
+    <edge source="0xfa35d1f603384e8fcfcbff3e610935d02922544e" target="0x10978Db3885bA79Bf1Bc823E108085FB88e6F02f"/>
+    <edge source="0xede905b2732ffcb73b95f5facb2a0f241b30bd50" target="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"/>
+    <edge source="0xe1a3864dbf62fb94834b108ff6bf439ce70183ac" target="0x72B886d09C117654aB7dA13A14d603001dE0B777"/>
+    <edge source="0x11aae8bee9b1da827c641540d20e4e664677e06f" target="0xe3668873D944E4A949DA05fc8bDE419eFF543882"/>
+  </graph>
+</graphml>
