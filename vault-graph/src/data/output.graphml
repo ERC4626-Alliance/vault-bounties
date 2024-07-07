@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns 
+     http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="type" for="node" attr.name="type" attr.type="string"/>
+  <key id="address" for="node" attr.name="address" attr.type="string"/>
+  <key id="name" for="node" attr.name="name" attr.type="string"/>
+  <key id="symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="totalAumUsdMillion" for="node" attr.name="totalAumUsdMillion" attr.type="double"/>
+  <graph id="G" edgedefault="undirected">
+    <node id="0x1">
+      <data key="type">vault</data>
+      <data key="address">0x1</data>
+      <data key="name">ZX Spectrum</data>
+      <data key="symbol">ZXS</data>
+      <data key="totalAumUsdMillion">10</data>
+    </node>
+    <node id="0x2">
+      <data key="type">asset</data>
+      <data key="address">0x2</data>
+      <data key="name">USDC stablecoin</data>
+      <data key="symbol">USDC</data>
+      
+    </node>
+    <node id="0x3">
+      <data key="type">mixed</data>
+      <data key="address">0x3</data>
+      <data key="name">ZX EightyOne</data>
+      <data key="symbol">ZX81</data>
+      <data key="totalAumUsdMillion">8</data>
+    </node>
+    <node id="0x4">
+      <data key="type">vault</data>
+      <data key="address">0x4</data>
+      <data key="name">Vault of ZX81</data>
+      <data key="symbol">vZX81</data>
+      <data key="totalAumUsdMillion">9</data>
+    </node>
+    <node id="0x5">
+      <data key="type">vault</data>
+      <data key="address">0x5</data>
+      <data key="name">Wrapped USDT</data>
+      <data key="symbol">wUSDT</data>
+      <data key="totalAumUsdMillion">4</data>
+    </node>
+    <node id="0x6">
+      <data key="type">asset</data>
+      <data key="address">0x6</data>
+      <data key="name">Tether</data>
+      <data key="symbol">USDT</data>
+      
+    </node>
+    <edge source="0x1" target="0x2"/>
+    <edge source="0x3" target="0x2"/>
+    <edge source="0x4" target="0x3"/>
+    <edge source="0x5" target="0x6"/>
+  </graph>
+</graphml>
