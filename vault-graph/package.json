@@ -8,7 +8,7 @@
   "scripts": {
     "buildGraphML": "yarn hardhat run src/scripts/buildGraphML.ts",
     "getBlock": "yarn hardhat run src/scripts/getBlock.ts",
-    "getVaultData": "yarn hardhat run src/scripts/getVaultDataSample.ts"
+    "getVaultDataAll": "yarn hardhat run src/scripts/getVaultDataAll.ts"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",

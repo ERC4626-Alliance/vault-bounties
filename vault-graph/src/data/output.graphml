@@ -10,57 +10,31 @@
   <key id="totalAumUsdMillion" for="node" attr.name="totalAumUsdMillion" attr.type="double"/>
   <key id="eventCount" for="node" attr.name="eventCount" attr.type="double"/>
   <graph id="G" edgedefault="undirected">
-    <node id="0x1">
+    <node id="0xd9a442856c234a39a81a089c06451ebaa4306a72">
       <data key="type">vault</data>
-      <data key="address">0x1</data>
-      <data key="name">ZX Spectrum</data>
-      <data key="symbol">ZXS</data>
-      <data key="totalAumUsdMillion">10</data>
-      <data key="eventCount">663</data>
+      <data key="address">0xd9a442856c234a39a81a089c06451ebaa4306a72</data>
+      <data key="name">pufETH</data>
+      <data key="symbol">pufETH</data>
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">66873</data>
     </node>
-    <node id="0x2">
+    <node id="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2">
       <data key="type">asset</data>
-      <data key="address">0x2</data>
-      <data key="name">USDC stablecoin</data>
-      <data key="symbol">USDC</data>
+      <data key="address">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</data>
+      <data key="name">Wrapped Ether</data>
+      <data key="symbol">WETH</data>
       <data key="totalAumUsdMillion">0</data>
       <data key="eventCount">0</data>
     </node>
-    <node id="0x3">
-      <data key="type">mixed</data>
-      <data key="address">0x3</data>
-      <data key="name">ZX EightyOne</data>
-      <data key="symbol">ZX81</data>
-      <data key="totalAumUsdMillion">8</data>
-      <data key="eventCount">2</data>
-    </node>
-    <node id="0x4">
+    <node id="0xea1a6307d9b18f8d1cbf1c3dd6aad8416c06a221">
       <data key="type">vault</data>
-      <data key="address">0x4</data>
-      <data key="name">Vault of ZX81</data>
-      <data key="symbol">vZX81</data>
-      <data key="totalAumUsdMillion">9</data>
-      <data key="eventCount">998</data>
-    </node>
-    <node id="0x5">
-      <data key="type">vault</data>
-      <data key="address">0x5</data>
-      <data key="name">Wrapped USDT</data>
-      <data key="symbol">wUSDT</data>
-      <data key="totalAumUsdMillion">4</data>
-      <data key="eventCount">300</data>
-    </node>
-    <node id="0x6">
-      <data key="type">asset</data>
-      <data key="address">0x6</data>
-      <data key="name">Tether</data>
-      <data key="symbol">USDT</data>
+      <data key="address">0xea1a6307d9b18f8d1cbf1c3dd6aad8416c06a221</data>
+      <data key="name">Ether.fi-Liquid1</data>
+      <data key="symbol">LQIDETHFIV1</data>
       <data key="totalAumUsdMillion">0</data>
-      <data key="eventCount">0</data>
+      <data key="eventCount">26633</data>
     </node>
-    <edge source="0x1" target="0x2"/>
-    <edge source="0x3" target="0x2"/>
-    <edge source="0x4" target="0x3"/>
-    <edge source="0x5" target="0x6"/>
+    <edge source="0xd9a442856c234a39a81a089c06451ebaa4306a72" target="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"/>
+    <edge source="0xea1a6307d9b18f8d1cbf1c3dd6aad8416c06a221" target="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"/>
   </graph>
 </graphml>
