@@ -8,6 +8,7 @@
   <key id="name" for="node" attr.name="name" attr.type="string"/>
   <key id="symbol" for="node" attr.name="symbol" attr.type="string"/>
   <key id="totalAumUsdMillion" for="node" attr.name="totalAumUsdMillion" attr.type="double"/>
+  <key id="eventCount" for="node" attr.name="eventCount" attr.type="double"/>
   <graph id="G" edgedefault="undirected">
     <node id="0x1">
       <data key="type">vault</data>
@@ -15,13 +16,15 @@
       <data key="name">ZX Spectrum</data>
       <data key="symbol">ZXS</data>
       <data key="totalAumUsdMillion">10</data>
+      <data key="eventCount">663</data>
     </node>
     <node id="0x2">
       <data key="type">asset</data>
       <data key="address">0x2</data>
       <data key="name">USDC stablecoin</data>
       <data key="symbol">USDC</data>
-      
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
     </node>
     <node id="0x3">
       <data key="type">mixed</data>
@@ -29,6 +32,7 @@
       <data key="name">ZX EightyOne</data>
       <data key="symbol">ZX81</data>
       <data key="totalAumUsdMillion">8</data>
+      <data key="eventCount">2</data>
     </node>
     <node id="0x4">
       <data key="type">vault</data>
@@ -36,6 +40,7 @@
       <data key="name">Vault of ZX81</data>
       <data key="symbol">vZX81</data>
       <data key="totalAumUsdMillion">9</data>
+      <data key="eventCount">998</data>
     </node>
     <node id="0x5">
       <data key="type">vault</data>
@@ -43,13 +48,15 @@
       <data key="name">Wrapped USDT</data>
       <data key="symbol">wUSDT</data>
       <data key="totalAumUsdMillion">4</data>
+      <data key="eventCount">300</data>
     </node>
     <node id="0x6">
       <data key="type">asset</data>
       <data key="address">0x6</data>
       <data key="name">Tether</data>
       <data key="symbol">USDT</data>
-      
+      <data key="totalAumUsdMillion">0</data>
+      <data key="eventCount">0</data>
     </node>
     <edge source="0x1" target="0x2"/>
     <edge source="0x3" target="0x2"/>

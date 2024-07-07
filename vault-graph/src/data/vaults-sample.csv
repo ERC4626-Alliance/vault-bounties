@@ -1,5 +1,5 @@
-vault_address,vault_symbol,vault_name,asset_address,asset_symbol,asset_name,total_aum_usd_m
-0x1,ZXS,ZX Spectrum,0x2,USDC,USDC stablecoin,10
-0x3,ZX81,ZX EightyOne,0x2,USDC,USDC stablecoin,8
-0x4,vZX81,Vault of ZX81,0x3,ZX81,ZX EightyOne,9
-0x5,wUSDT,Wrapped USDT,0x6,USDT,Tether,4
+vault_address,vault_symbol,vault_name,asset_address,asset_symbol,asset_name,total_aum_usd_m,event_count
+0x1,ZXS,ZX Spectrum,0x2,USDC,USDC stablecoin,10,663
+0x3,ZX81,ZX EightyOne,0x2,USDC,USDC stablecoin,8,2
+0x4,vZX81,Vault of ZX81,0x3,ZX81,ZX EightyOne,9,998
+0x5,wUSDT,Wrapped USDT,0x6,USDT,Tether,4,300
