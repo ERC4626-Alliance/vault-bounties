@@ -8,7 +8,7 @@
   "scripts": {
     "buildGraphML": "yarn hardhat run src/scripts/buildGraphML.ts",
     "getBlock": "yarn hardhat run src/scripts/getBlock.ts",
-    "getVaultData": "yarn hardhat run src/scripts/getVaultData.ts"
+    "getVaultData": "yarn hardhat run src/scripts/getVaultDataSample.ts"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
@@ -35,6 +35,7 @@
   "dependencies": {
     "@openzeppelin/contracts": "^5.0.2",
     "csv-parser": "^3.0.0",
+    "csv-stringify": "^6.5.0",
     "dotenv": "^16.4.5",
     "ethers": "^6.13.1"
   }
