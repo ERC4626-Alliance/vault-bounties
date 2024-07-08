@@ -106,7 +106,7 @@ function processCSVData(data: VaultAssetData[]): {
         id: row.asset_address,
         type: "asset",
         address: row.asset_address,
-        name: row.asset_name,
+        name: `[Asset] ${row.asset_name}`,
         symbol: row.asset_symbol,
         totalAumUsdMillion: 0,
         eventCount: 0,
@@ -125,10 +125,10 @@ function processCSVData(data: VaultAssetData[]): {
 
 async function main() {
   try {
-    const csvData = await readCSVFile("./src/data/process/vaults-6m-10c.csv");
+    const csvData = await readCSVFile("./src/data/process/vaults-sample.csv");
     const { nodes, edges } = processCSVData(csvData);
     const graphML = prepareGraphML(nodes, edges);
-    writeStringToFile(graphML, "./src/data/out/output-6m-10c.graphml");
+    writeStringToFile(graphML, "./src/data/out/output-sample.graphml");
   } catch (error) {
     console.error("Error processing CSV data:", error);
   }

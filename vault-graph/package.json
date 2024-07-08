@@ -6,9 +6,8 @@
   "author": "Kevin Small <kevin_small@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "buildGraphML": "yarn hardhat run src/scripts/buildGraphML.ts",
-    "getBlock": "yarn hardhat run src/scripts/getBlock.ts",
-    "getVaultDataAll": "yarn hardhat run src/scripts/getVaultDataAll.ts"
+    "s10_getVaultDataAll": "yarn hardhat run src/scripts/s10_getVaultDataAll.ts",
+    "s20_buildGraphML": "yarn hardhat run src/scripts/s20_buildGraphML.ts"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",

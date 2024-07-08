@@ -21,7 +21,7 @@
     <node id="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2">
       <data key="type">asset</data>
       <data key="address">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</data>
-      <data key="name">Wrapped Ether</data>
+      <data key="name">[Asset] Wrapped Ether</data>
       <data key="symbol">WETH</data>
       <data key="totalAumUsdMillion">0</data>
       <data key="eventCount">0</data>

@@ -1,7 +1,7 @@
 import { config } from "dotenv";
 import { createReadStream, writeFileSync } from "fs";
 import csvParser from "csv-parser";
-import { getVaultData } from "./getVaultData";
+import { getVaultData } from "./utils/getVaultData";
 import { stringify } from "csv-stringify/sync";
 import { ethers } from "ethers";
 config();
@@ -115,8 +115,8 @@ function writeCsv(filePath: string, records: VaultRecord[]): void {
 
 async function main() {
   try {
-    const inputFilePath = "./src/data/in/addresses-6m-10c.csv";
-    const outputFilePath = "./src/data/process/vaults-6m-10c.csv";
+    const inputFilePath = "./src/data/in/addresses-sample.csv";
+    const outputFilePath = "./src/data/process/vaults-sample.csv";
     const assetPricesFilePath = "./src/data/reference/asset-prices.csv";
 
     const addressRecords = await readCsv(inputFilePath);
