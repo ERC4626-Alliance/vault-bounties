@@ -3,7 +3,7 @@ import { createReadStream, writeFileSync } from "fs";
 import csvParser from "csv-parser";
 import { getVaultData } from "./getVaultData";
 import { stringify } from "csv-stringify/sync";
-
+import { ethers } from "ethers";
 config();
 
 interface AddressRecord {
@@ -18,8 +18,15 @@ interface VaultRecord {
   asset_address: string;
   asset_symbol: string;
   asset_name: string;
+  asset_decimals: number;
+  total_assets_base_units: string;
   total_aum_usd_m: number;
   event_count: number;
+}
+
+interface AssetPriceRecord {
+  contract_address: string;
+  price: number;
 }
 
 async function readCsv(filePath: string): Promise<AddressRecord[]> {
@@ -33,15 +40,29 @@ async function readCsv(filePath: string): Promise<AddressRecord[]> {
   });
 }
 
+async function readAssetPrices(filePath: string): Promise<Map<string, number>> {
+  const assetPrices = new Map<string, number>();
+  return new Promise((resolve, reject) => {
+    createReadStream(filePath)
+      .pipe(csvParser())
+      .on("data", (data: AssetPriceRecord) => {
+        assetPrices.set(data.contract_address, data.price);
+      })
+      .on("end", () => resolve(assetPrices))
+      .on("error", (error) => reject(error));
+  });
+}
+
 async function processRecords(
-  records: AddressRecord[]
+  records: AddressRecord[],
+  assetPrices: Map<string, number>
 ): Promise<VaultRecord[]> {
   const vaultRecords: VaultRecord[] = [];
 
   for (const record of records) {
     try {
+      // chain read
       const vaultData = await getVaultData(record.contract_address);
-
       if (
         vaultData.vaultName === "error" ||
         vaultData.vaultSymbol === "error" ||
@@ -53,6 +74,13 @@ async function processRecords(
         continue;
       }
 
+      const totalAssetsBaseUnits = BigInt(vaultData.totalAssetsBaseUnits);
+      const totalAssetsNaturalUnits = Number(
+        ethers.formatUnits(totalAssetsBaseUnits, vaultData.assetDecimals)
+      );
+      const assetPrice = assetPrices.get(vaultData.assetAddress) || 0;
+      const totalAumUsdM = totalAssetsNaturalUnits * assetPrice;
+
       vaultRecords.push({
         vault_address: record.contract_address,
         vault_symbol: vaultData.vaultSymbol,
@@ -60,7 +88,9 @@ async function processRecords(
         asset_address: vaultData.assetAddress,
         asset_symbol: vaultData.assetSymbol,
         asset_name: vaultData.assetName,
-        total_aum_usd_m: 0,
+        asset_decimals: Number(vaultData.assetDecimals),
+        total_assets_base_units: vaultData.totalAssetsBaseUnits.toString(),
+        total_aum_usd_m: totalAumUsdM,
         event_count: record.event_count,
       });
 
@@ -85,11 +115,13 @@ function writeCsv(filePath: string, records: VaultRecord[]): void {
 
 async function main() {
   try {
-    const inputFilePath = "./src/data/in/addresses-6m.csv";
-    const outputFilePath = "./src/data/process/vaults-6m.csv";
+    const inputFilePath = "./src/data/in/addresses-6m-10c.csv";
+    const outputFilePath = "./src/data/process/vaults-6m-10c.csv";
+    const assetPricesFilePath = "./src/data/reference/asset-prices.csv";
 
     const addressRecords = await readCsv(inputFilePath);
-    const vaultRecords = await processRecords(addressRecords);
+    const assetPrices = await readAssetPrices(assetPricesFilePath);
+    const vaultRecords = await processRecords(addressRecords, assetPrices);
 
     writeCsv(outputFilePath, vaultRecords);
     console.log(`File written to ${outputFilePath}`);

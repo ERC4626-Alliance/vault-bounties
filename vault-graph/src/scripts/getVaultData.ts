@@ -8,6 +8,8 @@ interface VaultData {
   assetAddress: string;
   assetSymbol: string;
   assetName: string;
+  assetDecimals: bigint;
+  totalAssetsBaseUnits: bigint;
 }
 
 export async function getVaultData(vaultAddress: string): Promise<VaultData> {
@@ -20,14 +22,31 @@ export async function getVaultData(vaultAddress: string): Promise<VaultData> {
     const assetAddress = await vaultContract.asset();
     const assetContract = Token__factory.connect(assetAddress, provider);
 
-    const [vaultSymbol, vaultName, assetSymbol, assetName] = await Promise.all([
+    const [
+      vaultSymbol,
+      vaultName,
+      assetSymbol,
+      assetName,
+      assetDecimals,
+      totalAssetsBaseUnits,
+    ] = await Promise.all([
       vaultContract.symbol(),
       vaultContract.name(),
       assetContract.symbol(),
       assetContract.name(),
+      assetContract.decimals(),
+      vaultContract.totalAssets(),
     ]);
 
-    return { vaultSymbol, vaultName, assetAddress, assetSymbol, assetName };
+    return {
+      vaultSymbol,
+      vaultName,
+      assetAddress,
+      assetSymbol,
+      assetName,
+      assetDecimals,
+      totalAssetsBaseUnits,
+    };
   } catch (error) {
     //console.error(`Error fetching data for vault ${vaultAddress}:`, error);
     return {
@@ -36,6 +55,8 @@ export async function getVaultData(vaultAddress: string): Promise<VaultData> {
       assetAddress: "0x0",
       assetSymbol: "error",
       assetName: "error",
+      assetDecimals: 0n,
+      totalAssetsBaseUnits: 0n,
     };
   }
 }
