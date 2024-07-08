@@ -1,0 +1,27 @@
+name: Runs automated tests
+on: [push]
+
+jobs:
+  tests:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+      - run: npx hardhat compile
+      - run: npx hardhat size-contracts
+      - run: npm run solhint
+      - run: npx hardhat test
+        env:
+          REPORT_GAS: "1"
+          ALCHEMY_URL: ${{ secrets.ALCHEMY_URL }}
+      - run: npx hardhat coverage
+        env:
+          ALCHEMY_URL: ${{ secrets.ALCHEMY_URL }}
