@@ -69,7 +69,7 @@ async function processRecords(
         vaultData.assetAddress === "0x0"
       ) {
         console.error(
-          `Skipping ${record.contract_address} because it is missing functions`
+          `Skipping ${record.contract_address} because it is missing functions and so not a proper ERC-4626 vault.`
         );
         continue;
       }
@@ -78,9 +78,16 @@ async function processRecords(
       const totalAssetsNaturalUnits = Number(
         ethers.formatUnits(totalAssetsBaseUnits, vaultData.assetDecimals)
       );
-      const assetPrice = assetPrices.get(vaultData.assetAddress) || 0;
-      const totalAumUsdM = totalAssetsNaturalUnits * assetPrice;
-
+      const assetPrice =
+        assetPrices.get(vaultData.assetAddress.toLowerCase()) || 0;
+      const totalAumUsdM = parseFloat(
+        ((totalAssetsNaturalUnits * assetPrice) / 1000000).toFixed(3)
+      );
+      // console.log(`Vault Address: ${record.contract_address}`);
+      // console.log(`Asset Address: ${vaultData.assetAddress}`);
+      // console.log(`Total AUM in USD (M): ${totalAumUsdM}`);
+      // console.log(`Total Assets (natural units): ${totalAssetsNaturalUnits}`);
+      // console.log(`Asset Price: ${assetPrice}`);
       vaultRecords.push({
         vault_address: record.contract_address,
         vault_symbol: vaultData.vaultSymbol,
@@ -115,8 +122,8 @@ function writeCsv(filePath: string, records: VaultRecord[]): void {
 
 async function main() {
   try {
-    const inputFilePath = "./src/data/in/addresses-sample.csv";
-    const outputFilePath = "./src/data/process/vaults-sample.csv";
+    const inputFilePath = "./src/data/in/addresses.csv";
+    const outputFilePath = "./src/data/process/vaults.csv";
     const assetPricesFilePath = "./src/data/reference/asset-prices.csv";
 
     const addressRecords = await readCsv(inputFilePath);

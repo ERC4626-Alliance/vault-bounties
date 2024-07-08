@@ -19,6 +19,7 @@ interface GraphNode {
   address: string;
   name: string;
   symbol: string;
+  description: string;
   totalAumUsdMillion: number;
   eventCount: number;
 }
@@ -49,6 +50,7 @@ function prepareGraphML(nodes: GraphNode[], edges: GraphEdge[]): string {
   <key id="address" for="node" attr.name="address" attr.type="string"/>
   <key id="name" for="node" attr.name="name" attr.type="string"/>
   <key id="symbol" for="node" attr.name="symbol" attr.type="string"/>
+  <key id="description" for="node" attr.name="description" attr.type="string"/>
   <key id="totalAumUsdMillion" for="node" attr.name="totalAumUsdMillion" attr.type="double"/>
   <key id="eventCount" for="node" attr.name="eventCount" attr.type="double"/>
   <graph id="G" edgedefault="undirected">
@@ -60,6 +62,7 @@ function prepareGraphML(nodes: GraphNode[], edges: GraphEdge[]): string {
       <data key="address">${node.address}</data>
       <data key="name">${node.name}</data>
       <data key="symbol">${node.symbol}</data>
+      <data key="description">${node.description}</data>
       <data key="totalAumUsdMillion">${node.totalAumUsdMillion}</data>
       <data key="eventCount">${node.eventCount}</data>
     </node>\n`;
@@ -90,6 +93,7 @@ function processCSVData(data: VaultAssetData[]): {
         address: row.vault_address,
         name: row.vault_name,
         symbol: row.vault_symbol,
+        description: `${row.vault_symbol} (AuM: ${row.total_aum_usd_m}M USD)`,
         totalAumUsdMillion: row.total_aum_usd_m,
         eventCount: row.event_count,
       });
@@ -106,8 +110,9 @@ function processCSVData(data: VaultAssetData[]): {
         id: row.asset_address,
         type: "asset",
         address: row.asset_address,
-        name: `[Asset] ${row.asset_name}`,
+        name: row.asset_name,
         symbol: row.asset_symbol,
+        description: `[Asset] ${row.asset_symbol}`,
         totalAumUsdMillion: 0,
         eventCount: 0,
       });
@@ -125,10 +130,10 @@ function processCSVData(data: VaultAssetData[]): {
 
 async function main() {
   try {
-    const csvData = await readCSVFile("./src/data/process/vaults-sample.csv");
+    const csvData = await readCSVFile("./src/data/process/vaults.csv");
     const { nodes, edges } = processCSVData(csvData);
     const graphML = prepareGraphML(nodes, edges);
-    writeStringToFile(graphML, "./src/data/out/output-sample.graphml");
+    writeStringToFile(graphML, "./src/data/out/output.graphml");
   } catch (error) {
     console.error("Error processing CSV data:", error);
   }
