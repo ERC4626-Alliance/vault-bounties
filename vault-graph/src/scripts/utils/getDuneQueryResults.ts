@@ -10,12 +10,10 @@ export async function getDuneQueryResults(
     const runQueryArgs: RunQueryArgs = {
       queryId: queryId,
       opts: {
-        batchSize: 1000,
-        pingFrequency: 10,
-        maxAgeHours: 1,
+        batchSize: 2000,
       },
     };
-    await dune.downloadCSV(runQueryArgs, targetFile);    
+    await dune.downloadCSV(runQueryArgs, targetFile);
   } catch (error) {
     console.error("Error downloading or saving file:", error);
     throw error;

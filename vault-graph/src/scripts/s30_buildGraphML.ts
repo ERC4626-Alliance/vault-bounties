@@ -128,15 +128,16 @@ function processCSVData(data: VaultAssetData[]): {
   return { nodes: Array.from(nodesMap.values()), edges };
 }
 
-async function main() {
+export async function s30_buildGraphML(vaultsFile: string, outputFile: string) {
   try {
-    const csvData = await readCSVFile("./src/data/process/vaults.csv");
+    console.log("Preparing GraphML file...");
+    const csvData = await readCSVFile(vaultsFile);
     const { nodes, edges } = processCSVData(csvData);
     const graphML = prepareGraphML(nodes, edges);
-    writeStringToFile(graphML, "./src/data/out/output.graphml");
+    writeStringToFile(graphML, outputFile);
+    console.log("Done.");
   } catch (error) {
     console.error("Error processing CSV data:", error);
+    throw error;
   }
 }
-
-main();

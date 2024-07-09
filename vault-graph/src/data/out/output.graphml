@@ -16,8 +16,8 @@
       <data key="address">0xd9a442856c234a39a81a089c06451ebaa4306a72</data>
       <data key="name">pufETH</data>
       <data key="symbol">pufETH</data>
-      <data key="description">pufETH (AuM: 1484.29M USD)</data>
-      <data key="totalAumUsdMillion">1484.29</data>
+      <data key="description">pufETH (AuM: 1526.33M USD)</data>
+      <data key="totalAumUsdMillion">1526.33</data>
       <data key="eventCount">129767</data>
     </node>
     <node id="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2">
@@ -34,8 +34,8 @@
       <data key="address">0xea1a6307d9b18f8d1cbf1c3dd6aad8416c06a221</data>
       <data key="name">Ether.fi-Liquid1</data>
       <data key="symbol">LQIDETHFIV1</data>
-      <data key="description">LQIDETHFIV1 (AuM: 439.841M USD)</data>
-      <data key="totalAumUsdMillion">439.841</data>
+      <data key="description">LQIDETHFIV1 (AuM: 445.932M USD)</data>
+      <data key="totalAumUsdMillion">445.932</data>
       <data key="eventCount">44261</data>
     </node>
     <node id="0x9d39a5de30e57443bff2a8307a4256c8797a3497">
@@ -43,8 +43,8 @@
       <data key="address">0x9d39a5de30e57443bff2a8307a4256c8797a3497</data>
       <data key="name">Staked USDe</data>
       <data key="symbol">sUSDe</data>
-      <data key="description">sUSDe (AuM: 1656.181M USD)</data>
-      <data key="totalAumUsdMillion">1656.181</data>
+      <data key="description">sUSDe (AuM: 1660.052M USD)</data>
+      <data key="totalAumUsdMillion">1660.052</data>
       <data key="eventCount">28862</data>
     </node>
     <node id="0x4c9EDD5852cd905f086C759E8383e09bff1E68B3">
@@ -79,8 +79,8 @@
       <data key="address">0x68754d29f2e97b837cb622ccff325adac27e9977</data>
       <data key="name">Karak - pufETH</data>
       <data key="symbol">KpufETH</data>
-      <data key="description">KpufETH (AuM: 57.291M USD)</data>
-      <data key="totalAumUsdMillion">57.291</data>
+      <data key="description">KpufETH (AuM: 59.226M USD)</data>
+      <data key="totalAumUsdMillion">59.226</data>
       <data key="eventCount">16395</data>
     </node>
     <node id="0xD9A442856C234a39a81a089C06451EBAa4306a72">
@@ -97,8 +97,8 @@
       <data key="address">0x83f20f44975d03b1b09e64809b757c47f942beea</data>
       <data key="name">Savings Dai</data>
       <data key="symbol">sDAI</data>
-      <data key="description">sDAI (AuM: 1206.84M USD)</data>
-      <data key="totalAumUsdMillion">1206.84</data>
+      <data key="description">sDAI (AuM: 1209.38M USD)</data>
+      <data key="totalAumUsdMillion">1209.38</data>
       <data key="eventCount">8360</data>
     </node>
     <node id="0x6B175474E89094C44Da98b954EedeAC495271d0F">
@@ -115,8 +115,8 @@
       <data key="address">0xc585df3a8c9ca0c614d023a812624be36161502b</data>
       <data key="name">Karak - swETH</data>
       <data key="symbol">KswETH</data>
-      <data key="description">KswETH (AuM: 14.829M USD)</data>
-      <data key="totalAumUsdMillion">14.829</data>
+      <data key="description">KswETH (AuM: 14.635M USD)</data>
+      <data key="totalAumUsdMillion">14.635</data>
       <data key="eventCount">6446</data>
     </node>
     <node id="0xf951E335afb289353dc249e82926178EaC7DEd78">
@@ -133,8 +133,8 @@
       <data key="address">0x1b4d88f5f38988bea334c79f48aa69beeefe2e1e</data>
       <data key="name">Karak - rswETH</data>
       <data key="symbol">KrswETH</data>
-      <data key="description">KrswETH (AuM: 20.561M USD)</data>
-      <data key="totalAumUsdMillion">20.561</data>
+      <data key="description">KrswETH (AuM: 21.197M USD)</data>
+      <data key="totalAumUsdMillion">21.197</data>
       <data key="eventCount">6178</data>
     </node>
     <node id="0xFAe103DC9cf190eD75350761e95403b7b8aFa6c0">
@@ -151,8 +151,8 @@
       <data key="address">0x2dabcea55a12d73191aece59f508b191fb68adac</data>
       <data key="name">Karak - Wrapped eETH</data>
       <data key="symbol">KweETH</data>
-      <data key="description">KweETH (AuM: 161.51M USD)</data>
-      <data key="totalAumUsdMillion">161.51</data>
+      <data key="description">KweETH (AuM: 178.413M USD)</data>
+      <data key="totalAumUsdMillion">178.413</data>
       <data key="eventCount">4814</data>
     </node>
     <node id="0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee">
@@ -169,8 +169,8 @@
       <data key="address">0xac3e018457b222d93114458476f3e3416abbe38f</data>
       <data key="name">Staked Frax Ether</data>
       <data key="symbol">sfrxETH</data>
-      <data key="description">sfrxETH (AuM: 470.403M USD)</data>
-      <data key="totalAumUsdMillion">470.403</data>
+      <data key="description">sfrxETH (AuM: 482.285M USD)</data>
+      <data key="totalAumUsdMillion">482.285</data>
       <data key="eventCount">3966</data>
     </node>
     <node id="0x5E8422345238F34275888049021821E8E08CAa1f">
@@ -187,8 +187,8 @@
       <data key="address">0xbe3ca34d0e877a1fc889bd5231d65477779aff4e</data>
       <data key="name">Karak - USDe</data>
       <data key="symbol">KUSDe</data>
-      <data key="description">KUSDe (AuM: 70.332M USD)</data>
-      <data key="totalAumUsdMillion">70.332</data>
+      <data key="description">KUSDe (AuM: 71.198M USD)</data>
+      <data key="totalAumUsdMillion">71.198</data>
       <data key="eventCount">2826</data>
     </node>
     <node id="0xda0002859b2d05f66a753d8241fcde8623f26f4f">
@@ -196,8 +196,8 @@
       <data key="address">0xda0002859b2d05f66a753d8241fcde8623f26f4f</data>
       <data key="name">Trade WETH v3</data>
       <data key="symbol">dWETHV3</data>
-      <data key="description">dWETHV3 (AuM: 97.775M USD)</data>
-      <data key="totalAumUsdMillion">97.775</data>
+      <data key="description">dWETHV3 (AuM: 96.26M USD)</data>
+      <data key="totalAumUsdMillion">96.26</data>
       <data key="eventCount">2066</data>
     </node>
     <node id="0x000000000077ee1fcfe351df1ff22736e995806b">
@@ -259,8 +259,8 @@
       <data key="address">0xe4a8b89ba73517c83c4e3e6b3e2e8c5c536d2085</data>
       <data key="name">Karak - Renzo Restaked ETH</data>
       <data key="symbol">KezETH</data>
-      <data key="description">KezETH (AuM: 42.189M USD)</data>
-      <data key="totalAumUsdMillion">42.189</data>
+      <data key="description">KezETH (AuM: 43.39M USD)</data>
+      <data key="totalAumUsdMillion">43.39</data>
       <data key="eventCount">1471</data>
     </node>
     <node id="0xbf5495Efe5DB9ce00f80364C8B423567e58d2110">
@@ -277,8 +277,8 @@
       <data key="address">0x9a23e79a8e6d77f940f2c30eb3d9282af2e4036c</data>
       <data key="name">Karak - rsETH</data>
       <data key="symbol">KrsETH</data>
-      <data key="description">KrsETH (AuM: 13.099M USD)</data>
-      <data key="totalAumUsdMillion">13.099</data>
+      <data key="description">KrsETH (AuM: 13.488M USD)</data>
+      <data key="totalAumUsdMillion">13.488</data>
       <data key="eventCount">1282</data>
     </node>
     <node id="0xA1290d69c65A6Fe4DF752f95823fae25cB99e5A7">
@@ -295,8 +295,8 @@
       <data key="address">0xda00000035fef4082f78def6a8903bee419fbf8e</data>
       <data key="name">Trade USDC v3</data>
       <data key="symbol">dUSDCV3</data>
-      <data key="description">dUSDCV3 (AuM: 58.205M USD)</data>
-      <data key="totalAumUsdMillion">58.205</data>
+      <data key="description">dUSDCV3 (AuM: 57.253M USD)</data>
+      <data key="totalAumUsdMillion">57.253</data>
       <data key="eventCount">1214</data>
     </node>
     <node id="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48">
@@ -313,8 +313,8 @@
       <data key="address">0x86862445f58f50382c421a7bcecbcd971cc25367</data>
       <data key="name">Bend Auto-compound ApeCoin</data>
       <data key="symbol">bacAPE</data>
-      <data key="description">bacAPE (AuM: 6.76M USD)</data>
-      <data key="totalAumUsdMillion">6.76</data>
+      <data key="description">bacAPE (AuM: 6.85M USD)</data>
+      <data key="totalAumUsdMillion">6.85</data>
       <data key="eventCount">1069</data>
     </node>
     <node id="0x4d224452801ACEd8B2F0aebE155379bb5D594381">
@@ -331,8 +331,8 @@
       <data key="address">0xde5bff0755f192c333b126a449ff944ee2b69681</data>
       <data key="name">Karak - Staked USDe</data>
       <data key="symbol">KsUSDe</data>
-      <data key="description">KsUSDe (AuM: 33.66M USD)</data>
-      <data key="totalAumUsdMillion">33.66</data>
+      <data key="description">KsUSDe (AuM: 35.404M USD)</data>
+      <data key="totalAumUsdMillion">35.404</data>
       <data key="eventCount">953</data>
     </node>
     <node id="0x9D39A5DE30e57443BfF2A8307A4256c8797A3497">
@@ -349,8 +349,8 @@
       <data key="address">0x9fb7b4477576fe5b32be4c1843afb1e55f251b33</data>
       <data key="name">Fluid USD Coin</data>
       <data key="symbol">fUSDC</data>
-      <data key="description">fUSDC (AuM: 73.908M USD)</data>
-      <data key="totalAumUsdMillion">73.908</data>
+      <data key="description">fUSDC (AuM: 74.194M USD)</data>
+      <data key="totalAumUsdMillion">74.194</data>
       <data key="eventCount">915</data>
     </node>
     <node id="0xcea18a8752bb7e7817f9ae7565328fe415c0f2ca">
@@ -358,8 +358,8 @@
       <data key="address">0xcea18a8752bb7e7817f9ae7565328fe415c0f2ca</data>
       <data key="name">Curve Vault for crvUSD</data>
       <data key="symbol">cvcrvUSD</data>
-      <data key="description">cvcrvUSD (AuM: 1.415M USD)</data>
-      <data key="totalAumUsdMillion">1.415</data>
+      <data key="description">cvcrvUSD (AuM: 1.412M USD)</data>
+      <data key="totalAumUsdMillion">1.412</data>
       <data key="eventCount">860</data>
     </node>
     <node id="0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E">
@@ -376,8 +376,8 @@
       <data key="address">0x815c23eca83261b6ec689b60cc4a58b54bc24d8d</data>
       <data key="name">vTHOR</data>
       <data key="symbol">vTHOR</data>
-      <data key="description">vTHOR (AuM: 22.054M USD)</data>
-      <data key="totalAumUsdMillion">22.054</data>
+      <data key="description">vTHOR (AuM: 22.499M USD)</data>
+      <data key="totalAumUsdMillion">22.499</data>
       <data key="eventCount">851</data>
     </node>
     <node id="0xa5f2211B9b8170F694421f2046281775E8468044">
@@ -394,8 +394,8 @@
       <data key="address">0xe24ba27551abe96ca401d39761ca2319ea14e3cb</data>
       <data key="name">Yearn-Ajna DAI Vault</data>
       <data key="symbol">yvAjnaDAI</data>
-      <data key="description">yvAjnaDAI (AuM: 3.17M USD)</data>
-      <data key="totalAumUsdMillion">3.17</data>
+      <data key="description">yvAjnaDAI (AuM: 3.166M USD)</data>
+      <data key="totalAumUsdMillion">3.166</data>
       <data key="eventCount">791</data>
     </node>
     <node id="0x5c20b550819128074fd538edf79791733ccedd18">
@@ -403,8 +403,8 @@
       <data key="address">0x5c20b550819128074fd538edf79791733ccedd18</data>
       <data key="name">Fluid Tether USD</data>
       <data key="symbol">fUSDT</data>
-      <data key="description">fUSDT (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">fUSDT (AuM: 63.369M USD)</data>
+      <data key="totalAumUsdMillion">63.369</data>
       <data key="eventCount">791</data>
     </node>
     <node id="0xdAC17F958D2ee523a2206206994597C13D831ec7">
@@ -421,8 +421,8 @@
       <data key="address">0xa663b02cf0a4b149d2ad41910cb81e23e1c41c32</data>
       <data key="name">Staked FRAX</data>
       <data key="symbol">sFRAX</data>
-      <data key="description">sFRAX (AuM: 51.536M USD)</data>
-      <data key="totalAumUsdMillion">51.536</data>
+      <data key="description">sFRAX (AuM: 51.34M USD)</data>
+      <data key="totalAumUsdMillion">51.34</data>
       <data key="eventCount">763</data>
     </node>
     <node id="0x853d955aCEf822Db058eb8505911ED77F175b99e">
@@ -457,8 +457,8 @@
       <data key="address">0x126d4dbf752aaf61f3eaada24ab0db84fecf6891</data>
       <data key="name">Karak - Wrapped Bitcoin</data>
       <data key="symbol">KwBTC</data>
-      <data key="description">KwBTC (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">KwBTC (AuM: 44.247M USD)</data>
+      <data key="totalAumUsdMillion">44.247</data>
       <data key="eventCount">739</data>
     </node>
     <node id="0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599">
@@ -475,8 +475,8 @@
       <data key="address">0xbeef01735c132ada46aa9aa4c54623caa92a64cb</data>
       <data key="name">Steakhouse USDC</data>
       <data key="symbol">steakUSDC</data>
-      <data key="description">steakUSDC (AuM: 46.32M USD)</data>
-      <data key="totalAumUsdMillion">46.32</data>
+      <data key="description">steakUSDC (AuM: 46.262M USD)</data>
+      <data key="totalAumUsdMillion">46.262</data>
       <data key="eventCount">733</data>
     </node>
     <node id="0x90551c1795392094fe6d29b758eccd233cfaa260">
@@ -484,8 +484,8 @@
       <data key="address">0x90551c1795392094fe6d29b758eccd233cfaa260</data>
       <data key="name">Fluid Wrapped Ether</data>
       <data key="symbol">fWETH</data>
-      <data key="description">fWETH (AuM: 13.424M USD)</data>
-      <data key="totalAumUsdMillion">13.424</data>
+      <data key="description">fWETH (AuM: 13.79M USD)</data>
+      <data key="totalAumUsdMillion">13.79</data>
       <data key="eventCount">712</data>
     </node>
     <node id="0x2411802d8bea09be0af8fd8d08314a63e706b29c">
@@ -493,8 +493,8 @@
       <data key="address">0x2411802d8bea09be0af8fd8d08314a63e706b29c</data>
       <data key="name">Fluid Wrapped liquid staked Ether 2.0</data>
       <data key="symbol">fwstETH</data>
-      <data key="description">fwstETH (AuM: 48.691M USD)</data>
-      <data key="totalAumUsdMillion">48.691</data>
+      <data key="description">fwstETH (AuM: 49.217M USD)</data>
+      <data key="totalAumUsdMillion">49.217</data>
       <data key="eventCount">559</data>
     </node>
     <node id="0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0">
@@ -511,8 +511,8 @@
       <data key="address">0x78fc2c2ed1a4cdb5402365934ae5648adad094d0</data>
       <data key="name">Re7 WETH</data>
       <data key="symbol">Re7WETH</data>
-      <data key="description">Re7WETH (AuM: 42.984M USD)</data>
-      <data key="totalAumUsdMillion">42.984</data>
+      <data key="description">Re7WETH (AuM: 44.587M USD)</data>
+      <data key="totalAumUsdMillion">44.587</data>
       <data key="eventCount">547</data>
     </node>
     <node id="0x38989bba00bdf8181f4082995b3deae96163ac5d">
@@ -520,8 +520,8 @@
       <data key="address">0x38989bba00bdf8181f4082995b3deae96163ac5d</data>
       <data key="name">Flagship ETH</data>
       <data key="symbol">bbETH</data>
-      <data key="description">bbETH (AuM: 29.347M USD)</data>
-      <data key="totalAumUsdMillion">29.347</data>
+      <data key="description">bbETH (AuM: 34.351M USD)</data>
+      <data key="totalAumUsdMillion">34.351</data>
       <data key="eventCount">539</data>
     </node>
     <node id="0xa0d3707c569ff8c87fa923d3823ec5d81c98be78">
@@ -529,8 +529,8 @@
       <data key="address">0xa0d3707c569ff8c87fa923d3823ec5d81c98be78</data>
       <data key="name">Instadapp ETH v2</data>
       <data key="symbol">iETHv2</data>
-      <data key="description">iETHv2 (AuM: 111.84M USD)</data>
-      <data key="totalAumUsdMillion">111.84</data>
+      <data key="description">iETHv2 (AuM: 114.985M USD)</data>
+      <data key="totalAumUsdMillion">114.985</data>
       <data key="eventCount">522</data>
     </node>
     <node id="0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84">
@@ -547,8 +547,8 @@
       <data key="address">0x8668a15b7b023dc77b372a740fcb8939e15257cf</data>
       <data key="name">Asymmetry Finance afCVX</data>
       <data key="symbol">afCVX</data>
-      <data key="description">afCVX (AuM: 4.585M USD)</data>
-      <data key="totalAumUsdMillion">4.585</data>
+      <data key="description">afCVX (AuM: 4.711M USD)</data>
+      <data key="totalAumUsdMillion">4.711</data>
       <data key="eventCount">510</data>
     </node>
     <node id="0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B">
@@ -565,8 +565,8 @@
       <data key="address">0x9ba021b0a9b958b5e75ce9f6dff97c7ee52cb3e6</data>
       <data key="name">Autocompounding Pirex Ether</data>
       <data key="symbol">apxETH</data>
-      <data key="description">apxETH (AuM: 11.653M USD)</data>
-      <data key="totalAumUsdMillion">11.653</data>
+      <data key="description">apxETH (AuM: 11.927M USD)</data>
+      <data key="totalAumUsdMillion">11.927</data>
       <data key="eventCount">505</data>
     </node>
     <node id="0x04C154b66CB340F3Ae24111CC767e0184Ed00Cc6">
@@ -601,8 +601,8 @@
       <data key="address">0xdef3aa48bad043e53207d359dcdfde46f50b6c02</data>
       <data key="name">ETH-AirPuff</data>
       <data key="symbol">ETH-AirPuff</data>
-      <data key="description">ETH-AirPuff (AuM: 1.771M USD)</data>
-      <data key="totalAumUsdMillion">1.771</data>
+      <data key="description">ETH-AirPuff (AuM: 1.553M USD)</data>
+      <data key="totalAumUsdMillion">1.553</data>
       <data key="eventCount">441</data>
     </node>
     <node id="0x4881ef0bf6d2365d3dd6499ccd7532bcdbce0658">
@@ -610,8 +610,8 @@
       <data key="address">0x4881ef0bf6d2365d3dd6499ccd7532bcdbce0658</data>
       <data key="name">Gauntlet LRT Core</data>
       <data key="symbol">gtLRTcore</data>
-      <data key="description">gtLRTcore (AuM: 12.694M USD)</data>
-      <data key="totalAumUsdMillion">12.694</data>
+      <data key="description">gtLRTcore (AuM: 13.055M USD)</data>
+      <data key="totalAumUsdMillion">13.055</data>
       <data key="eventCount">395</data>
     </node>
     <node id="0x528190e5169ddd5ff72c40cea6d8ba37613143ac">
@@ -619,8 +619,8 @@
       <data key="address">0x528190e5169ddd5ff72c40cea6d8ba37613143ac</data>
       <data key="name">Karak - USD Coin</data>
       <data key="symbol">KUSDC</data>
-      <data key="description">KUSDC (AuM: 9.208M USD)</data>
-      <data key="totalAumUsdMillion">9.208</data>
+      <data key="description">KUSDC (AuM: 9.21M USD)</data>
+      <data key="totalAumUsdMillion">9.21</data>
       <data key="eventCount">343</data>
     </node>
     <node id="0xa3726bedfd1a8aa696b9b4581277240028c4314b">
@@ -628,8 +628,8 @@
       <data key="address">0xa3726bedfd1a8aa696b9b4581277240028c4314b</data>
       <data key="name">Karak - Wrapped liquid staked Ether 2.0</data>
       <data key="symbol">KwstETH</data>
-      <data key="description">KwstETH (AuM: 13.462M USD)</data>
-      <data key="totalAumUsdMillion">13.462</data>
+      <data key="description">KwstETH (AuM: 17.014M USD)</data>
+      <data key="totalAumUsdMillion">17.014</data>
       <data key="eventCount">298</data>
     </node>
     <node id="0xf9834692f0b869d80072d1b6bbaa8d06e4a1cb68">
@@ -673,8 +673,8 @@
       <data key="address">0x7c22725d1e0871f0043397c9761ad99a86ffd498</data>
       <data key="name">Karak - mETH</data>
       <data key="symbol">KmETH</data>
-      <data key="description">KmETH (AuM: 2.834M USD)</data>
-      <data key="totalAumUsdMillion">2.834</data>
+      <data key="description">KmETH (AuM: 2.924M USD)</data>
+      <data key="totalAumUsdMillion">2.924</data>
       <data key="eventCount">284</data>
     </node>
     <node id="0xd5F7838F5C461fefF7FE49ea5ebaF7728bB0ADfa">
@@ -745,8 +745,8 @@
       <data key="address">0x2c25f6c25770ffec5959d34b94bf898865e5d6b1</data>
       <data key="name">Flagship USDT</data>
       <data key="symbol">bbUSDT</data>
-      <data key="description">bbUSDT (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">bbUSDT (AuM: 8.245M USD)</data>
+      <data key="totalAumUsdMillion">8.245</data>
       <data key="eventCount">277</data>
     </node>
     <node id="0x989ab830c6e2bdf3f28214ff54c9b7415c349a3f">
@@ -754,8 +754,8 @@
       <data key="address">0x989ab830c6e2bdf3f28214ff54c9b7415c349a3f</data>
       <data key="name">Karak - ETHx</data>
       <data key="symbol">KETHx</data>
-      <data key="description">KETHx (AuM: 0.31M USD)</data>
-      <data key="totalAumUsdMillion">0.31</data>
+      <data key="description">KETHx (AuM: 0.329M USD)</data>
+      <data key="totalAumUsdMillion">0.329</data>
       <data key="eventCount">249</data>
     </node>
     <node id="0xA35b1B31Ce002FBF2058D22F30f95D405200A15b">
@@ -772,8 +772,8 @@
       <data key="address">0x0d53bc2ba508dfdf47084d511f13bb2eb3f8317b</data>
       <data key="name">Affine ultraETHs</data>
       <data key="symbol">ultraETHs</data>
-      <data key="description">ultraETHs (AuM: 0.482M USD)</data>
-      <data key="totalAumUsdMillion">0.482</data>
+      <data key="description">ultraETHs (AuM: 0.503M USD)</data>
+      <data key="totalAumUsdMillion">0.503</data>
       <data key="eventCount">242</data>
     </node>
     <node id="0xfaa2ed111b4f580fcb85c48e6dc6782dc5fcd7a6">
@@ -781,8 +781,8 @@
       <data key="address">0xfaa2ed111b4f580fcb85c48e6dc6782dc5fcd7a6</data>
       <data key="name">Staked Aura BAL</data>
       <data key="symbol">stkauraBAL</data>
-      <data key="description">stkauraBAL (AuM: 15.356M USD)</data>
-      <data key="totalAumUsdMillion">15.356</data>
+      <data key="description">stkauraBAL (AuM: 15.873M USD)</data>
+      <data key="totalAumUsdMillion">15.873</data>
       <data key="eventCount">239</data>
     </node>
     <node id="0x616e8BfA43F920657B3497DBf40D6b1A02D4608d">
@@ -799,8 +799,8 @@
       <data key="address">0x05a811275fe9b4de503b3311f51edf6a856d936e</data>
       <data key="name">Universal USDT v3</data>
       <data key="symbol">dUSDTV3</data>
-      <data key="description">dUSDTV3 (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">dUSDTV3 (AuM: 10.166M USD)</data>
+      <data key="totalAumUsdMillion">10.166</data>
       <data key="eventCount">235</data>
     </node>
     <node id="0xfa35d1f603384e8fcfcbff3e610935d02922544e">
@@ -844,8 +844,8 @@
       <data key="address">0x503e0bab6acdae73ea7fb7cf6ae5792014dbe935</data>
       <data key="name">Yearn-Ajna WETH Vault</data>
       <data key="symbol">yvAjnaWETH</data>
-      <data key="description">yvAjnaWETH (AuM: 2.364M USD)</data>
-      <data key="totalAumUsdMillion">2.364</data>
+      <data key="description">yvAjnaWETH (AuM: 2.431M USD)</data>
+      <data key="totalAumUsdMillion">2.431</data>
       <data key="eventCount">230</data>
     </node>
     <node id="0x547213367cfb08ab418e7b54d7883b2c2aa27fd7">
@@ -871,8 +871,8 @@
       <data key="address">0x3808708e761b988d23ae011ed0e12674fb66bd62</data>
       <data key="name">SideShift SideShift Token Vault</data>
       <data key="symbol">svXAI</data>
-      <data key="description">svXAI (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">svXAI (AuM: 46.646M USD)</data>
+      <data key="totalAumUsdMillion">46.646</data>
       <data key="eventCount">224</data>
     </node>
     <node id="0x35e78b3982E87ecfD5b3f3265B601c046cDBe232">
@@ -925,8 +925,8 @@
       <data key="address">0xa92b60b8efe9ac06ed65980a6d43e3f488a7f7bb</data>
       <data key="name">Karak - Tether USD</data>
       <data key="symbol">KUSDT</data>
-      <data key="description">KUSDT (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">KUSDT (AuM: 1.145M USD)</data>
+      <data key="totalAumUsdMillion">1.145</data>
       <data key="eventCount">206</data>
     </node>
     <node id="0x73e4c11b670ef9c025a030a20b72cb9150e54523">
@@ -934,8 +934,8 @@
       <data key="address">0x73e4c11b670ef9c025a030a20b72cb9150e54523</data>
       <data key="name">Sturdy Aggregator - crvUSD</data>
       <data key="symbol">saCrvUSD</data>
-      <data key="description">saCrvUSD (AuM: 1.676M USD)</data>
-      <data key="totalAumUsdMillion">1.676</data>
+      <data key="description">saCrvUSD (AuM: 1.675M USD)</data>
+      <data key="totalAumUsdMillion">1.675</data>
       <data key="eventCount">205</data>
     </node>
     <node id="0xfd6db5011b171b05e1ea3b92f9eacaeeb055e971">
@@ -943,8 +943,8 @@
       <data key="address">0xfd6db5011b171b05e1ea3b92f9eacaeeb055e971</data>
       <data key="name">Turbo STETH</data>
       <data key="symbol">TurboSTETH</data>
-      <data key="description">TurboSTETH (AuM: 38.542M USD)</data>
-      <data key="totalAumUsdMillion">38.542</data>
+      <data key="description">TurboSTETH (AuM: 39.646M USD)</data>
+      <data key="totalAumUsdMillion">39.646</data>
       <data key="eventCount">200</data>
     </node>
     <node id="0x630ed8220f9cbc98358a2e2ecb0727d7b9d61397">
@@ -952,8 +952,8 @@
       <data key="address">0x630ed8220f9cbc98358a2e2ecb0727d7b9d61397</data>
       <data key="name">Wasabi WETH Vault</data>
       <data key="symbol">wWETH</data>
-      <data key="description">wWETH (AuM: 1.506M USD)</data>
-      <data key="totalAumUsdMillion">1.506</data>
+      <data key="description">wWETH (AuM: 1.549M USD)</data>
+      <data key="totalAumUsdMillion">1.549</data>
       <data key="eventCount">191</data>
     </node>
     <node id="0xc7372ab5dd315606db799246e8aa112405abaeff">
@@ -961,8 +961,8 @@
       <data key="address">0xc7372ab5dd315606db799246e8aa112405abaeff</data>
       <data key="name">Turbo stETH (stETH Deposit)</data>
       <data key="symbol">TurboSTETH2</data>
-      <data key="description">TurboSTETH2 (AuM: 5.394M USD)</data>
-      <data key="totalAumUsdMillion">5.394</data>
+      <data key="description">TurboSTETH2 (AuM: 5.54M USD)</data>
+      <data key="totalAumUsdMillion">5.54</data>
       <data key="eventCount">188</data>
     </node>
     <node id="0x991fc0b9f027a80e2d642eb260a41ffc14b2f450">
@@ -970,8 +970,8 @@
       <data key="address">0x991fc0b9f027a80e2d642eb260a41ffc14b2f450</data>
       <data key="name">Yield Maxi USD</data>
       <data key="symbol">YieldMaxiUSD</data>
-      <data key="description">YieldMaxiUSD (AuM: 0.326M USD)</data>
-      <data key="totalAumUsdMillion">0.326</data>
+      <data key="description">YieldMaxiUSD (AuM: 0.321M USD)</data>
+      <data key="totalAumUsdMillion">0.321</data>
       <data key="eventCount">187</data>
     </node>
     <node id="0x082a5743aadf3d0daf750eef24652b36a68b1e9c">
@@ -997,8 +997,8 @@
       <data key="address">0x7ceba0caec8cbe74db35b26d7705ba68cb38d725</data>
       <data key="name">Popcorn rsETH Vault</data>
       <data key="symbol">pop-rsETH</data>
-      <data key="description">pop-rsETH (AuM: 1.191M USD)</data>
-      <data key="totalAumUsdMillion">1.191</data>
+      <data key="description">pop-rsETH (AuM: 1.225M USD)</data>
+      <data key="totalAumUsdMillion">1.225</data>
       <data key="eventCount">185</data>
     </node>
     <node id="0xf6fe643cb8dcc3e379cdc6db88818b09fdf2200d">
@@ -1006,8 +1006,8 @@
       <data key="address">0xf6fe643cb8dcc3e379cdc6db88818b09fdf2200d</data>
       <data key="name">VaultCraft rsETH Adapter</data>
       <data key="symbol">vc-rsETH</data>
-      <data key="description">vc-rsETH (AuM: 1.191M USD)</data>
-      <data key="totalAumUsdMillion">1.191</data>
+      <data key="description">vc-rsETH (AuM: 1.225M USD)</data>
+      <data key="totalAumUsdMillion">1.225</data>
       <data key="eventCount">185</data>
     </node>
     <node id="0x95eef579155cd2c5510f312c8fa39208c3be01a8">
@@ -1015,8 +1015,8 @@
       <data key="address">0x95eef579155cd2c5510f312c8fa39208c3be01a8</data>
       <data key="name">Re7 USDT</data>
       <data key="symbol">Re7USDT</data>
-      <data key="description">Re7USDT (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">Re7USDT (AuM: 2.941M USD)</data>
+      <data key="totalAumUsdMillion">2.941</data>
       <data key="eventCount">183</data>
     </node>
     <node id="0xe1a3864dbf62fb94834b108ff6bf439ce70183ac">
@@ -1024,8 +1024,8 @@
       <data key="address">0xe1a3864dbf62fb94834b108ff6bf439ce70183ac</data>
       <data key="name">vXDEFI</data>
       <data key="symbol">vXDEFI</data>
-      <data key="description">vXDEFI (AuM: 2.096M USD)</data>
-      <data key="totalAumUsdMillion">2.096</data>
+      <data key="description">vXDEFI (AuM: 2.152M USD)</data>
+      <data key="totalAumUsdMillion">2.152</data>
       <data key="eventCount">183</data>
     </node>
     <node id="0x72B886d09C117654aB7dA13A14d603001dE0B777">
@@ -1042,8 +1042,8 @@
       <data key="address">0x186514400e52270cef3d80e1c6f8d10a75d47344</data>
       <data key="name">Flagship USDC</data>
       <data key="symbol">bbUSDC</data>
-      <data key="description">bbUSDC (AuM: 2.545M USD)</data>
-      <data key="totalAumUsdMillion">2.545</data>
+      <data key="description">bbUSDC (AuM: 2.54M USD)</data>
+      <data key="totalAumUsdMillion">2.54</data>
       <data key="eventCount">178</data>
     </node>
     <node id="0xb5b29320d2dde5ba5bafa1ebcd270052070483ec">
@@ -1051,8 +1051,8 @@
       <data key="address">0xb5b29320d2dde5ba5bafa1ebcd270052070483ec</data>
       <data key="name">Real Yield ETH</data>
       <data key="symbol">YieldETH</data>
-      <data key="description">YieldETH (AuM: 48.39M USD)</data>
-      <data key="totalAumUsdMillion">48.39</data>
+      <data key="description">YieldETH (AuM: 49.759M USD)</data>
+      <data key="totalAumUsdMillion">49.759</data>
       <data key="eventCount">177</data>
     </node>
     <node id="0xbe53a109b494e5c9f97b9cd39fe969be68bf6204">
@@ -1060,8 +1060,8 @@
       <data key="address">0xbe53a109b494e5c9f97b9cd39fe969be68bf6204</data>
       <data key="name">USDC-1 yVault</data>
       <data key="symbol">yvUSDC-1</data>
-      <data key="description">yvUSDC-1 (AuM: 2.329M USD)</data>
-      <data key="totalAumUsdMillion">2.329</data>
+      <data key="description">yvUSDC-1 (AuM: 2.33M USD)</data>
+      <data key="totalAumUsdMillion">2.33</data>
       <data key="eventCount">176</data>
     </node>
     <node id="0x2371e134e3455e0593363cbf89d3b6cf53740618">
@@ -1069,8 +1069,8 @@
       <data key="address">0x2371e134e3455e0593363cbf89d3b6cf53740618</data>
       <data key="name">Gauntlet WETH Prime</data>
       <data key="symbol">gtWETH</data>
-      <data key="description">gtWETH (AuM: 16.394M USD)</data>
-      <data key="totalAumUsdMillion">16.394</data>
+      <data key="description">gtWETH (AuM: 18.817M USD)</data>
+      <data key="totalAumUsdMillion">18.817</data>
       <data key="eventCount">175</data>
     </node>
     <node id="0x5ae28c9197a4a6570216fc7e53e7e0221d7a0fef">
@@ -1078,8 +1078,8 @@
       <data key="address">0x5ae28c9197a4a6570216fc7e53e7e0221d7a0fef</data>
       <data key="name">Curve Vault for crvUSD</data>
       <data key="symbol">cvcrvUSD</data>
-      <data key="description">cvcrvUSD (AuM: 5.611M USD)</data>
-      <data key="totalAumUsdMillion">5.611</data>
+      <data key="description">cvcrvUSD (AuM: 4.039M USD)</data>
+      <data key="totalAumUsdMillion">4.039</data>
       <data key="eventCount">169</data>
     </node>
     <node id="0xdadc82e26b3739750e036dfd9defd3ed459b877a">
@@ -1087,8 +1087,8 @@
       <data key="address">0xdadc82e26b3739750e036dfd9defd3ed459b877a</data>
       <data key="name">Turbo EETH</data>
       <data key="symbol">TurboEETH</data>
-      <data key="description">TurboEETH (AuM: 0.311M USD)</data>
-      <data key="totalAumUsdMillion">0.311</data>
+      <data key="description">TurboEETH (AuM: 0.32M USD)</data>
+      <data key="totalAumUsdMillion">0.32</data>
       <data key="eventCount">167</data>
     </node>
     <node id="0xdd0f28e19c1780eb6396170735d45153d261490d">
@@ -1096,8 +1096,8 @@
       <data key="address">0xdd0f28e19c1780eb6396170735d45153d261490d</data>
       <data key="name">Gauntlet USDC Prime</data>
       <data key="symbol">gtUSDC</data>
-      <data key="description">gtUSDC (AuM: 19.264M USD)</data>
-      <data key="totalAumUsdMillion">19.264</data>
+      <data key="description">gtUSDC (AuM: 16.056M USD)</data>
+      <data key="totalAumUsdMillion">16.056</data>
       <data key="eventCount">165</data>
     </node>
     <node id="0x8eb67a509616cd6a7c1b3c8c21d48ff57df3d458">
@@ -1105,8 +1105,8 @@
       <data key="address">0x8eb67a509616cd6a7c1b3c8c21d48ff57df3d458</data>
       <data key="name">Gauntlet USDC Core</data>
       <data key="symbol">gtUSDCcore</data>
-      <data key="description">gtUSDCcore (AuM: 21.371M USD)</data>
-      <data key="totalAumUsdMillion">21.371</data>
+      <data key="description">gtUSDCcore (AuM: 21.381M USD)</data>
+      <data key="totalAumUsdMillion">21.381</data>
       <data key="eventCount">160</data>
     </node>
     <node id="0x397b8c79bca182e25474ea46051a2b460c0985bc">
@@ -1114,8 +1114,8 @@
       <data key="address">0x397b8c79bca182e25474ea46051a2b460c0985bc</data>
       <data key="name">Staked DODO</data>
       <data key="symbol">stDODO</data>
-      <data key="description">stDODO (AuM: 10.1M USD)</data>
-      <data key="totalAumUsdMillion">10.1</data>
+      <data key="description">stDODO (AuM: 10.211M USD)</data>
+      <data key="totalAumUsdMillion">10.211</data>
       <data key="eventCount">156</data>
     </node>
     <node id="0x43Dfc4159D86F3A37A5A4B3D4580b888ad7d4DDd">
@@ -1150,8 +1150,8 @@
       <data key="address">0x4d56c9cba373ad39df69eb18f076b7348000ae09</data>
       <data key="name">GHO v3</data>
       <data key="symbol">dGHOV3</data>
-      <data key="description">dGHOV3 (AuM: 2.178M USD)</data>
-      <data key="totalAumUsdMillion">2.178</data>
+      <data key="description">dGHOV3 (AuM: 2.191M USD)</data>
+      <data key="totalAumUsdMillion">2.191</data>
       <data key="eventCount">152</data>
     </node>
     <node id="0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f">
@@ -1168,8 +1168,8 @@
       <data key="address">0x028ec7330ff87667b6dfb0d94b954c820195336c</data>
       <data key="name">DAI-1 yVault</data>
       <data key="symbol">yvDAI-1</data>
-      <data key="description">yvDAI-1 (AuM: 2.786M USD)</data>
-      <data key="totalAumUsdMillion">2.786</data>
+      <data key="description">yvDAI-1 (AuM: 2.787M USD)</data>
+      <data key="totalAumUsdMillion">2.787</data>
       <data key="eventCount">150</data>
     </node>
     <node id="0x1751e1e4d2c9fa99479c0c5574136f0dbd8f3eb8">
@@ -1195,8 +1195,8 @@
       <data key="address">0xe7146f53dbcae9d6fa3555fe502648deb0b2f823</data>
       <data key="name">DAI v3</data>
       <data key="symbol">dDAIV3</data>
-      <data key="description">dDAIV3 (AuM: 8.59M USD)</data>
-      <data key="totalAumUsdMillion">8.59</data>
+      <data key="description">dDAIV3 (AuM: 8.595M USD)</data>
+      <data key="totalAumUsdMillion">8.595</data>
       <data key="eventCount">147</data>
     </node>
     <node id="0x622fa41799406b120f9a40da843d358b7b2cfee3">
@@ -1222,8 +1222,8 @@
       <data key="address">0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b</data>
       <data key="name">Syrup USDC</data>
       <data key="symbol">syrupUSDC</data>
-      <data key="description">syrupUSDC (AuM: 6.322M USD)</data>
-      <data key="totalAumUsdMillion">6.322</data>
+      <data key="description">syrupUSDC (AuM: 6.384M USD)</data>
+      <data key="totalAumUsdMillion">6.384</data>
       <data key="eventCount">144</data>
     </node>
     <node id="0x7586c58bf6292b3c9defc8333fc757d6c5da0f7e">
@@ -1240,8 +1240,8 @@
       <data key="address">0xbeef047a543e45807105e51a8bbefcc5950fcfba</data>
       <data key="name">Steakhouse USDT</data>
       <data key="symbol">steakUSDT</data>
-      <data key="description">steakUSDT (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">steakUSDT (AuM: 4.745M USD)</data>
+      <data key="totalAumUsdMillion">4.745</data>
       <data key="eventCount">128</data>
     </node>
     <node id="0x004626a008b1acdc4c74ab51644093b155e59a23">
@@ -1249,8 +1249,8 @@
       <data key="address">0x004626a008b1acdc4c74ab51644093b155e59a23</data>
       <data key="name">Staked EURA</data>
       <data key="symbol">stEUR</data>
-      <data key="description">stEUR (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">stEUR (AuM: 5.812M USD)</data>
+      <data key="totalAumUsdMillion">5.812</data>
       <data key="eventCount">126</data>
     </node>
     <node id="0x1a7e4e63778B4f12a199C062f3eFdD288afCBce8">
@@ -1312,8 +1312,8 @@
       <data key="address">0x67315dd969b8cd3a3520c245837bf71f54579c75</data>
       <data key="name">LlamaRisk crvUSD Vault</data>
       <data key="symbol">llama-crvUSD</data>
-      <data key="description">llama-crvUSD (AuM: 2.161M USD)</data>
-      <data key="totalAumUsdMillion">2.161</data>
+      <data key="description">llama-crvUSD (AuM: 2.149M USD)</data>
+      <data key="totalAumUsdMillion">2.149</data>
       <data key="eventCount">121</data>
     </node>
     <node id="0x1dffb366b5c5a37a12af2c127f31e8e0ed86bdbe">
@@ -1321,8 +1321,8 @@
       <data key="address">0x1dffb366b5c5a37a12af2c127f31e8e0ed86bdbe</data>
       <data key="name">Turbo RSETH</data>
       <data key="symbol">TurboRSETH</data>
-      <data key="description">TurboRSETH (AuM: 0.233M USD)</data>
-      <data key="totalAumUsdMillion">0.233</data>
+      <data key="description">TurboRSETH (AuM: 0.24M USD)</data>
+      <data key="totalAumUsdMillion">0.24</data>
       <data key="eventCount">121</data>
     </node>
     <node id="0xff467c6e827ebbea64da1ab0425021e6c89fbe0d">
@@ -1330,8 +1330,8 @@
       <data key="address">0xff467c6e827ebbea64da1ab0425021e6c89fbe0d</data>
       <data key="name">Curve Vault for crvUSD</data>
       <data key="symbol">cvcrvUSD</data>
-      <data key="description">cvcrvUSD (AuM: 3.258M USD)</data>
-      <data key="totalAumUsdMillion">3.258</data>
+      <data key="description">cvcrvUSD (AuM: 3.233M USD)</data>
+      <data key="totalAumUsdMillion">3.233</data>
       <data key="eventCount">118</data>
     </node>
     <node id="0x06824c27c8a0dbde5f72f770ec82e3c0fd4dcec3">
@@ -1348,8 +1348,8 @@
       <data key="address">0xdcee70654261af21c44c093c300ed3bb97b78192</data>
       <data key="name">Wrapped OETH</data>
       <data key="symbol">WOETH</data>
-      <data key="description">WOETH (AuM: 9.121M USD)</data>
-      <data key="totalAumUsdMillion">9.121</data>
+      <data key="description">WOETH (AuM: 9.392M USD)</data>
+      <data key="totalAumUsdMillion">9.392</data>
       <data key="eventCount">115</data>
     </node>
     <node id="0x856c4Efb76C1D1AE02e20CEB03A2A6a08b0b8dC3">
@@ -1366,8 +1366,8 @@
       <data key="address">0x4ca0e178c94f039d7f202e09d8d1a655ed3fb6b6</data>
       <data key="name">LeadBlock USDC RWA</data>
       <data key="symbol">USDC RWA</data>
-      <data key="description">USDC RWA (AuM: 4.96M USD)</data>
-      <data key="totalAumUsdMillion">4.96</data>
+      <data key="description">USDC RWA (AuM: 4.963M USD)</data>
+      <data key="totalAumUsdMillion">4.963</data>
       <data key="eventCount">112</data>
     </node>
     <node id="0xc56413869c6cdf96496f2b1ef801fedbdfa7ddb0">
@@ -1375,8 +1375,8 @@
       <data key="address">0xc56413869c6cdf96496f2b1ef801fedbdfa7ddb0</data>
       <data key="name">WETH-1 yVault</data>
       <data key="symbol">yvWETH-1</data>
-      <data key="description">yvWETH-1 (AuM: 1.858M USD)</data>
-      <data key="totalAumUsdMillion">1.858</data>
+      <data key="description">yvWETH-1 (AuM: 1.916M USD)</data>
+      <data key="totalAumUsdMillion">1.916</data>
       <data key="eventCount">109</data>
     </node>
     <node id="0x8fb1c7aedcbbc1222325c39dd5c1d2d23420cae3">
@@ -1384,8 +1384,8 @@
       <data key="address">0x8fb1c7aedcbbc1222325c39dd5c1d2d23420cae3</data>
       <data key="name">Curve Vault for crvUSD</data>
       <data key="symbol">cvcrvUSD</data>
-      <data key="description">cvcrvUSD (AuM: 7.577M USD)</data>
-      <data key="totalAumUsdMillion">7.577</data>
+      <data key="description">cvcrvUSD (AuM: 7.987M USD)</data>
+      <data key="totalAumUsdMillion">7.987</data>
       <data key="eventCount">109</data>
     </node>
     <node id="0x7bdd71e46d602916c065b027028df686a27d5cb2">
@@ -1438,8 +1438,8 @@
       <data key="address">0xbeef050ecd6a16c4e7bffbb52ebba7846c4b8cd4</data>
       <data key="name">Steakhouse ETH</data>
       <data key="symbol">steakETH</data>
-      <data key="description">steakETH (AuM: 0.151M USD)</data>
-      <data key="totalAumUsdMillion">0.151</data>
+      <data key="description">steakETH (AuM: 0.155M USD)</data>
+      <data key="totalAumUsdMillion">0.155</data>
       <data key="eventCount">105</data>
     </node>
     <node id="0x125d41a6e5dbf455cd9df8f80bcc6fd172d52cc6">
@@ -1492,8 +1492,8 @@
       <data key="address">0xcfb23d05f32ea0be0dbb5078d189cca89688945e</data>
       <data key="name">Redacted pxETH aggregator</data>
       <data key="symbol">REDACT-agg</data>
-      <data key="description">REDACT-agg (AuM: 3.283M USD)</data>
-      <data key="totalAumUsdMillion">3.283</data>
+      <data key="description">REDACT-agg (AuM: 3.379M USD)</data>
+      <data key="totalAumUsdMillion">3.379</data>
       <data key="eventCount">92</data>
     </node>
     <node id="0xbd564bfe6f2366336ecd707862eda79b97bce383">
@@ -1501,8 +1501,8 @@
       <data key="address">0xbd564bfe6f2366336ecd707862eda79b97bce383</data>
       <data key="name">Swell aggregator</data>
       <data key="symbol">SWELL-agg</data>
-      <data key="description">SWELL-agg (AuM: 0.526M USD)</data>
-      <data key="totalAumUsdMillion">0.526</data>
+      <data key="description">SWELL-agg (AuM: 0.536M USD)</data>
+      <data key="totalAumUsdMillion">0.536</data>
       <data key="eventCount">88</data>
     </node>
     <node id="0xbde752ef69880c00a795d88438040b8f737eb254">
@@ -1510,8 +1510,8 @@
       <data key="address">0xbde752ef69880c00a795d88438040b8f737eb254</data>
       <data key="name">Spectra ERC4626 Wrapper: uniBTC</data>
       <data key="symbol">sw-uniBTC</data>
-      <data key="description">sw-uniBTC (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">sw-uniBTC (AuM: 2.859M USD)</data>
+      <data key="totalAumUsdMillion">2.859</data>
       <data key="eventCount">87</data>
     </node>
     <node id="0x11aae8bee9b1da827c641540d20e4e664677e06f">
@@ -1537,8 +1537,8 @@
       <data key="address">0x8e475a4f7820a4b6c0ff229f74fb4762f0813c47</data>
       <data key="name">Karak - Rocket Pool ETH</data>
       <data key="symbol">KrETH</data>
-      <data key="description">KrETH (AuM: 1.912M USD)</data>
-      <data key="totalAumUsdMillion">1.912</data>
+      <data key="description">KrETH (AuM: 1.967M USD)</data>
+      <data key="totalAumUsdMillion">1.967</data>
       <data key="eventCount">86</data>
     </node>
     <node id="0xae78736Cd615f374D3085123A210448E74Fc6393">
@@ -1555,8 +1555,8 @@
       <data key="address">0xede905b2732ffcb73b95f5facb2a0f241b30bd50</data>
       <data key="name">Swaap WETH Fund</data>
       <data key="symbol">swpWETH</data>
-      <data key="description">swpWETH (AuM: 0.828M USD)</data>
-      <data key="totalAumUsdMillion">0.828</data>
+      <data key="description">swpWETH (AuM: 0.846M USD)</data>
+      <data key="totalAumUsdMillion">0.846</data>
       <data key="eventCount">85</data>
     </node>
     <node id="0x6130e6cd924a40b24703407f246966d7435d4998">
@@ -1582,8 +1582,8 @@
       <data key="address">0xccd37eb6374ae5b1f0b85ac97eff14770e0d0063</data>
       <data key="name">Curve Vault for crvUSD</data>
       <data key="symbol">cvcrvUSD</data>
-      <data key="description">cvcrvUSD (AuM: 2.973M USD)</data>
-      <data key="totalAumUsdMillion">2.973</data>
+      <data key="description">cvcrvUSD (AuM: 3.18M USD)</data>
+      <data key="totalAumUsdMillion">3.18</data>
       <data key="eventCount">84</data>
     </node>
     <node id="0xbd32b8aa6ff34bedc447e503195fb2524c72658f">
@@ -1591,8 +1591,8 @@
       <data key="address">0xbd32b8aa6ff34bedc447e503195fb2524c72658f</data>
       <data key="name">KcbETH</data>
       <data key="symbol">KcbETH</data>
-      <data key="description">KcbETH (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">KcbETH (AuM: 2.527M USD)</data>
+      <data key="totalAumUsdMillion">2.527</data>
       <data key="eventCount">83</data>
     </node>
     <node id="0xBe9895146f7AF43049ca1c1AE358B0541Ea49704">
@@ -1609,8 +1609,8 @@
       <data key="address">0x3e49e9c890cd5b015a18ed76e7a4093f569f1a04</data>
       <data key="name">xGET</data>
       <data key="symbol">xGET</data>
-      <data key="description">xGET (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">xGET (AuM: 2.446M USD)</data>
+      <data key="totalAumUsdMillion">2.446</data>
       <data key="eventCount">82</data>
     </node>
     <node id="0x8a854288a5976036A725879164Ca3e91d30c6A1B">
@@ -1645,8 +1645,8 @@
       <data key="address">0x8cb3649114051ca5119141a34c200d65dc0faa73</data>
       <data key="name">Gauntlet USDT Prime</data>
       <data key="symbol">gtUSDT</data>
-      <data key="description">gtUSDT (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">gtUSDT (AuM: 5.152M USD)</data>
+      <data key="totalAumUsdMillion">5.152</data>
       <data key="eventCount">80</data>
     </node>
     <node id="0xc39a5a616f0ad1ff45077fa2de3f79ab8eb8b8b9">
@@ -1654,8 +1654,8 @@
       <data key="address">0xc39a5a616f0ad1ff45077fa2de3f79ab8eb8b8b9</data>
       <data key="name">High Yield Secured Lending Maple Pool USDC1</data>
       <data key="symbol">MPLhysUSDC1</data>
-      <data key="description">MPLhysUSDC1 (AuM: 31.332M USD)</data>
-      <data key="totalAumUsdMillion">31.332</data>
+      <data key="description">MPLhysUSDC1 (AuM: 31.394M USD)</data>
+      <data key="totalAumUsdMillion">31.394</data>
       <data key="eventCount">79</data>
     </node>
     <node id="0xb2b23c87a4b6d1b03ba603f7c3eb9a81fdc0aac9">
@@ -1663,8 +1663,8 @@
       <data key="address">0xb2b23c87a4b6d1b03ba603f7c3eb9a81fdc0aac9</data>
       <data key="name">Curve Vault for crvUSD</data>
       <data key="symbol">cvcrvUSD</data>
-      <data key="description">cvcrvUSD (AuM: 2.507M USD)</data>
-      <data key="totalAumUsdMillion">2.507</data>
+      <data key="description">cvcrvUSD (AuM: 1.981M USD)</data>
+      <data key="totalAumUsdMillion">1.981</data>
       <data key="eventCount">77</data>
     </node>
     <node id="0x8cf1de26729cfb7137af1a6b2a665e099ec319b5">
@@ -1672,8 +1672,8 @@
       <data key="address">0x8cf1de26729cfb7137af1a6b2a665e099ec319b5</data>
       <data key="name">Curve Vault for crvUSD</data>
       <data key="symbol">cvcrvUSD</data>
-      <data key="description">cvcrvUSD (AuM: 4.865M USD)</data>
-      <data key="totalAumUsdMillion">4.865</data>
+      <data key="description">cvcrvUSD (AuM: 4.359M USD)</data>
+      <data key="totalAumUsdMillion">4.359</data>
       <data key="eventCount">77</data>
     </node>
     <node id="0xda00010eda646913f273e10e7a5d1f659242757d">
@@ -1681,8 +1681,8 @@
       <data key="address">0xda00010eda646913f273e10e7a5d1f659242757d</data>
       <data key="name">Trade WBTC v3</data>
       <data key="symbol">dWBTCV3</data>
-      <data key="description">dWBTCV3 (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">dWBTCV3 (AuM: 0.901M USD)</data>
+      <data key="totalAumUsdMillion">0.901</data>
       <data key="eventCount">76</data>
     </node>
     <node id="0x0274a704a6d9129f90a62ddc6f6024b33ecdad36">
@@ -1690,8 +1690,8 @@
       <data key="address">0x0274a704a6d9129f90a62ddc6f6024b33ecdad36</data>
       <data key="name">Real Yield BTC</data>
       <data key="symbol">YieldBTC</data>
-      <data key="description">YieldBTC (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">YieldBTC (AuM: 12.006M USD)</data>
+      <data key="totalAumUsdMillion">12.006</data>
       <data key="eventCount">75</data>
     </node>
     <node id="0x0e1a341e0527287318c1a6643bb88c760038e0b0">
@@ -1699,8 +1699,8 @@
       <data key="address">0x0e1a341e0527287318c1a6643bb88c760038e0b0</data>
       <data key="name">dAPE</data>
       <data key="symbol">dAPE</data>
-      <data key="description">dAPE (AuM: 1.051M USD)</data>
-      <data key="totalAumUsdMillion">1.051</data>
+      <data key="description">dAPE (AuM: 1.068M USD)</data>
+      <data key="totalAumUsdMillion">1.068</data>
       <data key="eventCount">73</data>
     </node>
     <node id="0x07d1718ff05a8c53c8f05adaed57c0d672945f9a">
@@ -1726,8 +1726,8 @@
       <data key="address">0x4c406c068106375724275cbff028770c544a1333</data>
       <data key="name">Sandclock WETH Vault v2</data>
       <data key="symbol">scWETHv2</data>
-      <data key="description">scWETHv2 (AuM: 0.999M USD)</data>
-      <data key="totalAumUsdMillion">0.999</data>
+      <data key="description">scWETHv2 (AuM: 1.023M USD)</data>
+      <data key="totalAumUsdMillion">1.023</data>
       <data key="eventCount">72</data>
     </node>
     <node id="0xb45ad160634c528cc3d2926d9807104fa3157305">
@@ -1753,8 +1753,8 @@
       <data key="address">0xf7e20d67abd4923b4b48320a22a1e81887291296</data>
       <data key="name">Yield Maxi USDT</data>
       <data key="symbol">YieldMaxiUSDT</data>
-      <data key="description">YieldMaxiUSDT (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">YieldMaxiUSDT (AuM: 0.201M USD)</data>
+      <data key="totalAumUsdMillion">0.201</data>
       <data key="eventCount">70</data>
     </node>
     <node id="0x9a7b4980c6f0fcaa50cd5f288ad7038f434c692e">
@@ -1798,8 +1798,8 @@
       <data key="address">0x48afbbd342f64ef8a9ab1c143719b63c2ad81710</data>
       <data key="name">MetaPoolETH</data>
       <data key="symbol">mpETH</data>
-      <data key="description">mpETH (AuM: 2.508M USD)</data>
-      <data key="totalAumUsdMillion">2.508</data>
+      <data key="description">mpETH (AuM: 2.579M USD)</data>
+      <data key="totalAumUsdMillion">2.579</data>
       <data key="eventCount">68</data>
     </node>
     <node id="0x1576b2d7ef15a2ebe9c22c8765dd9c1efea8797b">
@@ -1807,8 +1807,8 @@
       <data key="address">0x1576b2d7ef15a2ebe9c22c8765dd9c1efea8797b</data>
       <data key="name">Static Aave Ethereum pyUSD</data>
       <data key="symbol">saEthPyUSD</data>
-      <data key="description">saEthPyUSD (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">saEthPyUSD (AuM: 9.433M USD)</data>
+      <data key="totalAumUsdMillion">9.433</data>
       <data key="eventCount">66</data>
     </node>
     <node id="0x6c3ea9036406852006290770BEdFcAbA0e23A0e8">
@@ -1843,8 +1843,8 @@
       <data key="address">0xa94ec39c91df334dcab55adaa8edd9c1daf67ca7</data>
       <data key="name">Spectra ERC4626 Wrapper: stk GHO</data>
       <data key="symbol">sw-stkGHO</data>
-      <data key="description">sw-stkGHO (AuM: 3.784M USD)</data>
-      <data key="totalAumUsdMillion">3.784</data>
+      <data key="description">sw-stkGHO (AuM: 3.846M USD)</data>
+      <data key="totalAumUsdMillion">3.846</data>
       <data key="eventCount">65</data>
     </node>
     <node id="0xb974598227660befe79a23dfc473d859602254ac">
@@ -1906,8 +1906,8 @@
       <data key="address">0xb0903ab70a7467ee5756074b31ac88aebb8fb777</data>
       <data key="name">Aladdin CVX</data>
       <data key="symbol">aCVX</data>
-      <data key="description">aCVX (AuM: 0.048M USD)</data>
-      <data key="totalAumUsdMillion">0.048</data>
+      <data key="description">aCVX (AuM: 0.049M USD)</data>
+      <data key="totalAumUsdMillion">0.049</data>
       <data key="eventCount">61</data>
     </node>
     <node id="0x92545bce636e6ee91d88d2d017182cd0bd2fc22e">
@@ -1915,8 +1915,8 @@
       <data key="address">0x92545bce636e6ee91d88d2d017182cd0bd2fc22e</data>
       <data key="name">DAI-2 yVault</data>
       <data key="symbol">yvDAI-2</data>
-      <data key="description">yvDAI-2 (AuM: 1.652M USD)</data>
-      <data key="totalAumUsdMillion">1.652</data>
+      <data key="description">yvDAI-2 (AuM: 1.653M USD)</data>
+      <data key="totalAumUsdMillion">1.653</data>
       <data key="eventCount">60</data>
     </node>
     <node id="0xb9a94f6d16b6c4635341fd4ed969f247ef7ed88a">
@@ -1942,8 +1942,8 @@
       <data key="address">0xcdd374f491fbf3f4fcf6e9023c99043774005137</data>
       <data key="name">CIAN ETH-stETH strategy pool</data>
       <data key="symbol">ciETH</data>
-      <data key="description">ciETH (AuM: 3.64M USD)</data>
-      <data key="totalAumUsdMillion">3.64</data>
+      <data key="description">ciETH (AuM: 3.74M USD)</data>
+      <data key="totalAumUsdMillion">3.74</data>
       <data key="eventCount">59</data>
     </node>
     <node id="0xe079dbdb0e63a991db5b7046db79651e4c726f44">
@@ -1996,8 +1996,8 @@
       <data key="address">0x8ce6936845b85412b4bd7ec9458ebcb8703a326b</data>
       <data key="name">Karak - Savings Dai</data>
       <data key="symbol">KsDAI</data>
-      <data key="description">KsDAI (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">KsDAI (AuM: 12.593M USD)</data>
+      <data key="totalAumUsdMillion">12.593</data>
       <data key="eventCount">52</data>
     </node>
     <node id="0x83F20F44975D03b1b09e64809B757c47f942BEeA">
@@ -2014,8 +2014,8 @@
       <data key="address">0x437d41b2ebef15a91618f4bf010fa4751bb48be6</data>
       <data key="name">Yearn-Ajna Pool apxETH/WETH Vault</data>
       <data key="symbol">yv-ajna-apxeth-weth</data>
-      <data key="description">yv-ajna-apxeth-weth (AuM: 1.734M USD)</data>
-      <data key="totalAumUsdMillion">1.734</data>
+      <data key="description">yv-ajna-apxeth-weth (AuM: 1.782M USD)</data>
+      <data key="totalAumUsdMillion">1.782</data>
       <data key="eventCount">52</data>
     </node>
     <node id="0x434e7ea9bc77c93c3f4680862281603338c7ae02">
@@ -2023,8 +2023,8 @@
       <data key="address">0x434e7ea9bc77c93c3f4680862281603338c7ae02</data>
       <data key="name">Popcorn Wrapped liquid staked Ether 2.0 Vault</data>
       <data key="symbol">pop-wstETH</data>
-      <data key="description">pop-wstETH (AuM: 0.147M USD)</data>
-      <data key="totalAumUsdMillion">0.147</data>
+      <data key="description">pop-wstETH (AuM: 0.126M USD)</data>
+      <data key="totalAumUsdMillion">0.126</data>
       <data key="eventCount">51</data>
     </node>
     <node id="0x9e0c5d524dc3ff0aa734c52aa57ab623436364e6">
@@ -2032,8 +2032,8 @@
       <data key="address">0x9e0c5d524dc3ff0aa734c52aa57ab623436364e6</data>
       <data key="name">VaultCraft IonDepositor Wrapped liquid staked Ether 2.0 Adapter</data>
       <data key="symbol">vc-ion-wstETH</data>
-      <data key="description">vc-ion-wstETH (AuM: 0.147M USD)</data>
-      <data key="totalAumUsdMillion">0.147</data>
+      <data key="description">vc-ion-wstETH (AuM: 0.126M USD)</data>
+      <data key="totalAumUsdMillion">0.126</data>
       <data key="eventCount">51</data>
     </node>
     <node id="0xa5ccbd739e7f5662b95d269ee9a48a37cbfb88bc">
@@ -2059,8 +2059,8 @@
       <data key="address">0x27500de405a3212d57177a789e30bb88b0adbec5</data>
       <data key="name">Turbo EZETH</data>
       <data key="symbol">TurboEZETH</data>
-      <data key="description">TurboEZETH (AuM: 0.407M USD)</data>
-      <data key="totalAumUsdMillion">0.407</data>
+      <data key="description">TurboEZETH (AuM: 0.419M USD)</data>
+      <data key="totalAumUsdMillion">0.419</data>
       <data key="eventCount">50</data>
     </node>
     <node id="0x8ef73f036feec873d0b2fd20892215df5b8bdd72">
@@ -2068,8 +2068,8 @@
       <data key="address">0x8ef73f036feec873d0b2fd20892215df5b8bdd72</data>
       <data key="name">crvUSD v3</data>
       <data key="symbol">dcrvUSDV3</data>
-      <data key="description">dcrvUSDV3 (AuM: 3.603M USD)</data>
-      <data key="totalAumUsdMillion">3.603</data>
+      <data key="description">dcrvUSDV3 (AuM: 3.602M USD)</data>
+      <data key="totalAumUsdMillion">3.602</data>
       <data key="eventCount">49</data>
     </node>
     <node id="0x52096539ed1391cb50c6b9e4fd18afd2438ed23b">
@@ -2086,8 +2086,8 @@
       <data key="address">0x47657094e3af11c47d5ef4d3598a1536b394eec4</data>
       <data key="name">Affine ultraETH</data>
       <data key="symbol">ultraETH</data>
-      <data key="description">ultraETH (AuM: 0.112M USD)</data>
-      <data key="totalAumUsdMillion">0.112</data>
+      <data key="description">ultraETH (AuM: 0.115M USD)</data>
+      <data key="totalAumUsdMillion">0.115</data>
       <data key="eventCount">46</data>
     </node>
     <node id="0x0a36f9565c6fb862509ad8d148941968344a55d8">
@@ -2095,8 +2095,8 @@
       <data key="address">0x0a36f9565c6fb862509ad8d148941968344a55d8</data>
       <data key="name">Staked Quartz</data>
       <data key="symbol">sQuartz</data>
-      <data key="description">sQuartz (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">sQuartz (AuM: 0.156M USD)</data>
+      <data key="totalAumUsdMillion">0.156</data>
       <data key="eventCount">45</data>
     </node>
     <node id="0xbA8A621b4a54e61C442F5Ec623687e2a942225ef">
@@ -2122,8 +2122,8 @@
       <data key="address">0xd33dad974b938744dac81fe00ac67cb5aa13958e</data>
       <data key="name">Turbo SWETH</data>
       <data key="symbol">TurboSWETH</data>
-      <data key="description">TurboSWETH (AuM: 0.139M USD)</data>
-      <data key="totalAumUsdMillion">0.139</data>
+      <data key="description">TurboSWETH (AuM: 0.143M USD)</data>
+      <data key="totalAumUsdMillion">0.143</data>
       <data key="eventCount">43</data>
     </node>
     <node id="0xe7f878f31fe1c2c2223259685255e45c475b4b8f">
@@ -2131,8 +2131,8 @@
       <data key="address">0xe7f878f31fe1c2c2223259685255e45c475b4b8f</data>
       <data key="name">STETH YIELD LAYER VAULT STEAKHOUSE</data>
       <data key="symbol">yield-steakLRT</data>
-      <data key="description">yield-steakLRT (AuM: 0.169M USD)</data>
-      <data key="totalAumUsdMillion">0.169</data>
+      <data key="description">yield-steakLRT (AuM: 0.173M USD)</data>
+      <data key="totalAumUsdMillion">0.173</data>
       <data key="eventCount">41</data>
     </node>
     <node id="0x2791eb5807d69fe10c02eed6b4dc12bac0701744">
@@ -2140,8 +2140,8 @@
       <data key="address">0x2791eb5807d69fe10c02eed6b4dc12bac0701744</data>
       <data key="name">Amphor Synthetic LP-IL Hedged (WSTETH)</data>
       <data key="symbol">ampr-LP-ETH</data>
-      <data key="description">ampr-LP-ETH (AuM: 0.029M USD)</data>
-      <data key="totalAumUsdMillion">0.029</data>
+      <data key="description">ampr-LP-ETH (AuM: 0.03M USD)</data>
+      <data key="totalAumUsdMillion">0.03</data>
       <data key="eventCount">41</data>
     </node>
     <node id="0x500331c9ff24d9d11aee6b07734aa72343ea74a5">
@@ -2158,8 +2158,8 @@
       <data key="address">0xbdb97ec319c41c6fa383e94ece6bdf383dfc7be4</data>
       <data key="name">Aave V3 USDC Lender</data>
       <data key="symbol">ysUSDC</data>
-      <data key="description">ysUSDC (AuM: 1.259M USD)</data>
-      <data key="totalAumUsdMillion">1.259</data>
+      <data key="description">ysUSDC (AuM: 1.26M USD)</data>
+      <data key="totalAumUsdMillion">1.26</data>
       <data key="eventCount">40</data>
     </node>
     <node id="0xcf4b531b4cde95bd35d71926e09b2b54c564f5b6">
@@ -2167,8 +2167,8 @@
       <data key="address">0xcf4b531b4cde95bd35d71926e09b2b54c564f5b6</data>
       <data key="name">Morpho ETH Maximizer</data>
       <data key="symbol">MaxMorphoETH</data>
-      <data key="description">MaxMorphoETH (AuM: 0.175M USD)</data>
-      <data key="totalAumUsdMillion">0.175</data>
+      <data key="description">MaxMorphoETH (AuM: 0.18M USD)</data>
+      <data key="totalAumUsdMillion">0.18</data>
       <data key="eventCount">39</data>
     </node>
     <node id="0x28da6de3e804bddf0ad237cfa6048f2930d0b4dc">
@@ -2203,8 +2203,8 @@
       <data key="address">0xa5269a8e31b93ff27b887b56720a25f844db0529</data>
       <data key="name">Morpho-Aave USD Coin Supply Vault</data>
       <data key="symbol">maUSDC</data>
-      <data key="description">maUSDC (AuM: 0.941M USD)</data>
-      <data key="totalAumUsdMillion">0.941</data>
+      <data key="description">maUSDC (AuM: 0.942M USD)</data>
+      <data key="totalAumUsdMillion">0.942</data>
       <data key="eventCount">39</data>
     </node>
     <node id="0xc1dd3f011290f212227170f0d02f511ebf57e433">
@@ -2212,8 +2212,8 @@
       <data key="address">0xc1dd3f011290f212227170f0d02f511ebf57e433</data>
       <data key="name">Maple Direct USDC1</data>
       <data key="symbol">MPLdirUSDC1</data>
-      <data key="description">MPLdirUSDC1 (AuM: 32.804M USD)</data>
-      <data key="totalAumUsdMillion">32.804</data>
+      <data key="description">MPLdirUSDC1 (AuM: 32.822M USD)</data>
+      <data key="totalAumUsdMillion">32.822</data>
       <data key="eventCount">39</data>
     </node>
     <node id="0xe1489af32c45c51f94acdb3f36b7032a82f6f55d">
@@ -2230,8 +2230,8 @@
       <data key="address">0xa84397004abe8229cc481ce91ba850ecd8204822</data>
       <data key="name">VaultCraft IonDepositor Wrapped liquid staked Ether 2.0 Adapter</data>
       <data key="symbol">vc-ion-wstETH</data>
-      <data key="description">vc-ion-wstETH (AuM: 0.153M USD)</data>
-      <data key="totalAumUsdMillion">0.153</data>
+      <data key="description">vc-ion-wstETH (AuM: 0.135M USD)</data>
+      <data key="totalAumUsdMillion">0.135</data>
       <data key="eventCount">38</data>
     </node>
     <node id="0xa48d49f63dfc185cdd409b65f042955f509d9658">
@@ -2239,8 +2239,8 @@
       <data key="address">0xa48d49f63dfc185cdd409b65f042955f509d9658</data>
       <data key="name">Popcorn Wrapped liquid staked Ether 2.0 Vault</data>
       <data key="symbol">pop-wstETH</data>
-      <data key="description">pop-wstETH (AuM: 0.153M USD)</data>
-      <data key="totalAumUsdMillion">0.153</data>
+      <data key="description">pop-wstETH (AuM: 0.135M USD)</data>
+      <data key="totalAumUsdMillion">0.135</data>
       <data key="eventCount">38</data>
     </node>
     <node id="0x19b8d8fc682fc56fbb42653f68c7d48dd3fe597e">
@@ -2248,8 +2248,8 @@
       <data key="address">0x19b8d8fc682fc56fbb42653f68c7d48dd3fe597e</data>
       <data key="name">Turbo ETHX</data>
       <data key="symbol">TurboETHX</data>
-      <data key="description">TurboETHX (AuM: 0.043M USD)</data>
-      <data key="totalAumUsdMillion">0.043</data>
+      <data key="description">TurboETHX (AuM: 0.044M USD)</data>
+      <data key="totalAumUsdMillion">0.044</data>
       <data key="eventCount">37</data>
     </node>
     <node id="0x57f5e098cad7a3d1eed53991d4d66c45c9af7812">
@@ -2275,8 +2275,8 @@
       <data key="address">0x21cf1c5dc48c603b89907fe6a7ae83ea5e3709af</data>
       <data key="name">Curve Vault for crvUSD</data>
       <data key="symbol">cvcrvUSD</data>
-      <data key="description">cvcrvUSD (AuM: 2.073M USD)</data>
-      <data key="totalAumUsdMillion">2.073</data>
+      <data key="description">cvcrvUSD (AuM: 2.098M USD)</data>
+      <data key="totalAumUsdMillion">2.098</data>
       <data key="eventCount">36</data>
     </node>
     <node id="0x81d93531720d86f0491dee7d03f30b3b5ac24e59">
@@ -2329,8 +2329,8 @@
       <data key="address">0xd2efb90c569ebd5b83d5cfb8632322edfac203a5</data>
       <data key="name">Aave V3 WETH Lender</data>
       <data key="symbol">ysWETH</data>
-      <data key="description">ysWETH (AuM: 0.089M USD)</data>
-      <data key="totalAumUsdMillion">0.089</data>
+      <data key="description">ysWETH (AuM: 0.091M USD)</data>
+      <data key="totalAumUsdMillion">0.091</data>
       <data key="eventCount">33</data>
     </node>
     <node id="0xa5e0163f778b05a522df8fe374f15d4ffbe54c2a">
@@ -2374,8 +2374,8 @@
       <data key="address">0x8d48b8d948726d4636aa15a9d6124422f461e153</data>
       <data key="name">Wasabi Mog Vault</data>
       <data key="symbol">wMog</data>
-      <data key="description">wMog (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">wMog (AuM: 0.279M USD)</data>
+      <data key="totalAumUsdMillion">0.279</data>
       <data key="eventCount">32</data>
     </node>
     <node id="0xaaeE1A9723aaDB7afA2810263653A34bA2C21C7a">
@@ -2392,8 +2392,8 @@
       <data key="address">0x096697720056886b905d0deb0f06affb8e4665e5</data>
       <data key="name">Sandclock Yield USDC</data>
       <data key="symbol">scUSDC</data>
-      <data key="description">scUSDC (AuM: 1.142M USD)</data>
-      <data key="totalAumUsdMillion">1.142</data>
+      <data key="description">scUSDC (AuM: 1.141M USD)</data>
+      <data key="totalAumUsdMillion">1.141</data>
       <data key="eventCount">32</data>
     </node>
     <node id="0x04bb50329a1b7d943e7fd2368288b674c8180d5e">
@@ -2464,8 +2464,8 @@
       <data key="address">0xfe119e9c24ab79f1bdd5dd884b86ceea2ee75d92</data>
       <data key="name">Maple Cash USDC1</data>
       <data key="symbol">MPLcashUSDC</data>
-      <data key="description">MPLcashUSDC (AuM: 20.5M USD)</data>
-      <data key="totalAumUsdMillion">20.5</data>
+      <data key="description">MPLcashUSDC (AuM: 20.508M USD)</data>
+      <data key="totalAumUsdMillion">20.508</data>
       <data key="eventCount">28</data>
     </node>
     <node id="0x23ee3d14f09946a084350cc6a7153fc6eb918817">
@@ -2473,8 +2473,8 @@
       <data key="address">0x23ee3d14f09946a084350cc6a7153fc6eb918817</data>
       <data key="name">Compound V3 WETH Lender</data>
       <data key="symbol">ysWETH</data>
-      <data key="description">ysWETH (AuM: 1.539M USD)</data>
-      <data key="totalAumUsdMillion">1.539</data>
+      <data key="description">ysWETH (AuM: 1.583M USD)</data>
+      <data key="totalAumUsdMillion">1.583</data>
       <data key="eventCount">28</data>
     </node>
     <node id="0xbeef02e5e13584ab96848af90261f0c8ee04722a">
@@ -2482,8 +2482,8 @@
       <data key="address">0xbeef02e5e13584ab96848af90261f0c8ee04722a</data>
       <data key="name">Steakhouse PYUSD</data>
       <data key="symbol">steakPYUSD</data>
-      <data key="description">steakPYUSD (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">steakPYUSD (AuM: 12.145M USD)</data>
+      <data key="totalAumUsdMillion">12.145</data>
       <data key="eventCount">28</data>
     </node>
     <node id="0x48302ba7bcdf2bd59d20f8893c0f11b431a3be24">
@@ -2527,8 +2527,8 @@
       <data key="address">0xac37729b76db6438ce62042ae1270ee574ca7571</data>
       <data key="name">WETH-2 yVault</data>
       <data key="symbol">yvWETH-2</data>
-      <data key="description">yvWETH-2 (AuM: 1.415M USD)</data>
-      <data key="totalAumUsdMillion">1.415</data>
+      <data key="description">yvWETH-2 (AuM: 1.455M USD)</data>
+      <data key="totalAumUsdMillion">1.455</data>
       <data key="eventCount">26</data>
     </node>
     <node id="0xdd1fe5ad401d4777ce89959b7fa587e569bf125d">
@@ -2554,8 +2554,8 @@
       <data key="address">0x97da68b0531350c2d7b1e8309f2f3f7889983cbd</data>
       <data key="name">WEN SVLT Stake Vault</data>
       <data key="symbol">stvltwenSVLT</data>
-      <data key="description">stvltwenSVLT (AuM: 0.018M USD)</data>
-      <data key="totalAumUsdMillion">0.018</data>
+      <data key="description">stvltwenSVLT (AuM: 0.022M USD)</data>
+      <data key="totalAumUsdMillion">0.022</data>
       <data key="eventCount">24</data>
     </node>
     <node id="0xc687141c18f20f7ba405e45328825579fddd3195">
@@ -2563,8 +2563,8 @@
       <data key="address">0xc687141c18f20f7ba405e45328825579fddd3195</data>
       <data key="name">Curve Vault for crvUSD</data>
       <data key="symbol">cvcrvUSD</data>
-      <data key="description">cvcrvUSD (AuM: 1.943M USD)</data>
-      <data key="totalAumUsdMillion">1.943</data>
+      <data key="description">cvcrvUSD (AuM: 2.333M USD)</data>
+      <data key="totalAumUsdMillion">2.333</data>
       <data key="eventCount">24</data>
     </node>
     <node id="0x6ea41486a8f21eed7b20afdb681b90a5b6c6d029">
@@ -2617,8 +2617,8 @@
       <data key="address">0x4f460bb11cf958606c69a963b4a17f9daeeea8b6</data>
       <data key="name">f(x) Protocol Morpho USDC</data>
       <data key="symbol">fxUSDC</data>
-      <data key="description">fxUSDC (AuM: 0.631M USD)</data>
-      <data key="totalAumUsdMillion">0.631</data>
+      <data key="description">fxUSDC (AuM: 0.637M USD)</data>
+      <data key="totalAumUsdMillion">0.637</data>
       <data key="eventCount">22</data>
     </node>
     <node id="0xf1617882a71467534d14eee865922de1395c9e89">
@@ -2644,8 +2644,8 @@
       <data key="address">0x3eba2358544fd71d62141dda9d23839603b6d7d0</data>
       <data key="name">Tether USD/NUKEM Staked</data>
       <data key="symbol">sUSDTNUKEM</data>
-      <data key="description">sUSDTNUKEM (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">sUSDTNUKEM (AuM: 0.001M USD)</data>
+      <data key="totalAumUsdMillion">0.001</data>
       <data key="eventCount">21</data>
     </node>
     <node id="0xe2fdf0526629d85b719dcbc6efe833b1b5b3cb36">
@@ -2653,8 +2653,8 @@
       <data key="address">0xe2fdf0526629d85b719dcbc6efe833b1b5b3cb36</data>
       <data key="name">Kelp aggregator</data>
       <data key="symbol">KELP-agg</data>
-      <data key="description">KELP-agg (AuM: 0.335M USD)</data>
-      <data key="totalAumUsdMillion">0.335</data>
+      <data key="description">KELP-agg (AuM: 0.344M USD)</data>
+      <data key="totalAumUsdMillion">0.344</data>
       <data key="eventCount">20</data>
     </node>
     <node id="0xebfa750279defa89b8d99bdd145a016f6292757b">
@@ -2707,8 +2707,8 @@
       <data key="address">0x4e39ceae6e771605ddd7d1121f3320f7a2319318</data>
       <data key="name">Arch Vault WBTC 1</data>
       <data key="symbol">avWBTC-1</data>
-      <data key="description">avWBTC-1 (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">avWBTC-1 (AuM: 0.264M USD)</data>
+      <data key="totalAumUsdMillion">0.264</data>
       <data key="eventCount">19</data>
     </node>
     <node id="0x3daaadae6bbcc47c4fdf6a72bf8ee5688362fe66">
@@ -2734,8 +2734,8 @@
       <data key="address">0xfc287513e2dd58fbf952eb0ed05d511591a6215b</data>
       <data key="name">sBlur</data>
       <data key="symbol">sbWETH</data>
-      <data key="description">sbWETH (AuM: 0.373M USD)</data>
-      <data key="totalAumUsdMillion">0.373</data>
+      <data key="description">sbWETH (AuM: 0.384M USD)</data>
+      <data key="totalAumUsdMillion">0.384</data>
       <data key="eventCount">19</data>
     </node>
     <node id="0x7578f31cc44fdf2f123a6f84c42f702f9c990091">
@@ -2770,8 +2770,8 @@
       <data key="address">0x6311ff24fb15310ed3d2180d3d0507a21a8e5227</data>
       <data key="name">Sturdy crvUSD/yean curve USDC-crvUSD LP silo</data>
       <data key="symbol">yscrvUSD</data>
-      <data key="description">yscrvUSD (AuM: 0.67M USD)</data>
-      <data key="totalAumUsdMillion">0.67</data>
+      <data key="description">yscrvUSD (AuM: 0.669M USD)</data>
+      <data key="totalAumUsdMillion">0.669</data>
       <data key="eventCount">18</data>
     </node>
     <node id="0x26fe402a57d52c8a323bb6e09f06489c8216ac88">
@@ -2806,8 +2806,8 @@
       <data key="address">0x5ef17ee66a64fd5b394362d98f51ba155aece9ce</data>
       <data key="name"></data>
       <data key="symbol"></data>
-      <data key="description"> (AuM: 0.007M USD)</data>
-      <data key="totalAumUsdMillion">0.007</data>
+      <data key="description"> (AuM: 0.008M USD)</data>
+      <data key="totalAumUsdMillion">0.008</data>
       <data key="eventCount">18</data>
     </node>
     <node id="0x288528ed85ebebea91e2dc94654937644c58f5f7">
@@ -2815,8 +2815,8 @@
       <data key="address">0x288528ed85ebebea91e2dc94654937644c58f5f7</data>
       <data key="name">X Ape</data>
       <data key="symbol">xAPE</data>
-      <data key="description">xAPE (AuM: 0.023M USD)</data>
-      <data key="totalAumUsdMillion">0.023</data>
+      <data key="description">xAPE (AuM: 0.024M USD)</data>
+      <data key="totalAumUsdMillion">0.024</data>
       <data key="eventCount">18</data>
     </node>
     <node id="0x1196b60c9cefbf02c9a3960883213f47257becdb">
@@ -2851,8 +2851,8 @@
       <data key="address">0x06c03069de266f58d10a0724a4f65c3d4fefff4d</data>
       <data key="name">Spectra ERC4626 Wrapper: Amphor Restaked ETH</data>
       <data key="symbol">sw-amphrETH</data>
-      <data key="description">sw-amphrETH (AuM: 0.405M USD)</data>
-      <data key="totalAumUsdMillion">0.405</data>
+      <data key="description">sw-amphrETH (AuM: 0.417M USD)</data>
+      <data key="totalAumUsdMillion">0.417</data>
       <data key="eventCount">16</data>
     </node>
     <node id="0xf35b31b941d94b249eaded041db1b05b7097feb6">
@@ -2932,8 +2932,8 @@
       <data key="address">0x91603c7fb539f2da2da93ba6bec696a47e46bba2</data>
       <data key="name">Yearn-Ajna Pool wstETH/WETH Vault</data>
       <data key="symbol">yv-ajna-wsteth-weth</data>
-      <data key="description">yv-ajna-wsteth-weth (AuM: 0.644M USD)</data>
-      <data key="totalAumUsdMillion">0.644</data>
+      <data key="description">yv-ajna-wsteth-weth (AuM: 0.662M USD)</data>
+      <data key="totalAumUsdMillion">0.662</data>
       <data key="eventCount">16</data>
     </node>
     <node id="0x90b28aa7df2efaaad4582afaf4d2a1c61519a245">
@@ -2977,8 +2977,8 @@
       <data key="address">0xcdc51f2b0e5f0906f2fd5f557de49d99c34df54e</data>
       <data key="name">Amphor Yield Aggregator (WETH)</data>
       <data key="symbol">amprETH</data>
-      <data key="description">amprETH (AuM: 8.648M USD)</data>
-      <data key="totalAumUsdMillion">8.648</data>
+      <data key="description">amprETH (AuM: 9.38M USD)</data>
+      <data key="totalAumUsdMillion">9.38</data>
       <data key="eventCount">15</data>
     </node>
     <node id="0xff8b9980fda386cafaafab472963c4cb5fb8c412">
@@ -3085,8 +3085,8 @@
       <data key="address">0x221042c39efffcff8fad051032fef583019f165f</data>
       <data key="name">Ebisu Point Farm</data>
       <data key="symbol">ebPointFarm</data>
-      <data key="description">ebPointFarm (AuM: 0.028M USD)</data>
-      <data key="totalAumUsdMillion">0.028</data>
+      <data key="description">ebPointFarm (AuM: 0.029M USD)</data>
+      <data key="totalAumUsdMillion">0.029</data>
       <data key="eventCount">13</data>
     </node>
     <node id="0x78bb3aec3d855431bd9289fd98da13f9ebb7ef15">
@@ -3094,8 +3094,8 @@
       <data key="address">0x78bb3aec3d855431bd9289fd98da13f9ebb7ef15</data>
       <data key="name">Fraxlend Interest Bearing FRAX (Staked Frax Ether) - 16</data>
       <data key="symbol">fFRAX(sfrxETH)-16</data>
-      <data key="description">fFRAX(sfrxETH)-16 (AuM: 69.406M USD)</data>
-      <data key="totalAumUsdMillion">69.406</data>
+      <data key="description">fFRAX(sfrxETH)-16 (AuM: 69.431M USD)</data>
+      <data key="totalAumUsdMillion">69.431</data>
       <data key="eventCount">13</data>
     </node>
     <node id="0x4d2f44b0369f3c20c3d670d2c26b048985598450">
@@ -3103,8 +3103,8 @@
       <data key="address">0x4d2f44b0369f3c20c3d670d2c26b048985598450</data>
       <data key="name">Curve Vault for CRV</data>
       <data key="symbol">cvCRV</data>
-      <data key="description">cvCRV (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">cvCRV (AuM: 0.046M USD)</data>
+      <data key="totalAumUsdMillion">0.046</data>
       <data key="eventCount">13</data>
     </node>
     <node id="0xD533a949740bb3306d119CC777fa900bA034cd52">
@@ -3184,8 +3184,8 @@
       <data key="address">0x288991c055f94e9a0dcf0ad08ee3496e96e68142</data>
       <data key="name">stETH accumulator</data>
       <data key="symbol">ysWETH</data>
-      <data key="description">ysWETH (AuM: 0.243M USD)</data>
-      <data key="totalAumUsdMillion">0.243</data>
+      <data key="description">ysWETH (AuM: 0.25M USD)</data>
+      <data key="totalAumUsdMillion">0.25</data>
       <data key="eventCount">12</data>
     </node>
     <node id="0x27ffa71dbb25a7c52a3da74c6eed8c94c9a43e0d">
@@ -3202,8 +3202,8 @@
       <data key="address">0xbeef094333aedd535c130958c204e84f681fd9fa</data>
       <data key="name">Steakhouse WBTC</data>
       <data key="symbol">steakWBTC</data>
-      <data key="description">steakWBTC (AuM: 0M USD)</data>
-      <data key="totalAumUsdMillion">0</data>
+      <data key="description">steakWBTC (AuM: 0.401M USD)</data>
+      <data key="totalAumUsdMillion">0.401</data>
       <data key="eventCount">12</data>
     </node>
     <node id="0x7633d0bbde67553c582bf241bf8cb22895610b94">
@@ -3364,8 +3364,8 @@
       <data key="address">0xe9d33286f0e37f517b1204aa6da085564414996d</data>
       <data key="name">AQRU Maple Pool USDC1</data>
       <data key="symbol">MPL-aqUSDC1</data>
-      <data key="description">MPL-aqUSDC1 (AuM: 22.865M USD)</data>
-      <data key="totalAumUsdMillion">22.865</data>
+      <data key="description">MPL-aqUSDC1 (AuM: 22.826M USD)</data>
+      <data key="totalAumUsdMillion">22.826</data>
       <data key="eventCount">11</data>
     </node>
     <node id="0x10b23f79e4a72807c3aef82077ca61eaa55e40d7">

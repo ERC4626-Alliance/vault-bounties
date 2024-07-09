@@ -83,11 +83,6 @@ async function processRecords(
       const totalAumUsdM = parseFloat(
         ((totalAssetsNaturalUnits * assetPrice) / 1000000).toFixed(3)
       );
-      // console.log(`Vault Address: ${record.contract_address}`);
-      // console.log(`Asset Address: ${vaultData.assetAddress}`);
-      // console.log(`Total AUM in USD (M): ${totalAumUsdM}`);
-      // console.log(`Total Assets (natural units): ${totalAssetsNaturalUnits}`);
-      // console.log(`Asset Price: ${assetPrice}`);
       vaultRecords.push({
         vault_address: record.contract_address,
         vault_symbol: vaultData.vaultSymbol,
@@ -120,21 +115,28 @@ function writeCsv(filePath: string, records: VaultRecord[]): void {
   writeFileSync(filePath, outputCsv);
 }
 
-async function main() {
+export async function s20_getVaultDataAll(
+  addressesFile: string,
+  vaultsFile: string,
+  pricesFile: string
+) {
   try {
-    const inputFilePath = "./src/data/in/addresses.csv";
-    const outputFilePath = "./src/data/process/vaults.csv";
-    const assetPricesFilePath = "./src/data/reference/asset-prices.csv";
+    const inputFilePath = addressesFile;
+    const outputFilePath = vaultsFile;
+    const assetPricesFilePath = pricesFile;
 
+    console.log("Reading CSV files...");
     const addressRecords = await readCsv(inputFilePath);
     const assetPrices = await readAssetPrices(assetPricesFilePath);
+    console.log("Done.");
+    console.log("Reading chain to get vault data...");
     const vaultRecords = await processRecords(addressRecords, assetPrices);
-
+    console.log("Done.");
+    console.log("Writing results...");
     writeCsv(outputFilePath, vaultRecords);
     console.log(`File written to ${outputFilePath}`);
   } catch (error) {
     console.error("Error in main processing:", error);
+    throw error;
   }
 }
-
-main();
