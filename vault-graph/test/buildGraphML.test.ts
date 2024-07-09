@@ -1,8 +1,8 @@
 import { expect } from "chai";
 import fs from "fs";
-import path from "path";
 import { s30_buildGraphML } from "../src/scripts/s30_buildGraphML";
 import dotenv from "dotenv";
+import "mocha";
 
 dotenv.config();
 
