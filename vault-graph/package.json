@@ -6,8 +6,9 @@
   "author": "Kevin Small <kevin_small@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "s10_getVaultDataAll": "yarn hardhat run src/scripts/s10_getVaultDataAll.ts",
-    "s20_buildGraphML": "yarn hardhat run src/scripts/s20_buildGraphML.ts"
+    "s10_getDuneQueryDataAll": "yarn hardhat run src/scripts/s10_getDuneQueryDataAll.ts",
+    "s20_getVaultDataAll": "yarn hardhat run src/scripts/s20_getVaultDataAll.ts",
+    "s30_buildGraphML": "yarn hardhat run src/scripts/s30_buildGraphML.ts"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
@@ -32,6 +33,7 @@
     "typescript": "^5.5.3"
   },
   "dependencies": {
+    "@duneanalytics/client-sdk": "^0.2.1",
     "@openzeppelin/contracts": "^5.0.2",
     "csv-parser": "^3.0.0",
     "csv-stringify": "^6.5.0",
