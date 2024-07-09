@@ -9,7 +9,7 @@ import {Address} from "@openzeppelin/contracts/utils/Address.sol";
 import {StorageSlot} from "@openzeppelin/contracts/utils/StorageSlot.sol";
 import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import {MathUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/math/MathUpgradeable.sol";
-import {PermissionedERC4626} from "@ensuro/vaults/contracts/PermissionedERC4626.sol";
+import {PermissionedERC4626} from "./PermissionedERC4626.sol";
 import {IInvestStrategy} from "@ensuro/vaults/contracts/interfaces/IInvestStrategy.sol";
 import {IExposeStorage} from "@ensuro/vaults/contracts/interfaces/IExposeStorage.sol";
 import {InvestStrategyClient} from "@ensuro/vaults/contracts/InvestStrategyClient.sol";

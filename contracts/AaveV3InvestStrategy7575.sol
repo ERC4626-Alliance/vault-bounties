@@ -6,8 +6,10 @@ import {IInvestStrategy} from "@ensuro/vaults/contracts/interfaces/IInvestStrate
 import {IERC7575} from "./interfaces/IERC7575.sol";
 import {IERC20} from "@openzeppelin/contracts/interfaces/IERC20.sol";
 import {IERC4626} from "@openzeppelin/contracts/interfaces/IERC4626.sol";
+import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
 import {IPool} from "@ensuro/vaults/contracts/dependencies/aave-v3/IPool.sol";
+import {MSV7575Share} from "./MSV7575Share.sol";
 
 /**
  * @title AaveV3InvestStrategy7575
@@ -17,9 +19,9 @@ import {IPool} from "@ensuro/vaults/contracts/dependencies/aave-v3/IPool.sol";
  * @author Ensuro
  */
 contract AaveV3InvestStrategy7575 is AaveV3InvestStrategy, IERC7575 {
-  IERC4626 internal immutable _msvVault;
+  MSV7575Share internal immutable _msvVault;
 
-  constructor(IERC20 asset_, IPool aave_, IERC4626 msvVault_) AaveV3InvestStrategy(asset_, aave_) {
+  constructor(IERC20 asset_, IPool aave_, MSV7575Share msvVault_) AaveV3InvestStrategy(asset_, aave_) {
     _msvVault = msvVault_;
   }
 
@@ -27,7 +29,7 @@ contract AaveV3InvestStrategy7575 is AaveV3InvestStrategy, IERC7575 {
    * @dev See {IERC7575-asset}.
    *      For this Strategy, the underlying asset is AAVE's aToken
    */
-  function asset() external view override returns (address assetTokenAddress) {
+  function asset() public view override returns (address assetTokenAddress) {
     return _reserveData().aTokenAddress;
   }
 
@@ -76,7 +78,7 @@ contract AaveV3InvestStrategy7575 is AaveV3InvestStrategy, IERC7575 {
   /**
    * @dev See {IERC7575-previewDeposit}.
    */
-  function previewDeposit(uint256 assets) external view override returns (uint256 shares) {
+  function previewDeposit(uint256 assets) public view override returns (uint256 shares) {
     return _msvVault.previewDeposit(assets);
   }
 
@@ -92,20 +94,24 @@ contract AaveV3InvestStrategy7575 is AaveV3InvestStrategy, IERC7575 {
    * NOTE: most implementations will require pre-approval of the Vault with the Vault’s underlying asset token.
    */
   function deposit(uint256 assets, address receiver) external override returns (uint256 shares) {
-    return 0; // TODO
+    require(assets <= maxDeposit(receiver), "ERC7575: deposit more than max");
+
+    shares = previewDeposit(assets);
+    _deposit(msg.sender, receiver, assets, shares);
+    return shares;
   }
 
   /**
    * @dev See {IERC7575-maxMint}.
    */
-  function maxMint(address receiver) external view override returns (uint256 maxShares) {
+  function maxMint(address receiver) public view override returns (uint256 maxShares) {
     return Math.min(convertToShares(AaveV3InvestStrategy.maxDeposit(receiver)), _msvVault.maxMint(receiver));
   }
 
   /**
    * @dev See {IERC7575-previewMint}.
    */
-  function previewMint(uint256 shares) external view override returns (uint256 assets) {
+  function previewMint(uint256 shares) public view override returns (uint256 assets) {
     return _msvVault.previewMint(shares);
   }
 
@@ -121,7 +127,11 @@ contract AaveV3InvestStrategy7575 is AaveV3InvestStrategy, IERC7575 {
    * NOTE: most implementations will require pre-approval of the Vault with the Vault’s underlying asset token.
    */
   function mint(uint256 shares, address receiver) external override returns (uint256 assets) {
-    return 0; // TODO
+    require(shares <= maxMint(receiver), "ERC7575: mint more than max");
+
+    assets = previewMint(shares);
+    _deposit(msg.sender, receiver, assets, shares);
+    return assets;
   }
 
   /**
@@ -139,7 +149,7 @@ contract AaveV3InvestStrategy7575 is AaveV3InvestStrategy, IERC7575 {
   /**
    * @dev See {IERC7575-previewWithdraw}.
    */
-  function previewWithdraw(uint256 assets) external view override returns (uint256 shares) {
+  function previewWithdraw(uint256 assets) public view override returns (uint256 shares) {
     return _msvVault.previewWithdraw(assets);
   }
 
@@ -156,20 +166,25 @@ contract AaveV3InvestStrategy7575 is AaveV3InvestStrategy, IERC7575 {
    * Those methods should be performed separately.
    */
   function withdraw(uint256 assets, address receiver, address owner) external override returns (uint256 shares) {
-    return 0; // TODO
+    require(assets <= maxWithdraw(owner), "ERC7575: withdraw more than max");
+
+    shares = previewWithdraw(assets);
+    _withdraw(msg.sender, receiver, owner, assets, shares);
+
+    return shares;
   }
 
   /**
    * @dev See {IERC7575-maxRedeem}.
    */
-  function maxRedeem(address owner) external view override returns (uint256 maxShares) {
+  function maxRedeem(address owner) public view override returns (uint256 maxShares) {
     return Math.min(convertToShares(AaveV3InvestStrategy.maxWithdraw(owner)), _msvVault.maxRedeem(owner));
   }
 
   /**
    * @dev See {IERC7575-previewRedeem}.
    */
-  function previewRedeem(uint256 shares) external view override returns (uint256 assets) {
+  function previewRedeem(uint256 shares) public view override returns (uint256 assets) {
     return _msvVault.previewRedeem(shares);
   }
 
@@ -186,7 +201,31 @@ contract AaveV3InvestStrategy7575 is AaveV3InvestStrategy, IERC7575 {
    * Those methods should be performed separately.
    */
   function redeem(uint256 shares, address receiver, address owner) external override returns (uint256 assets) {
-    return 0; // TODO
+    require(shares <= maxRedeem(owner), "ERC7575: redeem more than max");
+
+    assets = previewRedeem(shares);
+    _withdraw(msg.sender, receiver, owner, assets, shares);
+
+    return assets;
+  }
+
+  /**
+   * @dev Deposit/mint common workflow.
+   */
+  function _deposit(address caller, address receiver, uint256 assets, uint256 shares) internal virtual {
+    SafeERC20.safeTransferFrom(IERC20(asset()), caller, address(this), assets);
+    _msvVault.mintEntryPointShares(asset(), receiver, shares);
+    emit Deposit(caller, receiver, assets, shares);
+  }
+
+  /**
+   * @dev Withdraw/redeem common workflow.
+   */
+  function _withdraw(address caller, address receiver, address owner, uint256 assets, uint256 shares) internal virtual {
+    _msvVault.burnEntryPointShares(asset(), caller, owner, shares);
+    SafeERC20.safeTransfer(IERC20(asset()), receiver, assets);
+
+    emit Withdraw(caller, receiver, owner, assets, shares);
   }
 
   function supportsInterface(bytes4 interfaceId) external pure returns (bool) {

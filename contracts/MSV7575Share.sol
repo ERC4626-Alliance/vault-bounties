@@ -14,6 +14,7 @@ contract MSV7575Share is MultiStrategyERC4626, IERC7575Share {
 
   error InvalidLength();
   error DuplicatedAsset(address asset, uint256 strategyIndex);
+  error OnlyFromEntryPoint();
 
   /**
    * @dev Initializes the MSV7575Share
@@ -75,5 +76,18 @@ contract MSV7575Share is MultiStrategyERC4626, IERC7575Share {
     if (interfaceId == type(IERC4626).interfaceId) return true;
     if (interfaceId == type(IERC20).interfaceId) return true;
     return AccessControlUpgradeable.supportsInterface(interfaceId);
+  }
+
+  function mintEntryPointShares(address asset, address receiver, uint256 shares) external {
+    if (msg.sender != address(_entryPoints[asset])) revert OnlyFromEntryPoint();
+    _mint(receiver, shares);
+  }
+
+  function burnEntryPointShares(address asset, address caller, address owner, uint256 shares) external {
+    if (msg.sender != address(_entryPoints[asset])) revert OnlyFromEntryPoint();
+    if (caller != owner) {
+      _spendAllowance(owner, caller, shares);
+    }
+    _burn(owner, shares);
   }
 }
