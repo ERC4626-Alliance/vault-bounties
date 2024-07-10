@@ -32,7 +32,7 @@ But why do this? The idea is that graphs can reveal things about a dataset (in t
 
 # 3. Competition Requirements
 ## 3.1. Presentation
-Click this image to watch the presentation:
+Click the image below to watch the presentation. Be sure to set quality to 4K. The YouTube link is `https://www.youtube.com/watch?v=-EgRMKv5gBM`.
 
 [![Vault Graph Video](https://img.youtube.com/vi/-EgRMKv5gBM/0.jpg)](https://www.youtube.com/watch?v=-EgRMKv5gBM)
 
