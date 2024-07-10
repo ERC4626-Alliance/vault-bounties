@@ -4,7 +4,7 @@ pragma solidity ^0.8.13;
 import {Test, console} from "forge-std/Test.sol";
 import {VelodromeERC7575Share} from "./../src/VelodromeERC7575Share.sol";
 
-contract ERC7575Share_UnitTest is Test {
+contract VeloERC7575Share_UnitTest is Test {
     VelodromeERC7575Share public sut; // system-under-test
 
     address asset1 = makeAddr("asset1");

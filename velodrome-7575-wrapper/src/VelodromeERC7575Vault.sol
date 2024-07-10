@@ -69,25 +69,11 @@ contract VelodromeERC7575Vault is IERC7575 {
         }
     }
 
-    function deposit(uint256 assets_, address receiver_, uint256 minSharesOut_) public returns (uint256 shares) {}
-
     function deposit(uint256 assets_, address receiver_) public override returns (uint256 shares) {}
-
-    function mint(uint256 shares_, address receiver_, uint256 minSharesOut_) public returns (uint256 assets) {}
 
     function mint(uint256 shares_, address receiver_) public override returns (uint256 assets) {}
 
-    function withdraw(uint256 assets_, address receiver_, address owner_, uint256 minAmountOut_)
-        public
-        returns (uint256 shares)
-    {}
-
     function withdraw(uint256 assets_, address receiver_, address owner_) public override returns (uint256 shares) {}
-
-    function redeem(uint256 shares_, address receiver_, address owner_, uint256 minAmountOut_)
-        public
-        returns (uint256 assets)
-    {}
 
     function redeem(uint256 shares_, address receiver_, address owner) public override returns (uint256 assets) {}
 
