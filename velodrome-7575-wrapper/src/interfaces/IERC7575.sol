@@ -1,14 +1,13 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 pragma solidity >=0.8.0;
 
-
 /**
  * @dev Interface of the ERC165 standard, as defined in the
  * https://eips.ethereum.org/EIPS/eip-165[EIP].
  *
  * Implementers can declare support of contract interfaces, which can then be
  * queried by others.
- * 
+ *
  * @author Centrifuge https://github.com/centrifuge/liquidity-pools/blob/main/src/interfaces/IERC7575.sol
  */
 interface IERC165 {
