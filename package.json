@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@ensuro/core": "^2.8.0-beta1",
-    "@ensuro/swaplibrary": "^0.2.0",
+    "@ensuro/swaplibrary": "^0.2.1",
     "@ensuro/vaults": "^0.2.0",
     "@openzeppelin/contracts": "~4.9.2",
     "@openzeppelin/contracts-upgradeable": "~4.9.2",

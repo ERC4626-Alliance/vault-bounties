@@ -17,50 +17,19 @@ contract MSV7575Share is MultiStrategyERC4626, IERC7575Share {
   error OnlyFromEntryPoint();
 
   /**
-   * @dev Initializes the MSV7575Share
-   *
-   * @param name_ Name of the ERC20/ERC4626 token
-   * @param symbol_ Symbol of the ERC20/ERC4626 token
-   * @param admin_ User that will receive the DEFAULT_ADMIN_ROLE and later can assign other permissions.
-   * @param asset_ The asset() of the ERC4626
-   * @param strategies_ The IInvestStrategys that will be used to manage the funds received.
-   * @param initStrategyDatas Initialization data that will be sent to the strategies
-   * @param depositQueue_ The order in which the funds will be deposited in the strategies
-   * @param withdrawQueue_ The order in which the funds will be withdrawn from the strategies
-   * @param is7575EntryPoint_ Array of the same size of strategies_ that indicates wether a specific strategy is
-   *                          a 7575 entry point
+   * @dev Enables a strategy as entry point.
+   * @param strategyIndex The index of the strategy (previously plugged)
+   * @param isEntryPoint If true, the strategy will be enabled as entryPoint for the strategy.asset(), if false,
+   *                     the entryPoint for the asset will be disabled
    */
-  function initialize(
-    string memory name_,
-    string memory symbol_,
-    address admin_,
-    IERC20Upgradeable asset_,
-    IInvestStrategy[] memory strategies_,
-    bytes[] memory initStrategyDatas,
-    uint8[] memory depositQueue_,
-    uint8[] memory withdrawQueue_,
-    bool[] memory is7575EntryPoint_
-  ) public virtual initializer {
-    __MultiStrategyERC4626_init(
-      name_,
-      symbol_,
-      admin_,
-      asset_,
-      strategies_,
-      initStrategyDatas,
-      depositQueue_,
-      withdrawQueue_
-    );
-    if (is7575EntryPoint_.length != strategies_.length) revert InvalidLength();
-    for (uint256 i; i < is7575EntryPoint_.length; i++) {
-      if (!is7575EntryPoint_[i]) continue;
-      IERC7575 entryPoint = IERC7575(address(strategies_[i]));
-      address epAsset = entryPoint.asset();
-      if (address(_entryPoints[epAsset]) != address(0)) revert DuplicatedAsset(epAsset, i);
-      _entryPoints[epAsset] = entryPoint;
-      emit VaultUpdate(epAsset, address(strategies_[i]));
-    }
+  function setAs7575EntryPoint(uint256 strategyIndex, bool isEntryPoint) external onlyRole(STRATEGY_ADMIN_ROLE) {
+    IERC7575 entryPoint = IERC7575(address(_strategies[strategyIndex]));
+    address epAsset = entryPoint.asset();
+    _entryPoints[epAsset] = isEntryPoint ? entryPoint : IERC7575(address(0));
+    emit VaultUpdate(epAsset, address(_entryPoints[epAsset]));
   }
+
+  // TO DO: hook into replaceStrategy or removeStrategy methods and check if it's changing an enabled entryPoint
 
   /**
    * @dev See {IERC7575Share-vault}.
