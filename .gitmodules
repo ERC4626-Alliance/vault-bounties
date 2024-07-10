@@ -1,0 +1,3 @@
+[submodule "velodrome-7575-wrapper/lib/forge-std"]
+	path = velodrome-7575-wrapper/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
