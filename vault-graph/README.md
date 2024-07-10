@@ -21,7 +21,7 @@
   - [6.2. Telegram](#62-telegram)
 
 # 1. Project: Vault Graph
-For the Tokenized Vault Competition @ ETHCC. The unique submission name is `Vault Graph`. The project was started July 9th [see full commit history](https://github.com/KevinSmall/vault-bounties/commits/main/).
+For the Tokenized Vault Competition @ ETHCC. The unique submission name is `Vault Graph`. The project was started July 6th [see full commit history](https://github.com/KevinSmall/vault-bounties/commits/main/).
 
 # 2. Summary
 Vault meta-data can be represented as a graph with `vault assets` and `vaults` as graph **nodes**. Graph **edges** connect these nodes and show which vaults use which assets. 
