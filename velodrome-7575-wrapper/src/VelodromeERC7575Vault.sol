@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-pragma solidity ^0.8.23;
+pragma solidity >=0.8.0;
 
 import {ERC20} from "solmate/tokens/ERC20.sol";
 import {SafeTransferLib} from "solmate/utils/SafeTransferLib.sol";
@@ -21,11 +21,9 @@ contract VelodromeERC7575Vault is IERC7575 {
 
     address public immutable manager;
 
-    /// NOTE: Hardcoded workaround to ensure execution within changing pair reserves - 0.4% (4000/1000000)
-    uint256 public fee = 4000;
     uint256 public immutable slippage = 5000; // 5%
 
-    IRouter public immutable router;
+    IRouter public immutable router = IRouter(0xa062aE8A9c5e11aaA026fc2670B0D65cCc8B2858);
     IPool public immutable pool;
 
     ERC20 public token0;
@@ -50,14 +48,7 @@ contract VelodromeERC7575Vault is IERC7575 {
     /// @param _pool Address of the VElodrome pool contract
     /// @param _isStable Flag to specifiy if the vault operates on stable or volatile pool
     /// @param _share Address of the share token
-    constructor(
-        address _asset,
-        string memory _name,
-        string memory _symbol,
-        IPool _pool,
-        bool _isStable,
-        ERC20 _share
-    ) {
+    constructor(address _asset, string memory _name, string memory _symbol, IPool _pool, bool _isStable, ERC20 _share) {
         manager = msg.sender;
         asset = _asset;
         isStable = _isStable;
