@@ -6,7 +6,7 @@ import {IERC7575Share} from "./interfaces/IERC7575.sol";
 
 contract VelodromeERC7575Share is ERC20, IERC7575Share {
     mapping (address asset => address) public vault; 
-    mapping (address vault => bool) private isVault;
+    mapping (address vault => bool) public isVault;
     address public immutable factory;
 
     constructor(string memory name, string memory symbol) ERC20(name, symbol, 18) {
