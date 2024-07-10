@@ -98,6 +98,8 @@ async function setUp() {
   await vault.connect(admin).addStrategy(aaveStrategy, ethers.toUtf8Bytes(""));
   await vault.connect(admin).setAs7575EntryPoint(1, true);
 
+  const aUSDCv3 = await ethers.getContractAt("IERC20", ADDRESSES.aUSDCv3);
+
   const COMPPrice = await ethers.getContractAt(ChainlinkABI, ADDRESSES.COMP_CHAINLINK);
 
   return {
@@ -112,6 +114,7 @@ async function setUp() {
     swapLibrary,
     CompoundV3InvestStrategy,
     AaveV3InvestStrategy7575,
+    aUSDCv3,
     MSV7575Share,
     aaveStrategy,
     compoundStrategy,
@@ -120,17 +123,12 @@ async function setUp() {
   };
 }
 
-const CompoundV3StrategyMethods = {
-  harvestRewards: 0,
-  setSwapConfig: 1,
-};
-
 describe("MSV7575 Integration fork tests", function () {
   before(async () => {
     await setupChain(TEST_BLOCK);
   });
 
-  it("Can perform a basic smoke test", async () => {
+  it("Can perform a basic smoke test (doesn't use endpoints)", async () => {
     const { vault, currency, lp, lp2, admin, aaveStrategy, compoundStrategy } = await helpers.loadFixture(setUp);
     expect(await vault.name()).to.equal(NAME);
     await vault.connect(lp).deposit(_A(5000), lp);
@@ -158,5 +156,75 @@ describe("MSV7575 Integration fork tests", function () {
 
     expect(await currency.balanceOf(lp)).to.closeTo(_A(INITIAL) + _A("22.004665"), CENT);
     expect(await currency.balanceOf(lp2)).to.closeTo(_A(INITIAL) + _A("30.671779"), CENT);
+  });
+
+  it("Can perform a basic smoke test - Using AAVEv3 7575 endpoint", async () => {
+    const { vault, lp, lp2, admin, aaveStrategy, compoundStrategy, aUSDCv3 } =
+      await helpers.loadFixture(setUp);
+    expect(await vault.name()).to.equal(NAME);
+    await vault.connect(lp).deposit(_A(5000), lp);
+    await vault.connect(lp2).deposit(_A(7000), lp2);
+
+    expect(await vault.totalAssets()).to.be.closeTo(_A(12000), CENT);
+
+    // Move 6.5K from Compound to AAVEv3
+    await vault.connect(admin).rebalance(0, 1, _A(6500));
+
+    expect(await aaveStrategy["totalAssets(address)"](vault)).to.closeTo(_A(6500), CENT);
+    expect(await compoundStrategy.totalAssets(vault)).to.closeTo(_A(5500), CENT);
+
+    // Now test the 7575 views
+    expect(await aaveStrategy["totalAssets()"](vault)).to.closeTo(_A(6500), CENT);
+
+    // maxMint and maxDeposit use vault's validations and entry point limits
+    expect(await aaveStrategy.maxDeposit(lp)).to.equal(MaxUint256);
+    expect(await aaveStrategy.maxMint(lp)).to.gt(_W(9999999999999)); // A lot, not MaxUint256
+    expect(await aaveStrategy.maxDeposit(admin)).to.equal(0);
+    expect(await aaveStrategy.maxMint(admin)).to.equal(0);
+
+    expect(await aaveStrategy.maxWithdraw(lp)).to.closeTo(_A(5000), CENT);
+    expect(await aaveStrategy.maxRedeem(lp)).to.closeTo(_A(5000), CENT);
+    expect(await aaveStrategy.maxWithdraw(lp2)).to.closeTo(_A(6500), CENT);
+    expect(await aaveStrategy.maxRedeem(lp2)).to.closeTo(_A(6500), CENT);
+
+    expect(await vault.maxWithdraw(lp2)).to.closeTo(_A(7000), CENT);
+    expect(await vault.maxRedeem(lp2)).to.closeTo(_A(7000), CENT);
+
+    // I can withdraw and redeem directly from entry point
+    expect(await aaveStrategy.connect(lp).withdraw(_A(2000), lp, lp)).to.emit(aaveStrategy, "Withdraw");
+    expect(await aUSDCv3.balanceOf(lp)).to.equal(_A(2000));
+
+    // Redeem with owner=lp2 and receiver=lp
+    expect(await aaveStrategy.connect(lp2).redeem(_A(1000), lp, lp2)).to.emit(aaveStrategy, "Withdraw");
+    expect(await aUSDCv3.balanceOf(lp)).to.closeTo(_A(3000), CENT);
+
+    // Redeem with owner=lp, receiver=lp2, caller = lp2
+    await expect(aaveStrategy.connect(lp2).redeem(_A(1000), lp2, lp)).to.be.revertedWith(
+      "ERC20: insufficient allowance"
+    );
+    await vault.connect(lp).approve(lp2, _A(1001));
+    expect(await aaveStrategy.connect(lp2).redeem(_A(1000), lp2, lp)).to.emit(aaveStrategy, "Withdraw");
+    expect(await aUSDCv3.balanceOf(lp)).to.closeTo(_A(3000), CENT);
+    expect(await aUSDCv3.balanceOf(lp2)).to.closeTo(_A(1000), CENT);
+    expect(await vault.allowance(lp, lp2)).to.equal(_A(1));
+
+    await helpers.time.increase(MONTH);
+    expect(await aaveStrategy["totalAssets(address)"](vault)).to.closeTo(_A("2510.665764"), CENT);
+    expect(await compoundStrategy.totalAssets(vault)).to.closeTo(_A("5524.987726"), CENT);
+    expect(await vault.totalAssets()).to.be.closeTo(_A("8035.653490"), CENT);
+
+    // I can deposit and mint directly using aUSDCv3
+    await aUSDCv3.connect(lp).approve(aaveStrategy, MaxUint256);
+    await aUSDCv3.connect(lp2).approve(aaveStrategy, MaxUint256);
+    // Deposit directly with receiver of the shares = lp2
+    let expectedShares = (await vault.balanceOf(lp2)) + (await vault.convertToShares(_A(1500)));
+    expect(await aaveStrategy.connect(lp)["deposit(uint256, address)"](_A(1500), lp2)).to.emit(aaveStrategy, "Deposit");
+    expect(await vault.balanceOf(lp2)).to.closeTo(expectedShares, CENT);
+    // Mint directly
+    let expectedAssets = (await aUSDCv3.balanceOf(lp2)) - (await vault.convertToAssets(_A(1100)));
+    expect(await aaveStrategy.previewMint(_A(1100))).to.closeTo(await vault.convertToAssets(_A(1100)), CENT);
+    expect(await aaveStrategy.connect(lp2).mint(_A(1100), lp2)).to.emit(aaveStrategy, "Deposit");
+    expect(await aUSDCv3.balanceOf(lp2)).to.closeTo(expectedAssets, CENT);
+    expect(await vault.balanceOf(lp2)).to.closeTo(expectedShares + _A(1100), CENT);
   });
 });

@@ -6,6 +6,7 @@ import {IERC20Upgradeable} from "@openzeppelin/contracts-upgradeable/token/ERC20
 import {AccessControlUpgradeable} from "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol";
 import {IERC20} from "@openzeppelin/contracts/interfaces/IERC20.sol";
 import {IERC4626} from "@openzeppelin/contracts/interfaces/IERC4626.sol";
+import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import {IInvestStrategy} from "@ensuro/vaults/contracts/interfaces/IInvestStrategy.sol";
 import {IERC7575Share, IERC7575, IERC165} from "./interfaces/IERC7575.sol";
 
@@ -52,11 +53,19 @@ contract MSV7575Share is MultiStrategyERC4626, IERC7575Share {
     _mint(receiver, shares);
   }
 
-  function burnEntryPointShares(address asset, address caller, address owner, uint256 shares) external {
+  function burnEntryPointSharesAndTransfer(
+    address asset,
+    address caller,
+    address owner,
+    uint256 shares,
+    address receiver,
+    uint256 assets
+  ) external {
     if (msg.sender != address(_entryPoints[asset])) revert OnlyFromEntryPoint();
     if (caller != owner) {
       _spendAllowance(owner, caller, shares);
     }
     _burn(owner, shares);
+    SafeERC20.safeTransfer(IERC20(asset), receiver, assets);
   }
 }

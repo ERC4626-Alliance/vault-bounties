@@ -71,7 +71,7 @@ contract AaveV3InvestStrategy7575 is AaveV3InvestStrategy, IERC7575 {
       // Hack to overcome name collision issue, if receiver == _msvVault I assume it's an AaveV3InvestStrategy call
       return AaveV3InvestStrategy.maxDeposit(receiver);
     } else {
-      return Math.min(AaveV3InvestStrategy.maxDeposit(receiver), _msvVault.maxDeposit(receiver));
+      return Math.min(AaveV3InvestStrategy.maxDeposit(address(_msvVault)), _msvVault.maxDeposit(receiver));
     }
   }
 
@@ -105,7 +105,12 @@ contract AaveV3InvestStrategy7575 is AaveV3InvestStrategy, IERC7575 {
    * @dev See {IERC7575-maxMint}.
    */
   function maxMint(address receiver) public view override returns (uint256 maxShares) {
-    return Math.min(convertToShares(AaveV3InvestStrategy.maxDeposit(receiver)), _msvVault.maxMint(receiver));
+    uint256 maxDepositEP = AaveV3InvestStrategy.maxDeposit(address(_msvVault));
+    return
+      Math.min(
+        maxDepositEP == type(uint256).max ? type(uint256).max : convertToShares(maxDepositEP),
+        _msvVault.maxMint(receiver)
+      );
   }
 
   /**
@@ -142,7 +147,7 @@ contract AaveV3InvestStrategy7575 is AaveV3InvestStrategy, IERC7575 {
       // Hack to overcome name collision issue, if receiver == _msvVault I assume it's an AaveV3InvestStrategy call
       return AaveV3InvestStrategy.maxWithdraw(owner);
     } else {
-      return Math.min(AaveV3InvestStrategy.maxWithdraw(owner), _msvVault.maxWithdraw(owner));
+      return Math.min(AaveV3InvestStrategy.maxWithdraw(address(_msvVault)), _msvVault.maxWithdraw(owner));
     }
   }
 
@@ -178,7 +183,7 @@ contract AaveV3InvestStrategy7575 is AaveV3InvestStrategy, IERC7575 {
    * @dev See {IERC7575-maxRedeem}.
    */
   function maxRedeem(address owner) public view override returns (uint256 maxShares) {
-    return Math.min(convertToShares(AaveV3InvestStrategy.maxWithdraw(owner)), _msvVault.maxRedeem(owner));
+    return Math.min(convertToShares(AaveV3InvestStrategy.maxWithdraw(address(_msvVault))), _msvVault.maxRedeem(owner));
   }
 
   /**
@@ -222,8 +227,7 @@ contract AaveV3InvestStrategy7575 is AaveV3InvestStrategy, IERC7575 {
    * @dev Withdraw/redeem common workflow.
    */
   function _withdraw(address caller, address receiver, address owner, uint256 assets, uint256 shares) internal virtual {
-    _msvVault.burnEntryPointShares(asset(), caller, owner, shares);
-    SafeERC20.safeTransfer(IERC20(asset()), receiver, assets);
+    _msvVault.burnEntryPointSharesAndTransfer(asset(), caller, owner, shares, receiver, assets);
 
     emit Withdraw(caller, receiver, owner, assets, shares);
   }
