@@ -21,9 +21,12 @@ contract VelodromeERC7575Vault is IERC7575 {
 
     address public immutable manager;
 
-    uint256 public immutable slippage = 5000; // 5%
+    uint256 public slippage = 5000; // 5%
 
-    IRouter public immutable router = IRouter(0xa062aE8A9c5e11aaA026fc2670B0D65cCc8B2858);
+    IRouter public constant ROUTER = IRouter(0xa062aE8A9c5e11aaA026fc2670B0D65cCc8B2858);
+    address public constant FACTORY = 0xF1046053aa5682b4F9a81b5481394DA16BE5FF5a;
+    uint256 private constant MAX_BPS = 100000; // 100%
+
     IPool public immutable pool;
 
     ERC20 public token0;
@@ -67,6 +70,11 @@ contract VelodromeERC7575Vault is IERC7575 {
             token0 = ERC20(token0_);
             token1 = ERC20(asset);
         }
+
+        // Pre-approve
+        token0.approve(address(ROUTER), type(uint256).max);
+        token1.approve(address(ROUTER), type(uint256).max);
+        ERC20(address(pool)).approve(address(ROUTER), type(uint256).max);
     }
 
     function deposit(uint256 assets_, address receiver_) public override returns (uint256 shares) {}
@@ -91,20 +99,50 @@ contract VelodromeERC7575Vault is IERC7575 {
 
     function redeemAssets(uint256 shares_) public view returns (uint256 assets) {}
 
+    function setSlippage(uint256 _newSlippage) external {
+        require(msg.sender == manager, "UNAUTHORIZED");
+        slippage = _newSlippage;
+    }
+
     function share() external view returns (address) {
         return address(shareToken);
     }
 
     /// Helpers
 
-    /// @notice Remove liquidity from the underlying pool. Receive both token0 and token1 on the Vault address.
-    function _removeLiquidity(uint256, uint256 shares_) internal returns (uint256 assets0, uint256 assets1) {
-        //
+    /// @notice Add liquidity to the underlying pool. Send both token0 and token1 from the Vault address.
+    function _addLiquidity(uint256 _amount0, uint256 _amount1) internal returns (uint256 lpTokensReceived) {
+        (_amount0, _amount1,) =
+            ROUTER.quoteAddLiquidity(address(token0), address(token1), isStable, FACTORY, _amount0, _amount1);
+
+        (,, lpTokensReceived) = ROUTER.addLiquidity(
+            address(token0),
+            address(token1),
+            isStable,
+            _amount0,
+            _amount1,
+            _slippageAdjusted(_amount0),
+            _slippageAdjusted(_amount1),
+            address(this),
+            block.timestamp
+        );
     }
 
-    /// @notice Add liquidity to the underlying pool. Send both token0 and token1 from the Vault address.
-    function _addLiquidity(uint256 assets0_, uint256 assets1_) internal returns (uint256 li) {
-        //
+    /// @notice Remove liquidity from the underlying pool. Receive both token0 and token1 on the Vault address.
+    function _removeLiquidity(uint256 _shares) internal returns (uint256 token0Recvd, uint256 token1Recvd) {
+        (uint256 _amount0, uint256 _amount1) =
+            ROUTER.quoteRemoveLiquidity(address(token0), address(token1), isStable, FACTORY, _shares);
+
+        (token0Recvd, token1Recvd) = ROUTER.removeLiquidity(
+            address(token0),
+            address(token1),
+            isStable,
+            _shares,
+            _slippageAdjusted(_amount0),
+            _slippageAdjusted(_amount1),
+            address(this),
+            block.timestamp
+        );
     }
 
     function supportsInterface(bytes4 interfaceId) external pure override returns (bool) {
@@ -143,5 +181,9 @@ contract VelodromeERC7575Vault is IERC7575 {
 
     function maxRedeem(address owner) public view virtual returns (uint256) {
         return shareToken.balanceOf(owner);
+    }
+
+    function _slippageAdjusted(uint256 _amount) internal view returns (uint256) {
+        return (MAX_BPS - slippage) * _amount;
     }
 }
