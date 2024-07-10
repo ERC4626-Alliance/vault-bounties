@@ -47,24 +47,25 @@ contract VelodromeERC7575Vault is IERC7575 {
     /// @param _asset The address of the ERC20 token to be used as ASSET.
     /// @param _name The name of the ERC4626 token.
     /// @param _symbol The symbol of the ERC4626 token.
-    /// @param _router The address of the Velodrome router.
     /// @param _pool Address of the VElodrome pool contract
     /// @param _isStable Flag to specifiy if the vault operates on stable or volatile pool
+    /// @param _share Address of the share token
     constructor(
         address _asset,
         string memory _name,
         string memory _symbol,
-        IRouter _router,
         IPool _pool,
-        bool _isStable
+        bool _isStable,
+        ERC20 _share
     ) {
         manager = msg.sender;
         asset = _asset;
-        router = _router;
         isStable = _isStable;
         name = _name;
         symbol = _symbol;
         pool = _pool;
+
+        shareToken = _share;
         address token0_ = pool.token0();
         address token1_ = pool.token1();
 
