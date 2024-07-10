@@ -1,7 +1,6 @@
-import path from "path";
 import { s10_getDuneQueryDataAll } from "./s10_getDuneQueryDataAll";
-import { s30_buildGraphML } from "./s30_buildGraphML";
 import { s20_getVaultDataAll } from "./s20_getVaultDataAll";
+import { s30_buildGraphML } from "./s30_buildGraphML";
 
 const mode = process.env.MODE || "sample";
 if (mode !== "sample" && mode !== "full") {

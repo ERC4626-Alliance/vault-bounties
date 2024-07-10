@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
-import { Vault__factory } from "../../../typechain-types/factories/contracts/Vault__factory";
 import { Token__factory } from "../../../typechain-types/factories/contracts/Token__factory";
+import { Vault__factory } from "../../../typechain-types/factories/contracts/Vault__factory";
 
 interface VaultData {
   vaultSymbol: string;

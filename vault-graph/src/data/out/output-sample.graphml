@@ -16,8 +16,8 @@
       <data key="address">0xd9a442856c234a39a81a089c06451ebaa4306a72</data>
       <data key="name">pufETH</data>
       <data key="symbol">pufETH</data>
-      <data key="description">pufETH (AuM: 1526.33M USD)</data>
-      <data key="totalAumUsdMillion">1526.33</data>
+      <data key="description">pufETH (AuM: 1526.876M USD)</data>
+      <data key="totalAumUsdMillion">1526.876</data>
       <data key="eventCount">66873</data>
     </node>
     <node id="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2">
@@ -34,8 +34,8 @@
       <data key="address">0xea1a6307d9b18f8d1cbf1c3dd6aad8416c06a221</data>
       <data key="name">Ether.fi-Liquid1</data>
       <data key="symbol">LQIDETHFIV1</data>
-      <data key="description">LQIDETHFIV1 (AuM: 445.921M USD)</data>
-      <data key="totalAumUsdMillion">445.921</data>
+      <data key="description">LQIDETHFIV1 (AuM: 440.873M USD)</data>
+      <data key="totalAumUsdMillion">440.873</data>
       <data key="eventCount">26633</data>
     </node>
     <edge source="0xd9a442856c234a39a81a089c06451ebaa4306a72" target="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"/>

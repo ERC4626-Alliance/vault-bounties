@@ -1,9 +1,9 @@
-import { config } from "dotenv";
-import { createReadStream, writeFileSync } from "fs";
 import csvParser from "csv-parser";
-import { getVaultData } from "./utils/getVaultData";
 import { stringify } from "csv-stringify/sync";
+import { config } from "dotenv";
 import { ethers } from "ethers";
+import { createReadStream, writeFileSync } from "fs";
+import { getVaultData } from "./utils/getVaultData";
 config();
 
 interface AddressRecord {
