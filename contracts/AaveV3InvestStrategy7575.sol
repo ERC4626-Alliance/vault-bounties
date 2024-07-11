@@ -55,8 +55,8 @@ contract AaveV3InvestStrategy7575 is AaveV3InvestStrategy, MSV7575EntryPoint {
    * @dev See {IERC7575-maxWithdraw}.
    */
   function maxWithdraw(
-    address receiver
+    address owner
   ) public view virtual override(AaveV3InvestStrategy, MSV7575EntryPoint) returns (uint256 maxAssets) {
-    return MSV7575EntryPoint.maxWithdraw(receiver);
+    return MSV7575EntryPoint.maxWithdraw(owner);
   }
 }

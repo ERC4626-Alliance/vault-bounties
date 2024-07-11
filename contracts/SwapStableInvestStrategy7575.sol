@@ -27,6 +27,27 @@ contract SwapStableInvestStrategy7575 is SwapStableInvestStrategy, MSV7575EntryP
     return address(_investAsset);
   }
 
+  function _convertToMSVAssets(uint256 epAssets) internal view override returns (uint256 msvAssets) {
+    if (epAssets == type(uint256).max) return type(uint256).max;
+    return
+      Math.mulDiv(
+        Math.mulDiv(epAssets * _toWadFactor(_investAsset), _price, WAD),
+        WAD - _getSwapConfig(address(_msvVault)).maxSlippage,
+        WAD
+      ) / _toWadFactor(_asset);
+  }
+
+  function _convertFromMSVAssets(uint256 msvAssets) internal view override returns (uint256 epAssets) {
+    if (msvAssets == type(uint256).max) return type(uint256).max;
+    uint256 price = Math.mulDiv(WAD, WAD, _price); // 1/_price - Units: investAsset/asset
+    return
+      Math.mulDiv(
+        Math.mulDiv(msvAssets * _toWadFactor(_asset), price, WAD),
+        WAD - _getSwapConfig(address(_msvVault)).maxSlippage,
+        WAD
+      ) / _toWadFactor(_investAsset);
+  }
+
   /**
    * @dev See {IERC7575-totalAssets}.
    */

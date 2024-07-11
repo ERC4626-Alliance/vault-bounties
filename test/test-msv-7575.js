@@ -21,8 +21,9 @@ const ADDRESSES = {
   aUSDCv3: "0x98C23E9d8f34FEFb1B7BD6a91B7FF122F4e16F5c",
   COMP_CHAINLINK: "0xdbd020CAeF83eFd542f4De03e3cF0C28A4428bd5",
   USDe: "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
-  USDM: "0x59d9356e565ab3a36dd77763fc0d87feaf85508c",  // i = 0 in USDM-3crv
+  USDM: "0x59d9356e565ab3a36dd77763fc0d87feaf85508c", // i = 0 in USDM-3crv
   CURVE_ROUTER: "0x16C6521Dff6baB339122a0FE25a9116693265353",
+  GAUNLET_METAMORPHO: "0x8eB67A509616cd6A7c1B3c8C21D48FF57df3d458", // a 4626 vault denominated in USDC
 };
 
 const ChainlinkABI = [
@@ -135,9 +136,7 @@ function usdm2usdcSwapConfig() {
         "0xc83b79c07ece44b8b99ffa0e235c00add9124f9e", // USDM-3crv
         ADDRESSES.USDM,
       ],
-      swapParams: [
-        [0, 1, 1, 1, 2],
-      ],
+      swapParams: [[0, 1, 1, 1, 2]],
       pools: ["0xc83b79c07ece44b8b99ffa0e235c00add9124f9e"],
     },
     {
@@ -146,9 +145,7 @@ function usdm2usdcSwapConfig() {
         "0xc83b79c07ece44b8b99ffa0e235c00add9124f9e", // USDM-3crv
         ADDRESSES.USDC,
       ],
-      swapParams: [
-        [0, 1, 1, 1, 2],
-      ],
+      swapParams: [[0, 1, 1, 1, 2]],
       pools: ["0xc83b79c07ece44b8b99ffa0e235c00add9124f9e"],
     },
   ]);
@@ -256,5 +253,47 @@ describe("MSV7575 Integration fork tests", function () {
     expect(await aaveStrategy.connect(lp2).mint(_A(1100), lp2)).to.emit(aaveStrategy, "Deposit");
     expect(await aUSDCv3.balanceOf(lp2)).to.closeTo(expectedAssets, CENT);
     expect(await vault.balanceOf(lp2)).to.closeTo(expectedShares + _A(1100), CENT);
+  });
+
+  it("Can invest in another 4646 using ERC4626InvestStrategy7575", async () => {
+    const { currency, vault, lp, lp2, admin, compoundStrategy } = await helpers.loadFixture(setUp);
+    const ERC4626InvestStrategy7575 = await ethers.getContractFactory("ERC4626InvestStrategy7575");
+    const metamorpho = await ethers.getContractAt("IERC4626", ADDRESSES.GAUNLET_METAMORPHO);
+    const morphoStrategy = await ERC4626InvestStrategy7575.deploy(metamorpho, vault);
+    await vault.connect(admin).addStrategy(morphoStrategy, ethers.toUtf8Bytes(""));
+    await vault.connect(admin).setAs7575EntryPoint(2, true);
+    expect(await vault.vault(metamorpho)).to.equal(morphoStrategy);
+
+    await vault.connect(lp).deposit(_A(5000), lp);
+
+    expect(await vault.totalAssets()).to.be.closeTo(_A(5000), CENT);
+
+    // Move 4.5K from Compound to morphoStrategy
+    await vault.connect(admin).rebalance(0, 2, _A(4500));
+
+    // totalAssets 7575 returns the number of metamorpho shares
+    expect(await morphoStrategy["totalAssets()"](vault)).to.equal(await metamorpho.balanceOf(vault));
+    expect(await morphoStrategy["totalAssets()"](vault)).to.closeTo(_W(4401), _W(1)); // Clearly different
+    expect(await compoundStrategy.totalAssets(vault)).to.closeTo(_A(500), CENT);
+    // totalAssets IInvestStrategy returns the amount in USDC
+    expect(await morphoStrategy["totalAssets(address)"](vault)).to.closeTo(_A(4500), CENT);
+
+    await currency.connect(lp2).approve(metamorpho, MaxUint256);
+    await metamorpho.connect(lp2).deposit(_A(3000), lp2);
+    const lp2Shares = await metamorpho.balanceOf(lp2);
+
+    await metamorpho.connect(lp2).approve(morphoStrategy, _W(500));
+
+    expect(await morphoStrategy.maxDeposit(lp2)).to.equal(await metamorpho.maxMint(vault));
+
+    expect(await morphoStrategy.connect(lp2)["deposit(uint256, address)"](_W(500), lp2)).to.emit(
+      morphoStrategy,
+      "Deposit"
+    );
+    expect(await metamorpho.balanceOf(lp2)).to.equal(lp2Shares - _W(500));
+
+    // Now test in metamorpho shares withdraw
+    expect(await morphoStrategy.connect(lp).withdraw(_W(100), lp, lp)).to.emit(morphoStrategy, "Withdraw");
+    expect(await metamorpho.balanceOf(lp)).to.equal(_W(100));
   });
 });
