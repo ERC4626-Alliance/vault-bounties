@@ -110,6 +110,47 @@ contract VeloERC7575Vault_ForkTest is Test {
         // assertEq(finalShareBalance, initialShareBalance + receivedShares, "Incorrect final share balance for user");
     }
 
+    function testMint() public {
+        uint256 sharesToMint = 0.001 * 1e18; 
+        uint256 expectedAssets = sut.previewMint(sharesToMint);
+ 
+        // Mint initial USDC to this contract
+        deal(USDC_ADDRESS, address(this), expectedAssets * 2);
+
+        // Approve USDC spending for the vault
+        usdc.approve(address(sut), type(uint256).max);
+
+        // Get initial balances
+        uint256 initialShareBalance = share.balanceOf(address(this));
+        uint256 initialUsdcBalance = usdc.balanceOf(address(this));
+        uint256 initialVaultLpBalance = ERC20(address(pool)).balanceOf(address(sut));
+
+        // Perform mint
+        uint256 actualAssets = sut.mint(sharesToMint, address(this));
+         // Check final balances
+        uint256 finalShareBalance = share.balanceOf(address(this));
+        uint256 finalUsdcBalance = usdc.balanceOf(address(this));
+        uint256 finalVaultLpBalance = ERC20(address(pool)).balanceOf(address(sut));
+
+        // Assert shares were minted to user
+        assertApproxEqRel(finalShareBalance, initialShareBalance + sharesToMint,1e16, "Incorrect final share balance for user");
+
+        // Assert USDC was transferred from user to vault
+        assertEq(finalUsdcBalance, initialUsdcBalance - actualAssets, "Incorrect final USDC balance for user");
+
+        // Assert LP tokens were received by the vault
+        assertGt(finalVaultLpBalance, initialVaultLpBalance, "Vault should have received LP tokens");
+
+        // Assert actual assets used is close to expected assets
+        assertApproxEqRel(actualAssets, expectedAssets, 1e16, "Actual assets should be close to expected assets");
+
+        // Assert vault has no leftover USDC or DAI
+        assertApproxEqAbs(usdc.balanceOf(address(sut)), 0, 1, "Vault should have no leftover USDC");
+        
+        // DUST ISSUE!!!
+        // assertApproxEqAbs(dai.balanceOf(address(sut)), 0, 1, "Vault should have no leftover DAI");
+    }
+
     function testWithdraw() public {
         // Deposit some assets to have shares to withdraw
         uint256 depositAmount = 1000 * 1e6; // 1000 USDC

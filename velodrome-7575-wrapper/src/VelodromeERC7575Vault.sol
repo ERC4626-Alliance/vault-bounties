@@ -96,7 +96,6 @@ contract VelodromeERC7575Vault is IERC7575 {
         emit Deposit(msg.sender, _reciever, _assets, receivedLpTokens);
     }
 
-    // Revisit buggy
     function mint(uint256 _shares, address _receiver) public override returns (uint256 assets) {
         assets = previewMint(_shares);
 
@@ -106,8 +105,9 @@ contract VelodromeERC7575Vault is IERC7575 {
 
         uint256 receivedLpTokens = _addLiquidity(a0, a1);
 
+
         /// NOTE: PreviewMint needs to output reasonable amount of shares
-        require(receivedLpTokens >= _shares, "INSUFFICENT_SHARES");
+        require(receivedLpTokens >= _slippageAdjusted(_shares), "INSUFFICENT_SHARES");
 
         IERC20MintableBurnable(address(shareToken)).mint(_receiver, receivedLpTokens);
 
@@ -167,25 +167,27 @@ contract VelodromeERC7575Vault is IERC7575 {
         return redeemAssets(_shares);
     }
 
-    // Revisit buggy
+    // Revisit - hacky
     function mintAssets(uint256 shares_) public view returns (uint256 assets) {
         (uint256 reserveA, uint256 reserveB,) = pool.getReserves();
         /// shares of pool contract
         uint256 lpSupply = IERC20MintableBurnable(address(pool)).totalSupply();
 
         /// amount of token0 to provide to receive poolLpAmount
-        uint256 assets0_ = (reserveA * shares_) / lpSupply;
-        uint256 amount0 = assets0_ + _slippageAdjusted(assets0_);
+        uint256 _amount0 = reserveA.mulDivUp(shares_,lpSupply);
 
         /// amount of token1 to provide to receive poolLpAmount
-        uint256 assets1_ = (reserveB * shares_) / lpSupply;
-        uint256 amount1 = assets1_ + _slippageAdjusted(assets1_);
+        uint256 _amount1 = reserveB.mulDivUp(shares_,lpSupply);
 
-        if (amount1 == 0 || amount0 == 0) return 0;
+        if (_amount1 == 0 || _amount0 == 0) return 0;
 
-        (reserveA, reserveB,) = pool.getReserves();
-        /// NOTE: Can be manipulated!
-        return amount0 + pool.getAmountOut(amount0, address(asset));
+        if (asset == address(token0)) {
+            assets = _amount0 + pool.getAmountOut(_amount1, address(token1));
+        } else {
+            assets = _amount1 + pool.getAmountOut(_amount0, address(token0));
+        }
+
+        assets += (assets * (isStable ? 5000 : 30000)) / MAX_BPS; //include fee
     }
 
     function redeemAssets(uint256 _shares) public view returns (uint256 assets) {
@@ -264,7 +266,6 @@ contract VelodromeERC7575Vault is IERC7575 {
     function _addLiquidity(uint256 _amount0, uint256 _amount1) internal returns (uint256 lpTokensReceived) {
         (_amount0, _amount1,) =
             ROUTER.quoteAddLiquidity(address(token0), address(token1), isStable, FACTORY, _amount0, _amount1);
-        // console.log("Quote",_amount0, _amount1);
         (,, lpTokensReceived) = ROUTER.addLiquidity(
             address(token0),
             address(token1),
