@@ -86,7 +86,8 @@ forge script ./scripts/CreateVault.s.sol --rpc-url <RPC_URL> --broadcast
 
 ## Flow diagrams:
 
-### Deposit Flow:
+<details> 
+<summary> <b>Deposit flow: </b> </summary>
 
 ```mermaid
 sequenceDiagram
@@ -114,6 +115,44 @@ sequenceDiagram
     Vault->>ShareToken: mint(receiver, shares)
     Vault-->>User: shares
 ```
+</details>
+
+
+
+<details> 
+<summary> <b>Withdrawal flow: </b> </summary>
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant Vault as VelodromeERC7575Vault
+    participant ShareToken
+    participant Router as Velodrome Router
+    participant Pool as Velodrome Pool
+    participant Asset
+
+    User->>Vault: withdraw(assets, receiver, owner)
+    Vault->>Vault: previewWithdraw(assets)
+    Vault->>Vault: _removeLiquidity(shares)
+    Vault->>Router: removeLiquidity()
+    Router->>Pool: burn(liquidity)
+    Pool-->>Router: token0, token1
+    Router-->>Vault: token0, token1
+    Vault->>ShareToken: burn(owner, shares)
+    alt asset is token0
+        Vault->>Vault: _swapFull(token1Amount)
+    else asset is token1
+        Vault->>Vault: _swapFull(token0Amount)
+    end
+    Vault->>Router: swapExactTokensForTokens()
+    Router->>Pool: swap()
+    Pool-->>Router: tokens
+    Router-->>Vault: swapped tokens
+    Vault->>Asset: transfer(receiver, assets)
+    Vault-->>User: assets
+```
+</details>
+
 
 ## Pain Points
 - No/very minimal reference implementation. 
