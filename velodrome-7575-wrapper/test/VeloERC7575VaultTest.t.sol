@@ -109,4 +109,22 @@ contract VeloERC7575Vault_ForkTest is Test {
         // Assert shares were minted to user
         // assertEq(finalShareBalance, initialShareBalance + receivedShares, "Incorrect final share balance for user");
     }
+
+    function testWithdraw() public {
+        // Deposit some assets to have shares to withdraw
+        uint256 depositAmount = 1000 * 1e6; // 1000 USDC
+        deal(USDC_ADDRESS, address(this), depositAmount);
+        usdc.approve(address(sut), type(uint256).max);
+        sut.deposit(depositAmount, address(this));
+
+        uint256 withdrawAmount = depositAmount / 2; // Withdraw half of the original deposit
+        uint256 initialShares = share.balanceOf(address(this));
+
+        uint256 sharesToWithdraw = sut.previewWithdraw(withdrawAmount);
+        uint256 actualShares = sut.withdraw(withdrawAmount, address(this), address(this));
+
+        // Check if correct number of shares were burned
+        assertEq(actualShares, sharesToWithdraw, "Incorrect number of shares withdrawn");
+        assertEq(share.balanceOf(address(this)), initialShares - sharesToWithdraw, "Incorrect final share balance");
+    }
 }

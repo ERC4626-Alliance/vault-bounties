@@ -4,13 +4,14 @@ pragma solidity >=0.8.0;
 import {ERC20} from "solmate/tokens/ERC20.sol";
 import {SafeTransferLib} from "solmate/utils/SafeTransferLib.sol";
 import {FixedPointMathLib} from "solmate/utils/FixedPointMathLib.sol";
-import {IERC20Mintable} from "./interfaces/IERC20Mintable.sol";
+import {IERC20MintableBurnable} from "./interfaces/IERC20MintableBurnable.sol";
 import {IPool} from "./interfaces/IPool.sol";
 import {IRouter} from "./interfaces/IRouter.sol";
 import {IERC7575} from "./interfaces/IERC7575.sol";
 import {console} from "forge-std/console.sol";
 
-/// @title VelodromeERC7575Vault
+/// @title VelodromeERC7575Vault Wrapper contract
+/// @dev Unaudited and will have bugs. Don't use in PRODUCTION
 contract VelodromeERC7575Vault is IERC7575 {
     using SafeTransferLib for ERC20;
     using FixedPointMathLib for uint256;
@@ -87,14 +88,15 @@ contract VelodromeERC7575Vault is IERC7575 {
         uint256 receivedLpTokens = _addLiquidity(_amount0, _amount1);
         require(receivedLpTokens >= shares, "NOT_ENOUGH_SHARES");
 
-        /// @dev we want to have 1:1 relation to UniV2Pair lp token
+        /// @dev track 1:1 shares
         shares = receivedLpTokens;
 
-        IERC20Mintable(address(shareToken)).mint(_reciever, receivedLpTokens);
+        IERC20MintableBurnable(address(shareToken)).mint(_reciever, receivedLpTokens);
 
         emit Deposit(msg.sender, _reciever, _assets, receivedLpTokens);
     }
 
+    // Revisit buggy
     function mint(uint256 _shares, address _receiver) public override returns (uint256 assets) {
         assets = previewMint(_shares);
 
@@ -107,17 +109,30 @@ contract VelodromeERC7575Vault is IERC7575 {
         /// NOTE: PreviewMint needs to output reasonable amount of shares
         require(receivedLpTokens >= _shares, "INSUFFICENT_SHARES");
 
-        IERC20Mintable(address(shareToken)).mint(_receiver, receivedLpTokens);
+        IERC20MintableBurnable(address(shareToken)).mint(_receiver, receivedLpTokens);
 
         emit Deposit(msg.sender, _receiver, assets, _shares);
     }
 
-    function withdraw(uint256 assets_, address receiver_, address owner_) public override returns (uint256 shares) {}
+    /// @notice Receive amount of `assets` of underlying token of this Vault
+    function withdraw(uint256 assets_, address receiver_, address owner_) public override returns (uint256 shares) {
+        shares = previewWithdraw(assets_);
+
+        (uint256 assets0, uint256 assets1) = _removeLiquidity(shares);
+
+        IERC20MintableBurnable(address(shareToken)).burn(owner_, shares);
+
+        uint256 amount = asset == address(token0) ? _swapFull(assets1) + assets0 : _swapFull(assets0) + assets1;
+
+        ERC20(asset).safeTransfer(receiver_, amount);
+
+        emit Withdraw(msg.sender, receiver_, owner_, amount, shares);
+    }
 
     function redeem(uint256 shares_, address receiver_, address owner) public override returns (uint256 assets) {}
 
     function totalAssets() public view override returns (uint256) {
-        return IERC20Mintable(address(pool)).balanceOf(address(this));
+        return IERC20MintableBurnable(address(pool)).balanceOf(address(this));
     }
 
     function previewDeposit(uint256 _assets) public view override returns (uint256 shares) {
@@ -130,14 +145,17 @@ contract VelodromeERC7575Vault is IERC7575 {
         assets = mintAssets(_shares);
     }
 
-    function previewWithdraw(uint256 assets_) public view override returns (uint256 shares) {}
+    function previewWithdraw(uint256 assets_) public view override returns (uint256 shares) {
+        return getSharesFromAssets(assets_);
+    }
 
     function previewRedeem(uint256 shares_) public view override returns (uint256 assets) {}
 
+    // Revisit buggy
     function mintAssets(uint256 shares_) public view returns (uint256 assets) {
         (uint256 reserveA, uint256 reserveB,) = pool.getReserves();
         /// shares of pool contract
-        uint256 lpSupply = IERC20Mintable(address(pool)).totalSupply();
+        uint256 lpSupply = IERC20MintableBurnable(address(pool)).totalSupply();
 
         /// amount of token0 to provide to receive poolLpAmount
         uint256 assets0_ = (reserveA * shares_) / lpSupply;
@@ -150,9 +168,8 @@ contract VelodromeERC7575Vault is IERC7575 {
         if (amount1 == 0 || amount0 == 0) return 0;
 
         (reserveA, reserveB,) = pool.getReserves();
-
         /// NOTE: Can be manipulated!
-        return amount0 + pool.getAmountOut(amount1, address(asset));
+        return amount0 + pool.getAmountOut(amount0, address(asset));
     }
 
     function redeemAssets(uint256 shares_) public view returns (uint256 assets) {}
@@ -170,7 +187,7 @@ contract VelodromeERC7575Vault is IERC7575 {
 
     // Swaps 50% of input token to other pool token.
     // Naive implementation, needs improvement. Will result in dust after addLiquidity()
-    // TODO: Revisit
+    // TODO: Revisit and split logic for stable and volatile pools?
     function _swapHalf(uint256 _amountA) internal returns (uint256 amountA, uint256 amountB) {
         address tokenIn;
         address tokenOut;
@@ -194,7 +211,7 @@ contract VelodromeERC7575Vault is IERC7575 {
     }
 
     // Swaps 100% of input token amount to other pool token.
-    function _swapFull(uint256 _amountA) internal {
+    function _swapFull(uint256 _amountA) internal returns (uint256) {
         address tokenIn;
         address tokenOut;
         if (address(token0) == asset) {
@@ -210,9 +227,11 @@ contract VelodromeERC7575Vault is IERC7575 {
         IRouter.Route memory route = IRouter.Route(tokenIn, tokenOut, isStable, FACTORY);
         IRouter.Route[] memory routes = new IRouter.Route[](1);
         routes[0] = route;
-        ROUTER.swapExactTokensForTokens(
+        uint256[] memory amounts = ROUTER.swapExactTokensForTokens(
             amountIn, _slippageAdjusted(amountOutMin), routes, address(this), block.timestamp
         );
+
+        return amounts[1];
     }
 
     /// @notice Add liquidity to the underlying pool. Send both token0 and token1 from the Vault address.

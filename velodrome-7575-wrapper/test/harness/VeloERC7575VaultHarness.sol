@@ -14,7 +14,7 @@ contract VeloERC7575VaultHarness is VelodromeERC7575Vault {
         return _swapHalf(_amountIn);
     }
 
-    function swapFullExposed(uint256 _amountIn) external {
+    function swapFullExposed(uint256 _amountIn) external returns (uint256) {
         return _swapFull(_amountIn);
     }
 }
