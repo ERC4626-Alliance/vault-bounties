@@ -1,14 +1,14 @@
-// SPDX-License-Identifier: Apache-2.0
+// SPDX-License-Identifier: MIT
 pragma solidity >=0.8.0;
 
 import {ERC20} from "solmate/tokens/ERC20.sol";
 import {SafeTransferLib} from "solmate/utils/SafeTransferLib.sol";
 import {FixedPointMathLib} from "solmate/utils/FixedPointMathLib.sol";
-
+import {IERC20Mintable} from "./interfaces/IERC20Mintable.sol";
 import {IPool} from "./interfaces/IPool.sol";
 import {IRouter} from "./interfaces/IRouter.sol";
-
 import {IERC7575} from "./interfaces/IERC7575.sol";
+import {console} from "forge-std/console.sol";
 
 /// @title VelodromeERC7575Vault
 contract VelodromeERC7575Vault is IERC7575 {
@@ -55,6 +55,7 @@ contract VelodromeERC7575Vault is IERC7575 {
         manager = msg.sender;
         asset = _asset;
         isStable = _isStable;
+
         name = _name;
         symbol = _symbol;
         pool = _pool;
@@ -77,25 +78,82 @@ contract VelodromeERC7575Vault is IERC7575 {
         ERC20(address(pool)).approve(address(ROUTER), type(uint256).max);
     }
 
-    function deposit(uint256 assets_, address receiver_) public override returns (uint256 shares) {}
+    function deposit(uint256 _assets, address _reciever) public override returns (uint256 shares) {
+        shares = previewDeposit(_assets);
+        /// @dev 100% of tokenX/Y is transferred to this contract
+        ERC20(asset).safeTransferFrom(msg.sender, address(this), _assets);
 
-    function mint(uint256 shares_, address receiver_) public override returns (uint256 assets) {}
+        (uint256 _amount0, uint256 _amount1) = _swapHalf(_assets);
+        uint256 receivedLpTokens = _addLiquidity(_amount0, _amount1);
+        require(receivedLpTokens >= shares, "NOT_ENOUGH_SHARES");
+
+        /// @dev we want to have 1:1 relation to UniV2Pair lp token
+        shares = receivedLpTokens;
+
+        IERC20Mintable(address(shareToken)).mint(_reciever, receivedLpTokens);
+
+        emit Deposit(msg.sender, _reciever, _assets, receivedLpTokens);
+    }
+
+    function mint(uint256 _shares, address _receiver) public override returns (uint256 assets) {
+        assets = previewMint(_shares);
+
+        ERC20(address(asset)).safeTransferFrom(msg.sender, address(this), assets);
+
+        (uint256 a0, uint256 a1) = _swapHalf(assets);
+
+        uint256 receivedLpTokens = _addLiquidity(a0, a1);
+
+        /// NOTE: PreviewMint needs to output reasonable amount of shares
+        require(receivedLpTokens >= _shares, "INSUFFICENT_SHARES");
+
+        IERC20Mintable(address(shareToken)).mint(_receiver, receivedLpTokens);
+
+        emit Deposit(msg.sender, _receiver, assets, _shares);
+    }
 
     function withdraw(uint256 assets_, address receiver_, address owner_) public override returns (uint256 shares) {}
 
     function redeem(uint256 shares_, address receiver_, address owner) public override returns (uint256 assets) {}
 
-    function totalAssets() public view override returns (uint256) {}
+    function totalAssets() public view override returns (uint256) {
+        return IERC20Mintable(address(pool)).balanceOf(address(this));
+    }
 
-    function previewDeposit(uint256 assets_) public view override returns (uint256 shares) {}
+    function previewDeposit(uint256 _assets) public view override returns (uint256 shares) {
+        return getSharesFromAssets(_assets);
+    }
 
-    function previewMint(uint256 shares_) public view override returns (uint256 assets) {}
+    /// @notice For this many shares/lp we need to pay at least this many assets
+    function previewMint(uint256 _shares) public view override returns (uint256 assets) {
+        /// NOTE: This method assumes that it covers liquidity requested for a block!
+        assets = mintAssets(_shares);
+    }
 
     function previewWithdraw(uint256 assets_) public view override returns (uint256 shares) {}
 
     function previewRedeem(uint256 shares_) public view override returns (uint256 assets) {}
 
-    function mintAssets(uint256 shares_) public view returns (uint256 assets) {}
+    function mintAssets(uint256 shares_) public view returns (uint256 assets) {
+        (uint256 reserveA, uint256 reserveB,) = pool.getReserves();
+        /// shares of pool contract
+        uint256 lpSupply = IERC20Mintable(address(pool)).totalSupply();
+
+        /// amount of token0 to provide to receive poolLpAmount
+        uint256 assets0_ = (reserveA * shares_) / lpSupply;
+        uint256 amount0 = assets0_ + _slippageAdjusted(assets0_);
+
+        /// amount of token1 to provide to receive poolLpAmount
+        uint256 assets1_ = (reserveB * shares_) / lpSupply;
+        uint256 amount1 = assets1_ + _slippageAdjusted(assets1_);
+
+        if (amount1 == 0 || amount0 == 0) return 0;
+
+        (reserveA, reserveB,) = pool.getReserves();
+
+        /// NOTE: Can be manipulated!
+        return amount0 + pool.getAmountOut(amount1, address(asset));
+    }
 
     function redeemAssets(uint256 shares_) public view returns (uint256 assets) {}
 
@@ -110,11 +168,59 @@ contract VelodromeERC7575Vault is IERC7575 {
 
     /// Helpers
 
+    // Swaps 50% of input token to other pool token.
+    // Naive implementation, needs improvement. Will result in dust after addLiquidity()
+    // TODO: Revisit
+    function _swapHalf(uint256 _amountA) internal returns (uint256 amountA, uint256 amountB) {
+        address tokenIn;
+        address tokenOut;
+        if (address(token0) == asset) {
+            tokenIn = address(token0);
+            tokenOut = address(token1);
+        } else {
+            tokenIn = address(token1);
+            tokenOut = address(token0);
+        }
+
+        uint256 amountIn = _amountA / 2;
+        uint256 amountOutMin = pool.getAmountOut(amountIn, tokenIn);
+        IRouter.Route memory route = IRouter.Route(tokenIn, tokenOut, isStable, FACTORY);
+        IRouter.Route[] memory routes = new IRouter.Route[](1);
+        routes[0] = route;
+        uint256[] memory amounts = ROUTER.swapExactTokensForTokens(
+            amountIn, _slippageAdjusted(amountOutMin), routes, address(this), block.timestamp
+        );
+        return (amounts[0], amounts[1]);
+    }
+
+    // Swaps 100% of input token amount to other pool token.
+    function _swapFull(uint256 _amountA) internal {
+        address tokenIn;
+        address tokenOut;
+        if (address(token0) == asset) {
+            tokenIn = address(token1);
+            tokenOut = address(token0);
+        } else {
+            tokenIn = address(token0);
+            tokenOut = address(token1);
+        }
+
+        uint256 amountIn = _amountA;
+        uint256 amountOutMin = pool.getAmountOut(amountIn, tokenIn);
+        IRouter.Route memory route = IRouter.Route(tokenIn, tokenOut, isStable, FACTORY);
+        IRouter.Route[] memory routes = new IRouter.Route[](1);
+        routes[0] = route;
+        ROUTER.swapExactTokensForTokens(
+            amountIn, _slippageAdjusted(amountOutMin), routes, address(this), block.timestamp
+        );
+    }
+
     /// @notice Add liquidity to the underlying pool. Send both token0 and token1 from the Vault address.
     function _addLiquidity(uint256 _amount0, uint256 _amount1) internal returns (uint256 lpTokensReceived) {
+        console.log(address(token0), _amount0, _amount1);
         (_amount0, _amount1,) =
             ROUTER.quoteAddLiquidity(address(token0), address(token1), isStable, FACTORY, _amount0, _amount1);
-
+        // console.log("Quote",_amount0, _amount1);
         (,, lpTokensReceived) = ROUTER.addLiquidity(
             address(token0),
             address(token1),
@@ -184,6 +290,25 @@ contract VelodromeERC7575Vault is IERC7575 {
     }
 
     function _slippageAdjusted(uint256 _amount) internal view returns (uint256) {
-        return (MAX_BPS - slippage) * _amount;
+        return (_amount * (MAX_BPS - slippage)) / MAX_BPS;
+    }
+
+    function getSharesFromAssets(uint256 assets_) public view returns (uint256 poolLpAmount) {
+        (uint256 assets0, uint256 assets1) = getSplitAssetAmounts(assets_);
+        (,, poolLpAmount) = ROUTER.quoteAddLiquidity(
+            address(token0), address(token1), isStable, FACTORY, _slippageAdjusted(assets0), _slippageAdjusted(assets1)
+        );
+    }
+
+    function getSplitAssetAmounts(uint256 assets_) public view returns (uint256 assets0, uint256 assets1) {
+        uint256 halfAssets = assets_ / 2;
+
+        if (address(token0) == asset) {
+            assets1 = pool.getAmountOut(halfAssets, address(token0));
+            assets0 = assets_ - halfAssets;
+        } else {
+            assets0 = pool.getAmountOut(halfAssets, address(token1));
+            assets1 = assets_ - halfAssets;
+        }
     }
 }
