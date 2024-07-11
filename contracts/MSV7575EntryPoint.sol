@@ -4,10 +4,8 @@ pragma solidity ^0.8.0;
 import {IInvestStrategy} from "@ensuro/vaults/contracts/interfaces/IInvestStrategy.sol";
 import {IERC7575} from "./interfaces/IERC7575.sol";
 import {IERC20} from "@openzeppelin/contracts/interfaces/IERC20.sol";
-import {IERC4626} from "@openzeppelin/contracts/interfaces/IERC4626.sol";
 import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
-import {IPool} from "@ensuro/vaults/contracts/dependencies/aave-v3/IPool.sol";
 import {MSV7575Share} from "./MSV7575Share.sol";
 
 /**
@@ -20,6 +18,8 @@ import {MSV7575Share} from "./MSV7575Share.sol";
 abstract contract MSV7575EntryPoint is IERC7575 {
   MSV7575Share internal immutable _msvVault;
 
+  error MoreThanMax();
+
   constructor(MSV7575Share msvVault_) {
     _msvVault = msvVault_;
   }
@@ -27,6 +27,7 @@ abstract contract MSV7575EntryPoint is IERC7575 {
   /**
    * @dev Implement this with the same behaviour as {IERC7575-asset}
    */
+  // solhint-disable-next-line func-name-mixedcase
   function _EPAsset() internal view virtual returns (address assetTokenAddress);
 
   /**
@@ -101,7 +102,7 @@ abstract contract MSV7575EntryPoint is IERC7575 {
    * NOTE: most implementations will require pre-approval of the Vault with the Vault’s underlying asset token.
    */
   function deposit(uint256 assets, address receiver) external override returns (uint256 shares) {
-    require(assets <= maxDeposit(receiver), "ERC7575: deposit more than max");
+    if (assets > maxDeposit(receiver)) revert MoreThanMax();
 
     shares = previewDeposit(assets);
     _deposit(msg.sender, receiver, assets, shares);
@@ -139,7 +140,7 @@ abstract contract MSV7575EntryPoint is IERC7575 {
    * NOTE: most implementations will require pre-approval of the Vault with the Vault’s underlying asset token.
    */
   function mint(uint256 shares, address receiver) external override returns (uint256 assets) {
-    require(shares <= maxMint(receiver), "ERC7575: mint more than max");
+    if (shares > maxMint(receiver)) revert MoreThanMax();
 
     assets = previewMint(shares);
     _deposit(msg.sender, receiver, assets, shares);
@@ -183,7 +184,7 @@ abstract contract MSV7575EntryPoint is IERC7575 {
    * Those methods should be performed separately.
    */
   function withdraw(uint256 assets, address receiver, address owner) external override returns (uint256 shares) {
-    require(assets <= maxWithdraw(owner), "ERC7575: withdraw more than max");
+    if (assets > maxWithdraw(owner)) revert MoreThanMax();
 
     shares = previewWithdraw(assets);
     _withdraw(msg.sender, receiver, owner, assets, shares);
@@ -218,7 +219,7 @@ abstract contract MSV7575EntryPoint is IERC7575 {
    * Those methods should be performed separately.
    */
   function redeem(uint256 shares, address receiver, address owner) external override returns (uint256 assets) {
-    require(shares <= maxRedeem(owner), "ERC7575: redeem more than max");
+    if (shares > maxRedeem(owner)) revert MoreThanMax();
 
     assets = previewRedeem(shares);
     _withdraw(msg.sender, receiver, owner, assets, shares);

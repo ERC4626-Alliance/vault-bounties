@@ -2,12 +2,10 @@
 pragma solidity ^0.8.0;
 
 import {MultiStrategyERC4626} from "./dependencies/MultiStrategyERC4626.sol";
-import {IERC20Upgradeable} from "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol";
 import {AccessControlUpgradeable} from "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol";
 import {IERC20} from "@openzeppelin/contracts/interfaces/IERC20.sol";
 import {IERC4626} from "@openzeppelin/contracts/interfaces/IERC4626.sol";
 import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
-import {IInvestStrategy} from "@ensuro/vaults/contracts/interfaces/IInvestStrategy.sol";
 import {IERC7575Share, IERC7575, IERC165} from "./interfaces/IERC7575.sol";
 
 contract MSV7575Share is MultiStrategyERC4626, IERC7575Share {

@@ -3,7 +3,6 @@ pragma solidity ^0.8.0;
 
 import {SwapStableInvestStrategy} from "@ensuro/vaults/contracts/SwapStableInvestStrategy.sol";
 import {IERC20Metadata} from "@openzeppelin/contracts/interfaces/IERC20Metadata.sol";
-import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
 import {MSV7575Share} from "./MSV7575Share.sol";
 import {MSV7575EntryPoint} from "./MSV7575EntryPoint.sol";
@@ -23,6 +22,7 @@ contract SwapStableInvestStrategy7575 is SwapStableInvestStrategy, MSV7575EntryP
     MSV7575Share msvVault_
   ) SwapStableInvestStrategy(IERC20Metadata(msvVault_.asset()), investAsset_, price_) MSV7575EntryPoint(msvVault_) {}
 
+  // solhint-disable-next-line func-name-mixedcase
   function _EPAsset() internal view override returns (address assetTokenAddress) {
     return address(_investAsset);
   }

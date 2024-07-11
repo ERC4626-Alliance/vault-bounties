@@ -72,7 +72,7 @@ contract ERC4626InvestStrategy is IInvestStrategy {
   }
 
   function forwardEntryPoint(uint8, bytes memory) external view onlyDelegCall returns (bytes memory) {
-    // solhint-disable-next-line custom-errors,reason-string
+    // solhint-disable-next-line gas-custom-errors,reason-string
     revert();
   }
 }
