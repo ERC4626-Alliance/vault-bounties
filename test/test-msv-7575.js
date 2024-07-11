@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 const { amountFunction, _W, getRole } = require("@ensuro/core/js/utils");
 const { initForkCurrency, setupChain } = require("@ensuro/core/js/test-utils");
-const { buildUniswapConfig } = require("@ensuro/swaplibrary/js/utils");
+const { buildUniswapConfig, buildCurveConfig } = require("@ensuro/swaplibrary/js/utils");
 const { encodeSwapConfig } = require("./utils");
 const hre = require("hardhat");
 const helpers = require("@nomicfoundation/hardhat-network-helpers");
@@ -20,6 +20,9 @@ const ADDRESSES = {
   AAVEv3: "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2",
   aUSDCv3: "0x98C23E9d8f34FEFb1B7BD6a91B7FF122F4e16F5c",
   COMP_CHAINLINK: "0xdbd020CAeF83eFd542f4De03e3cF0C28A4428bd5",
+  USDe: "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+  USDM: "0x59d9356e565ab3a36dd77763fc0d87feaf85508c",  // i = 0 in USDM-3crv
+  CURVE_ROUTER: "0x16C6521Dff6baB339122a0FE25a9116693265353",
 };
 
 const ChainlinkABI = [
@@ -121,6 +124,34 @@ async function setUp() {
     vault,
     COMPPrice,
   };
+}
+
+function usdm2usdcSwapConfig() {
+  // TO DO: I don't have the precise route in mainnet for this
+  return buildCurveConfig(_W("0.02"), ADDRESSES.CURVE_ROUTER, [
+    {
+      route: [
+        ADDRESSES.USDC,
+        "0xc83b79c07ece44b8b99ffa0e235c00add9124f9e", // USDM-3crv
+        ADDRESSES.USDM,
+      ],
+      swapParams: [
+        [0, 1, 1, 1, 2],
+      ],
+      pools: ["0xc83b79c07ece44b8b99ffa0e235c00add9124f9e"],
+    },
+    {
+      route: [
+        ADDRESSES.USDM,
+        "0xc83b79c07ece44b8b99ffa0e235c00add9124f9e", // USDM-3crv
+        ADDRESSES.USDC,
+      ],
+      swapParams: [
+        [0, 1, 1, 1, 2],
+      ],
+      pools: ["0xc83b79c07ece44b8b99ffa0e235c00add9124f9e"],
+    },
+  ]);
 }
 
 describe("MSV7575 Integration fork tests", function () {
