@@ -27,6 +27,9 @@ This repo contains [ERC7575](https://eips.ethereum.org/EIPS/eip-7575) vault wrap
 > Volatile pools use `x.y=K` curve <br/>
 > Stable pools use `x^3.y + y^3.x=K` curve
 
+## Presentation
+[![Presentation Link](https://img.youtube.com/vi/LNCqzubeciw/0.jpg)](https://youtu.be/LNCqzubeciw)
+
 
 ## Testing and deployment:
 - **Install dependencies:**
