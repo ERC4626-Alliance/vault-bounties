@@ -19,19 +19,40 @@ TO DO.
 
 ## Feature achieved
 
-TO DO.
+The MultiStrategyVault is a 4626 vault that accepts multiple pluggable strategies to invest in different ways.
+
+Typically those strategies have ERC20 assets representing the investment, like AAVE's aTokens.
+
+In this project we extend the strategies to support the 7575 standard, allowing to enter and exit the vault directly with the investment tokens.
+
+Also, I implemented a new strategy that invests in other 4626 tokens (denominated in the same asset as the MSV asset) and with the 7575 support, it's possible to enter and exit in those 4626 shares.
+
+Strategies supported:
+
+- AaveV3InvestStrategy7575: invest in AAVE
+- CompoundV3InvestStrategy: invest in Compound (also collects rewards). Couldn't port it to 7575 because of lack of time, but should be easy.
+- StableSwapInvestStrategy7575: invest in other token that can be swapped at a stable price (minus slippage) for the asset price. It can be used to invest in other stablecoins that generate yield like USDM.
+- ERC4626InvestStrategy7575: invest in other 4626 vaults, like MetaMorpho vaults.
+
+The main feature of this design is this allows to have a flexible vault with pluggable strategies, but keeping the ownership of the assets in the core vault, something that's better for security and transparency reasons.
 
 ## Architecture
 
-TO DO.
+![Architecture Diagram](Architecture.png "Architecture Diagram")
 
 ## Pain points
 
-TO DO.
+In the initial design of the MultiStrategyVault, I decided to use the same method names as the ones used in the 4626 standard in the strategies, to make it easier to associate the expected behaviour.
+
+But when those strategies also have to support the 7575 standard that also has the same method names but with different parameters or different semantics, that generates some problems and makes the code hard to understand.
+
+In the future it would be good to change the IInvestStrategy interface to use different names.
 
 ## Libraries used
 
 - https://www.npmjs.com/package/@ensuro/vaults
+- https://www.npmjs.com/package/@ensuro/swaplibrary
+- https://www.npmjs.com/package/@ensuro/ensuro: just utils functions, not the Ensuro protocol
 
 ## EVM Address
 
