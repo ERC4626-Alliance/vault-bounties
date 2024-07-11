@@ -1,6 +1,0 @@
-[submodule "velodrome-7575-wrapper/lib/forge-std"]
-	path = velodrome-7575-wrapper/lib/forge-std
-	url = https://github.com/foundry-rs/forge-std
-[submodule "velodrome-7575-wrapper/lib/solmate"]
-	path = velodrome-7575-wrapper/lib/solmate
-	url = https://github.com/transmissions11/solmate
