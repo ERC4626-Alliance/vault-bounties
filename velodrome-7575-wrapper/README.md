@@ -84,6 +84,37 @@ forge script ./scripts/CreateVault.s.sol --rpc-url <RPC_URL> --broadcast
 2. Call the `createVault()` method to deploy wrappers for each desired pool.
 3. Direct user deposits and withdrawals to the vault contracts based on the `asset`.
 
+## Flow diagrams:
+
+### Deposit Flow:
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant Vault as VelodromeERC7575Vault
+    participant ShareToken
+    participant Router as Velodrome Router
+    participant Pool as Velodrome Pool
+    participant Asset
+
+    User->>Vault: deposit(assets, receiver)
+    Vault->>Vault: previewDeposit(assets)
+    Vault->>Asset: safeTransferFrom(user, vault, assets)
+    Vault->>Vault: _swapHalf(assets)
+    Vault->>Router: swapExactTokensForTokens()
+    Vault-->>Router: token0, token1
+    Router->>Pool: swap()
+    Pool-->>Router: tokens
+    Router-->>Vault: swapped tokens
+    Vault->>Vault: _addLiquidity(amount0, amount1)
+    Vault->>Router: addLiquidity()
+    Router->>Pool: mint(liquidity)
+    Pool-->>Router: LP tokens
+    Router-->>Vault: LP tokens
+    Vault->>ShareToken: mint(receiver, shares)
+    Vault-->>User: shares
+```
+
 ## Pain Points
 - No/very minimal reference implementation. 
 - Handling both stable and volatile pools required additional logic and checks.
