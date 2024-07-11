@@ -171,7 +171,7 @@ sequenceDiagram
 - `0x89e357484BD97B489a291681789fd259C8dc71d1`
 
 ## Contact
-- Twitter: https://x.com/0xasp_
+- Twitter: [@PraneshASP](https://x.com/0xasp_)
 
 ## Future improvement ideas:
 - More robust methods to calculate amounts to add liquidity.
