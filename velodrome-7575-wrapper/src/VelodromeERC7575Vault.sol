@@ -8,7 +8,6 @@ import {IERC20MintableBurnable} from "./interfaces/IERC20MintableBurnable.sol";
 import {IPool} from "./interfaces/IPool.sol";
 import {IRouter} from "./interfaces/IRouter.sol";
 import {IERC7575} from "./interfaces/IERC7575.sol";
-import {console} from "forge-std/console.sol";
 
 /// @title VelodromeERC7575Vault Wrapper contract
 /// @dev Unaudited and will have bugs. Don't use in PRODUCTION
@@ -105,7 +104,6 @@ contract VelodromeERC7575Vault is IERC7575 {
 
         uint256 receivedLpTokens = _addLiquidity(a0, a1);
 
-
         /// NOTE: PreviewMint needs to output reasonable amount of shares
         require(receivedLpTokens >= _slippageAdjusted(_shares), "INSUFFICENT_SHARES");
 
@@ -174,10 +172,10 @@ contract VelodromeERC7575Vault is IERC7575 {
         uint256 lpSupply = IERC20MintableBurnable(address(pool)).totalSupply();
 
         /// amount of token0 to provide to receive poolLpAmount
-        uint256 _amount0 = reserveA.mulDivUp(shares_,lpSupply);
+        uint256 _amount0 = reserveA.mulDivUp(shares_, lpSupply);
 
         /// amount of token1 to provide to receive poolLpAmount
-        uint256 _amount1 = reserveB.mulDivUp(shares_,lpSupply);
+        uint256 _amount1 = reserveB.mulDivUp(shares_, lpSupply);
 
         if (_amount1 == 0 || _amount0 == 0) return 0;
 
@@ -227,7 +225,13 @@ contract VelodromeERC7575Vault is IERC7575 {
             tokenOut = address(token0);
         }
 
-        uint256 amountIn = _amountA / 2;
+        uint256 amountIn;
+        if (isStable == true) {
+            amountIn = _amountA / 2;
+        } else {
+            uint256 reserve = _getReserves();
+            amountIn = _getSwapAmount(reserve, _amountA);
+        }
         uint256 amountOutMin = pool.getAmountOut(amountIn, tokenIn);
         IRouter.Route memory route = IRouter.Route(tokenIn, tokenOut, isStable, FACTORY);
         IRouter.Route[] memory routes = new IRouter.Route[](1);
@@ -338,22 +342,40 @@ contract VelodromeERC7575Vault is IERC7575 {
         return (_amount * (MAX_BPS - slippage)) / MAX_BPS;
     }
 
-    function getSharesFromAssets(uint256 assets_) public view returns (uint256 poolLpAmount) {
-        (uint256 assets0, uint256 assets1) = getSplitAssetAmounts(assets_);
+    function getSharesFromAssets(uint256 _assets) public view returns (uint256 poolLpAmount) {
+        (uint256 assets0, uint256 assets1) = getSplitAssetAmounts(_assets);
         (,, poolLpAmount) = ROUTER.quoteAddLiquidity(
             address(token0), address(token1), isStable, FACTORY, _slippageAdjusted(assets0), _slippageAdjusted(assets1)
         );
     }
 
-    function getSplitAssetAmounts(uint256 assets_) public view returns (uint256 assets0, uint256 assets1) {
-        uint256 halfAssets = assets_ / 2;
+    function getSplitAssetAmounts(uint256 _assets) public view returns (uint256 assets0, uint256 assets1) {
+        uint256 amountIn;
+        if (isStable == true) {
+            amountIn = _assets / 2;
+        } else {
+            amountIn = _getSwapAmount(_getReserves(), _assets);
+        }
 
         if (address(token0) == asset) {
-            assets1 = pool.getAmountOut(halfAssets, address(token0));
-            assets0 = assets_ - halfAssets;
+            assets1 = pool.getAmountOut(amountIn, address(token0));
+            assets0 = _assets - amountIn;
         } else {
-            assets0 = pool.getAmountOut(halfAssets, address(token1));
-            assets1 = assets_ - halfAssets;
+            assets0 = pool.getAmountOut(amountIn, address(token1));
+            assets1 = _assets - amountIn;
+        }
+    }
+
+    /// @dev implementation details: https://blog.alphaventuredao.io/onesideduniswap/
+    function _getSwapAmount(uint256 resA, uint256 amt) internal pure returns (uint256) {
+        return (FixedPointMathLib.sqrt(resA * (resA * (3_988_009) + amt * (3_988_000))) - (resA * (1997))) / 1994;
+    }
+
+    function _getReserves() internal view returns (uint256 assetReserves) {
+        if (address(token0) == asset) {
+            (assetReserves,,) = pool.getReserves();
+        } else {
+            (, assetReserves,) = pool.getReserves();
         }
     }
 }
