@@ -227,7 +227,7 @@ contract VelodromeERC7575Vault is IERC7575 {
 
         uint256 amountIn;
         if (isStable == true) {
-            amountIn = _amountA / 2;
+            amountIn = _amountA / 2; // naive: should be handled better
         } else {
             uint256 reserve = _getReserves();
             amountIn = _getSwapAmount(reserve, _amountA);
@@ -352,7 +352,7 @@ contract VelodromeERC7575Vault is IERC7575 {
     function getSplitAssetAmounts(uint256 _assets) public view returns (uint256 assets0, uint256 assets1) {
         uint256 amountIn;
         if (isStable == true) {
-            amountIn = _assets / 2;
+            amountIn = _assets / 2; // naive: should be handled better
         } else {
             amountIn = _getSwapAmount(_getReserves(), _assets);
         }
