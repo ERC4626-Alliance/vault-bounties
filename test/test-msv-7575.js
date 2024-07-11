@@ -159,8 +159,7 @@ describe("MSV7575 Integration fork tests", function () {
   });
 
   it("Can perform a basic smoke test - Using AAVEv3 7575 endpoint", async () => {
-    const { vault, lp, lp2, admin, aaveStrategy, compoundStrategy, aUSDCv3 } =
-      await helpers.loadFixture(setUp);
+    const { vault, lp, lp2, admin, aaveStrategy, compoundStrategy, aUSDCv3 } = await helpers.loadFixture(setUp);
     expect(await vault.name()).to.equal(NAME);
     await vault.connect(lp).deposit(_A(5000), lp);
     await vault.connect(lp2).deposit(_A(7000), lp2);

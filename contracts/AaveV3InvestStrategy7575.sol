@@ -10,6 +10,7 @@ import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol
 import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
 import {IPool} from "@ensuro/vaults/contracts/dependencies/aave-v3/IPool.sol";
 import {MSV7575Share} from "./MSV7575Share.sol";
+import {MSV7575EntryPoint} from "./MSV7575EntryPoint.sol";
 
 /**
  * @title AaveV3InvestStrategy7575
@@ -18,40 +19,15 @@ import {MSV7575Share} from "./MSV7575Share.sol";
  * @custom:security-contact security@ensuro.co
  * @author Ensuro
  */
-contract AaveV3InvestStrategy7575 is AaveV3InvestStrategy, IERC7575 {
-  MSV7575Share internal immutable _msvVault;
+contract AaveV3InvestStrategy7575 is AaveV3InvestStrategy, MSV7575EntryPoint {
+  constructor(
+    IERC20 asset_,
+    IPool aave_,
+    MSV7575Share msvVault_
+  ) AaveV3InvestStrategy(asset_, aave_) MSV7575EntryPoint(msvVault_) {}
 
-  constructor(IERC20 asset_, IPool aave_, MSV7575Share msvVault_) AaveV3InvestStrategy(asset_, aave_) {
-    _msvVault = msvVault_;
-  }
-
-  /**
-   * @dev See {IERC7575-asset}.
-   *      For this Strategy, the underlying asset is AAVE's aToken
-   */
-  function asset() public view override returns (address assetTokenAddress) {
+  function _EPAsset() internal view override returns (address assetTokenAddress) {
     return _reserveData().aTokenAddress;
-  }
-
-  /**
-   * @dev See {IERC7575-vault}.
-   */
-  function share() external view override returns (address shareTokenAddress) {
-    return address(_msvVault);
-  }
-
-  /**
-   * @dev See {IERC7575-convertToShares}.
-   */
-  function convertToShares(uint256 assets) public view override returns (uint256 shares) {
-    return _msvVault.convertToShares(assets); // Since aToken converts 1:1 to _msvVault.asset()
-  }
-
-  /**
-   * @dev See {IERC7575-convertToAssets}.
-   */
-  function convertToAssets(uint256 shares) external view override returns (uint256 assets) {
-    return _msvVault.convertToAssets(shares); // Since aToken converts 1:1 to _msvVault.asset()
   }
 
   /**
@@ -61,180 +37,29 @@ contract AaveV3InvestStrategy7575 is AaveV3InvestStrategy, IERC7575 {
     return AaveV3InvestStrategy.totalAssets(address(_msvVault));
   }
 
+  function _strategyMaxDeposit() internal view override returns (uint256 maxAssetsInEPAssets) {
+    return AaveV3InvestStrategy.maxDeposit(address(_msvVault));
+  }
+
+  function _strategyMaxWithdraw() internal view override returns (uint256 maxAssetsInEPAssets) {
+    return AaveV3InvestStrategy.maxWithdraw(address(_msvVault));
+  }
+
   /**
    * @dev See {IERC7575-maxDeposit}.
    */
   function maxDeposit(
     address receiver
-  ) public view override(IERC7575, AaveV3InvestStrategy) returns (uint256 maxAssets) {
-    if (receiver == address(_msvVault)) {
-      // Hack to overcome name collision issue, if receiver == _msvVault I assume it's an AaveV3InvestStrategy call
-      return AaveV3InvestStrategy.maxDeposit(receiver);
-    } else {
-      return Math.min(AaveV3InvestStrategy.maxDeposit(address(_msvVault)), _msvVault.maxDeposit(receiver));
-    }
-  }
-
-  /**
-   * @dev See {IERC7575-previewDeposit}.
-   */
-  function previewDeposit(uint256 assets) public view override returns (uint256 shares) {
-    return _msvVault.previewDeposit(assets);
-  }
-
-  /**
-   * @dev Mints shares Vault shares to receiver by depositing exactly amount of underlying tokens.
-   *
-   * - MUST emit the Deposit event.
-   * - MAY support an additional flow in which the underlying tokens are owned by the Vault contract before the
-   *   deposit execution, and are accounted for during deposit.
-   * - MUST revert if all of assets cannot be deposited (due to deposit limit being reached, slippage, the user not
-   *   approving enough underlying tokens to the Vault contract, etc).
-   *
-   * NOTE: most implementations will require pre-approval of the Vault with the Vault’s underlying asset token.
-   */
-  function deposit(uint256 assets, address receiver) external override returns (uint256 shares) {
-    require(assets <= maxDeposit(receiver), "ERC7575: deposit more than max");
-
-    shares = previewDeposit(assets);
-    _deposit(msg.sender, receiver, assets, shares);
-    return shares;
-  }
-
-  /**
-   * @dev See {IERC7575-maxMint}.
-   */
-  function maxMint(address receiver) public view override returns (uint256 maxShares) {
-    uint256 maxDepositEP = AaveV3InvestStrategy.maxDeposit(address(_msvVault));
-    return
-      Math.min(
-        maxDepositEP == type(uint256).max ? type(uint256).max : convertToShares(maxDepositEP),
-        _msvVault.maxMint(receiver)
-      );
-  }
-
-  /**
-   * @dev See {IERC7575-previewMint}.
-   */
-  function previewMint(uint256 shares) public view override returns (uint256 assets) {
-    return _msvVault.previewMint(shares);
-  }
-
-  /**
-   * @dev Mints exactly shares Vault shares to receiver by depositing amount of underlying tokens.
-   *
-   * - MUST emit the Deposit event.
-   * - MAY support an additional flow in which the underlying tokens are owned by the Vault contract before the mint
-   *   execution, and are accounted for during mint.
-   * - MUST revert if all of shares cannot be minted (due to deposit limit being reached, slippage, the user not
-   *   approving enough underlying tokens to the Vault contract, etc).
-   *
-   * NOTE: most implementations will require pre-approval of the Vault with the Vault’s underlying asset token.
-   */
-  function mint(uint256 shares, address receiver) external override returns (uint256 assets) {
-    require(shares <= maxMint(receiver), "ERC7575: mint more than max");
-
-    assets = previewMint(shares);
-    _deposit(msg.sender, receiver, assets, shares);
-    return assets;
+  ) public view virtual override(AaveV3InvestStrategy, MSV7575EntryPoint) returns (uint256 maxAssets) {
+    return MSV7575EntryPoint.maxDeposit(receiver);
   }
 
   /**
    * @dev See {IERC7575-maxWithdraw}.
    */
-  function maxWithdraw(address owner) public view override(IERC7575, AaveV3InvestStrategy) returns (uint256 maxAssets) {
-    if (owner == address(_msvVault)) {
-      // Hack to overcome name collision issue, if receiver == _msvVault I assume it's an AaveV3InvestStrategy call
-      return AaveV3InvestStrategy.maxWithdraw(owner);
-    } else {
-      return Math.min(AaveV3InvestStrategy.maxWithdraw(address(_msvVault)), _msvVault.maxWithdraw(owner));
-    }
-  }
-
-  /**
-   * @dev See {IERC7575-previewWithdraw}.
-   */
-  function previewWithdraw(uint256 assets) public view override returns (uint256 shares) {
-    return _msvVault.previewWithdraw(assets);
-  }
-
-  /**
-   * @dev Burns shares from owner and sends exactly assets of underlying tokens to receiver.
-   *
-   * - MUST emit the Withdraw event.
-   * - MAY support an additional flow in which the underlying tokens are owned by the Vault contract before the
-   *   withdraw execution, and are accounted for during withdraw.
-   * - MUST revert if all of assets cannot be withdrawn (due to withdrawal limit being reached, slippage, the owner
-   *   not having enough shares, etc).
-   *
-   * Note that some implementations will require pre-requesting to the Vault before a withdrawal may be performed.
-   * Those methods should be performed separately.
-   */
-  function withdraw(uint256 assets, address receiver, address owner) external override returns (uint256 shares) {
-    require(assets <= maxWithdraw(owner), "ERC7575: withdraw more than max");
-
-    shares = previewWithdraw(assets);
-    _withdraw(msg.sender, receiver, owner, assets, shares);
-
-    return shares;
-  }
-
-  /**
-   * @dev See {IERC7575-maxRedeem}.
-   */
-  function maxRedeem(address owner) public view override returns (uint256 maxShares) {
-    return Math.min(convertToShares(AaveV3InvestStrategy.maxWithdraw(address(_msvVault))), _msvVault.maxRedeem(owner));
-  }
-
-  /**
-   * @dev See {IERC7575-previewRedeem}.
-   */
-  function previewRedeem(uint256 shares) public view override returns (uint256 assets) {
-    return _msvVault.previewRedeem(shares);
-  }
-
-  /**
-   * @dev Burns exactly shares from owner and sends assets of underlying tokens to receiver.
-   *
-   * - MUST emit the Withdraw event.
-   * - MAY support an additional flow in which the underlying tokens are owned by the Vault contract before the
-   *   redeem execution, and are accounted for during redeem.
-   * - MUST revert if all of shares cannot be redeemed (due to withdrawal limit being reached, slippage, the owner
-   *   not having enough shares, etc).
-   *
-   * NOTE: some implementations will require pre-requesting to the Vault before a withdrawal may be performed.
-   * Those methods should be performed separately.
-   */
-  function redeem(uint256 shares, address receiver, address owner) external override returns (uint256 assets) {
-    require(shares <= maxRedeem(owner), "ERC7575: redeem more than max");
-
-    assets = previewRedeem(shares);
-    _withdraw(msg.sender, receiver, owner, assets, shares);
-
-    return assets;
-  }
-
-  /**
-   * @dev Deposit/mint common workflow.
-   */
-  function _deposit(address caller, address receiver, uint256 assets, uint256 shares) internal virtual {
-    SafeERC20.safeTransferFrom(IERC20(asset()), caller, address(this), assets);
-    _msvVault.mintEntryPointShares(asset(), receiver, shares);
-    emit Deposit(caller, receiver, assets, shares);
-  }
-
-  /**
-   * @dev Withdraw/redeem common workflow.
-   */
-  function _withdraw(address caller, address receiver, address owner, uint256 assets, uint256 shares) internal virtual {
-    _msvVault.burnEntryPointSharesAndTransfer(asset(), caller, owner, shares, receiver, assets);
-
-    emit Withdraw(caller, receiver, owner, assets, shares);
-  }
-
-  function supportsInterface(bytes4 interfaceId) external pure returns (bool) {
-    if (interfaceId == type(IERC7575).interfaceId) return true;
-    if (interfaceId == type(IInvestStrategy).interfaceId) return true;
-    return false;
+  function maxWithdraw(
+    address receiver
+  ) public view virtual override(AaveV3InvestStrategy, MSV7575EntryPoint) returns (uint256 maxAssets) {
+    return MSV7575EntryPoint.maxWithdraw(receiver);
   }
 }
