@@ -19,7 +19,10 @@ import {MSV7575EntryPoint} from "./MSV7575EntryPoint.sol";
  * @author Ensuro
  */
 contract ERC4626InvestStrategy7575 is ERC4626InvestStrategy, MSV7575EntryPoint {
-  constructor(IERC4626 investVault_, MSV7575Share msvVault_)  ERC4626InvestStrategy(IERC20(msvVault_.asset()), investVault_) MSV7575EntryPoint(msvVault_) {}
+  constructor(
+    IERC4626 investVault_,
+    MSV7575Share msvVault_
+  ) ERC4626InvestStrategy(IERC20(msvVault_.asset()), investVault_) MSV7575EntryPoint(msvVault_) {}
 
   function _EPAsset() internal view override returns (address assetTokenAddress) {
     return address(_investVault);
@@ -27,12 +30,12 @@ contract ERC4626InvestStrategy7575 is ERC4626InvestStrategy, MSV7575EntryPoint {
 
   function _convertToMSVAssets(uint256 epAssets) internal view override returns (uint256 msvAssets) {
     if (epAssets == type(uint256).max) return type(uint256).max;
-    return _investVault.convertToAssets(epAssets);  // epAssets == _investVault shares
+    return _investVault.convertToAssets(epAssets); // epAssets == _investVault shares
   }
 
   function _convertFromMSVAssets(uint256 msvAssets) internal view override returns (uint256 epAssets) {
     if (msvAssets == type(uint256).max) return type(uint256).max;
-    return _investVault.convertToShares(msvAssets);  // epAssets == _investVault shares
+    return _investVault.convertToShares(msvAssets); // epAssets == _investVault shares
   }
 
   /**

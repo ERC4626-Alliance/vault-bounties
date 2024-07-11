@@ -18,7 +18,7 @@ contract ERC4626InvestStrategy is IInvestStrategy {
   bytes32 public immutable storageSlot = InvestStrategyClient.makeStorageSlot(this);
 
   IERC4626 internal immutable _investVault;
-  IERC20 internal immutable _asset;  // MSV asset
+  IERC20 internal immutable _asset; // MSV asset
 
   // From OZ v5
   error AccessControlUnauthorizedAccount(address account, bytes32 neededRole);
