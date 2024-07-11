@@ -129,7 +129,21 @@ contract VelodromeERC7575Vault is IERC7575 {
         emit Withdraw(msg.sender, receiver_, owner_, amount, shares);
     }
 
-    function redeem(uint256 shares_, address receiver_, address owner) public override returns (uint256 assets) {}
+    /// @notice Burn amount of 'shares' of this Vault to receive some amount of underlying
+    /// token of this vault
+    function redeem(uint256 _shares, address _receiver, address _owner) public override returns (uint256 assets) {
+        assets = previewRedeem(_shares);
+        require(assets > 0, "ZERO_SHARES");
+
+        (uint256 assets0, uint256 assets1) = _removeLiquidity(_shares);
+        IERC20MintableBurnable(address(shareToken)).burn(_owner, _shares);
+
+        uint256 amount = asset == address(token0) ? _swapFull(assets1) + assets0 : _swapFull(assets0) + assets1;
+
+        ERC20(address(asset)).safeTransfer(_receiver, amount);
+
+        emit Withdraw(msg.sender, _receiver, _owner, amount, _shares);
+    }
 
     function totalAssets() public view override returns (uint256) {
         return IERC20MintableBurnable(address(pool)).balanceOf(address(this));
@@ -149,7 +163,9 @@ contract VelodromeERC7575Vault is IERC7575 {
         return getSharesFromAssets(assets_);
     }
 
-    function previewRedeem(uint256 shares_) public view override returns (uint256 assets) {}
+    function previewRedeem(uint256 _shares) public view override returns (uint256 assets) {
+        return redeemAssets(_shares);
+    }
 
     // Revisit buggy
     function mintAssets(uint256 shares_) public view returns (uint256 assets) {
@@ -172,7 +188,17 @@ contract VelodromeERC7575Vault is IERC7575 {
         return amount0 + pool.getAmountOut(amount0, address(asset));
     }
 
-    function redeemAssets(uint256 shares_) public view returns (uint256 assets) {}
+    function redeemAssets(uint256 _shares) public view returns (uint256 assets) {
+        (uint256 amount0, uint256 amount1) =
+            ROUTER.quoteRemoveLiquidity(address(token0), address(token1), isStable, FACTORY, _shares);
+        if (amount1 == 0 || amount0 == 0) return 0;
+
+        if (asset == address(token0)) {
+            assets = amount0 + pool.getAmountOut(amount1, address(token1));
+        } else {
+            assets = amount1 + pool.getAmountOut(amount0, address(token0));
+        }
+    }
 
     function setSlippage(uint256 _newSlippage) external {
         require(msg.sender == manager, "UNAUTHORIZED");
@@ -236,7 +262,6 @@ contract VelodromeERC7575Vault is IERC7575 {
 
     /// @notice Add liquidity to the underlying pool. Send both token0 and token1 from the Vault address.
     function _addLiquidity(uint256 _amount0, uint256 _amount1) internal returns (uint256 lpTokensReceived) {
-        console.log(address(token0), _amount0, _amount1);
         (_amount0, _amount1,) =
             ROUTER.quoteAddLiquidity(address(token0), address(token1), isStable, FACTORY, _amount0, _amount1);
         // console.log("Quote",_amount0, _amount1);

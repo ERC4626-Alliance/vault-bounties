@@ -127,4 +127,28 @@ contract VeloERC7575Vault_ForkTest is Test {
         assertEq(actualShares, sharesToWithdraw, "Incorrect number of shares withdrawn");
         assertEq(share.balanceOf(address(this)), initialShares - sharesToWithdraw, "Incorrect final share balance");
     }
+
+    function testRedeem() public {
+        // Deposit some assets to have shares to redeem
+        uint256 depositAmount = 1000 * 1e6; // 1000 USDC
+        deal(USDC_ADDRESS, address(this), depositAmount);
+        usdc.approve(address(sut), type(uint256).max);
+        uint256 receivedShares = sut.deposit(depositAmount, address(this));
+
+        uint256 redeemShares = receivedShares / 2; // Redeem half of the received shares
+        uint256 initialAssets = usdc.balanceOf(address(this));
+        uint256 initialShares = share.balanceOf(address(this));
+
+        uint256 assetsToReceive = sut.previewRedeem(redeemShares);
+        uint256 actualAssets = sut.redeem(redeemShares, address(this), address(this));
+
+        // Check if correct amount of assets were received
+        assertEq(actualAssets, assetsToReceive, "Incorrect amount of assets received");
+        assertApproxEqRel(
+            usdc.balanceOf(address(this)), initialAssets + assetsToReceive, 1e16, "Incorrect final asset balance"
+        );
+
+        // Check if correct number of shares were burned
+        assertEq(share.balanceOf(address(this)), initialShares - redeemShares, "Incorrect final share balance");
+    }
 }
