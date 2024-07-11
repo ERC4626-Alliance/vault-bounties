@@ -32,7 +32,7 @@ contract SwapStableInvestStrategy7575 is SwapStableInvestStrategy, MSV7575EntryP
     return
       Math.mulDiv(
         Math.mulDiv(epAssets * _toWadFactor(_investAsset), _price, WAD),
-        WAD - _getSwapConfig(address(_msvVault)).maxSlippage,
+        WAD + _getSwapConfig(address(_msvVault)).maxSlippage,
         WAD
       ) / _toWadFactor(_asset);
   }

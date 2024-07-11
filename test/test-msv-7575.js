@@ -24,6 +24,7 @@ const ADDRESSES = {
   USDM: "0x59d9356e565ab3a36dd77763fc0d87feaf85508c", // i = 0 in USDM-3crv
   CURVE_ROUTER: "0x16C6521Dff6baB339122a0FE25a9116693265353",
   GAUNLET_METAMORPHO: "0x8eB67A509616cd6A7c1B3c8C21D48FF57df3d458", // a 4626 vault denominated in USDC
+  DAI: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
 };
 
 const ChainlinkABI = [
@@ -53,7 +54,7 @@ const INITIAL = 10000;
 const NAME = "MSV7575";
 const SYMB = "USDCmsv";
 
-const FEETIER = 3000;
+const FEETIER = 100;
 
 async function setUp() {
   const [, lp, lp2, anon, guardian, admin] = await ethers.getSigners();
@@ -62,7 +63,7 @@ async function setUp() {
   const SwapLibrary = await ethers.getContractFactory("SwapLibrary");
   const swapLibrary = await SwapLibrary.deploy();
 
-  const swapConfig = buildUniswapConfig(_W("0.00001"), FEETIER, ADDRESSES.UNISWAP);
+  const swapConfig = buildUniswapConfig(_W("0.001"), FEETIER, ADDRESSES.UNISWAP);
   const adminAddr = await ethers.resolveAddress(admin);
 
   // I leave this strategy as non-7575 strategy
@@ -295,5 +296,41 @@ describe("MSV7575 Integration fork tests", function () {
     // Now test in metamorpho shares withdraw
     expect(await morphoStrategy.connect(lp).withdraw(_W(100), lp, lp)).to.emit(morphoStrategy, "Withdraw");
     expect(await metamorpho.balanceOf(lp)).to.equal(_W(100));
+  });
+
+  it("Can invest in DAI using SwapStableInvestStrategy7575", async () => {
+    const { vault, lp, lp2, admin, compoundStrategy, swapConfig, swapLibrary } = await helpers.loadFixture(setUp);
+    const SwapStableInvestStrategy7575 = await ethers.getContractFactory("SwapStableInvestStrategy7575", {
+      libraries: {
+        SwapLibrary: await ethers.resolveAddress(swapLibrary),
+      },
+    });
+    const dai = await ethers.getContractAt("IERC20", ADDRESSES.DAI);
+    const daiStrategy = await SwapStableInvestStrategy7575.deploy(dai, _W(1), vault);
+    await vault.connect(admin).addStrategy(daiStrategy, encodeSwapConfig(swapConfig));
+    await vault.connect(admin).setAs7575EntryPoint(2, true);
+    expect(await vault.vault(dai)).to.equal(daiStrategy);
+
+    await vault.connect(lp).deposit(_A(5000), lp);
+
+    expect(await vault.totalAssets()).to.be.closeTo(_A(5000), CENT);
+
+    // Move 3.5K from Compound to daiStrategy
+    await vault.connect(admin).rebalance(0, 2, _A(3500));
+
+    // totalAssets 7575 returns the number of metamorpho shares
+    expect(await daiStrategy["totalAssets()"](vault)).to.equal(await dai.balanceOf(vault));
+    expect(await daiStrategy["totalAssets()"](vault)).to.closeTo(_W(3500), _W(1)); // DAI uses 18 decimals
+    expect(await compoundStrategy.totalAssets(vault)).to.closeTo(_A(1500), CENT);
+    // totalAssets IInvestStrategy returns the amount in USDC
+    expect(await daiStrategy["totalAssets(address)"](vault)).to.closeTo(_A(3500 * (1 - 0.001)), _A("0.5"));
+
+    // lp2 deposits in the vault and can withdraw in DAI
+    await vault.connect(lp2).deposit(_A(2000), lp2);
+    // Now test in metamorpho shares withdraw
+    expect(await daiStrategy.connect(lp2).withdraw(_W(1000), lp2, lp2)).to.emit(daiStrategy, "Withdraw");
+    expect(await dai.balanceOf(lp2)).to.equal(_W(1000));
+    expect(await vault.balanceOf(lp2)).to.lt(_A(1000));
+    expect(await vault.balanceOf(lp2)).to.closeTo(_A(1000), _A(1));
   });
 });
